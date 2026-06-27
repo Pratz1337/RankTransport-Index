@@ -1,17 +1,8 @@
 # HRT-LI: Hierarchical Rank-Transport Learned Index
 
-HRT-LI is a research prototype for exact dynamic learned indexing over
+HRT-LI is a prototype for exact dynamic learned indexing over
 hierarchical string keys such as file paths, DNS records, and JSON paths.
 
-The current Q1-facing contribution is not the older Mobius-warp idea. The
-publishable method is:
-
-1. build a certified learned base-rank model on hierarchical keys;
-2. keep that model fixed after writes;
-3. correct write drift with an exact order-statistic rank-transport layer;
-4. use exact sparse-radix lexicodes as the string-order certificate;
-5. route newly inserted keys through the delta layer until threshold-triggered
-   consolidation rebuilds the base snapshot.
 
 ## Quickstart
 

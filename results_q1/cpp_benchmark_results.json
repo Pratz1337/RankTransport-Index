@@ -1,0 +1,54 @@
+{
+  "synthetic": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 1.29675, "insert_time_ms": 1.15626, "lookup_throughput_mops": 3.56939, "avg_lookup_latency_ns": 280.16, "memory_bytes": 1442415},
+    {"index_name": "HRT-LI v3", "load_time_ms": 6.86204, "insert_time_ms": 2.44666, "lookup_throughput_mops": 2.84423, "avg_lookup_latency_ns": 351.588, "memory_bytes": 1088973},
+    {"index_name": "sorted vector lower_bound", "load_time_ms": 1.0956, "insert_time_ms": 0.335841, "lookup_throughput_mops": 4.68176, "avg_lookup_latency_ns": 213.595, "memory_bytes": 562359},
+    {"index_name": "std::set", "load_time_ms": 0.429179, "insert_time_ms": 0.324818, "lookup_throughput_mops": 4.91287, "avg_lookup_latency_ns": 203.547, "memory_bytes": 960000},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 0.5853, "insert_time_ms": 0.134928, "lookup_throughput_mops": 22.4121, "avg_lookup_latency_ns": 44.6187, "memory_bytes": 1120000}
+  ],
+  "filesystem": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 0.162942, "insert_time_ms": 0.084756, "lookup_throughput_mops": 4.78752, "avg_lookup_latency_ns": 208.877, "memory_bytes": 149639},
+    {"index_name": "HRT-LI v3", "load_time_ms": 0.329335, "insert_time_ms": 0.122149, "lookup_throughput_mops": 5.05626, "avg_lookup_latency_ns": 197.774, "memory_bytes": 139365},
+    {"index_name": "sorted vector lower_bound", "load_time_ms": 0.070744, "insert_time_ms": 0.054353, "lookup_throughput_mops": 8.1324, "avg_lookup_latency_ns": 122.965, "memory_bytes": 87529},
+    {"index_name": "std::set", "load_time_ms": 0.04322, "insert_time_ms": 0.023688, "lookup_throughput_mops": 9.00306, "avg_lookup_latency_ns": 111.073, "memory_bytes": 90240},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 0.060521, "insert_time_ms": 0.0122, "lookup_throughput_mops": 20.8648, "avg_lookup_latency_ns": 47.9277, "memory_bytes": 105280}
+  ],
+  "url": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 0.039467, "insert_time_ms": 0.0211, "lookup_throughput_mops": 5.80465, "avg_lookup_latency_ns": 172.276, "memory_bytes": 42952},
+    {"index_name": "HRT-LI v3", "load_time_ms": 0.071809, "insert_time_ms": 0.02654, "lookup_throughput_mops": 8.68234, "avg_lookup_latency_ns": 115.176, "memory_bytes": 33452},
+    {"index_name": "sorted vector lower_bound", "load_time_ms": 0.018485, "insert_time_ms": 0.005077, "lookup_throughput_mops": 11.5112, "avg_lookup_latency_ns": 86.8718, "memory_bytes": 17860},
+    {"index_name": "std::set", "load_time_ms": 0.013966, "insert_time_ms": 0.007632, "lookup_throughput_mops": 11.8456, "avg_lookup_latency_ns": 84.4199, "memory_bytes": 29952},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 0.020035, "insert_time_ms": 0.004013, "lookup_throughput_mops": 33.1281, "avg_lookup_latency_ns": 30.1859, "memory_bytes": 34944}
+  ],
+  "dns": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 0.991996, "insert_time_ms": 0.93382, "lookup_throughput_mops": 4.72009, "avg_lookup_latency_ns": 211.86, "memory_bytes": 1390505},
+    {"index_name": "HRT-LI v3", "load_time_ms": 4.41411, "insert_time_ms": 1.75413, "lookup_throughput_mops": 3.25442, "avg_lookup_latency_ns": 307.274, "memory_bytes": 1043413},
+    {"index_name": "sorted vector lower_bound", "load_time_ms": 0.915918, "insert_time_ms": 0.370192, "lookup_throughput_mops": 4.22301, "avg_lookup_latency_ns": 236.798, "memory_bytes": 521750},
+    {"index_name": "std::set", "load_time_ms": 0.443002, "insert_time_ms": 0.335842, "lookup_throughput_mops": 3.67567, "avg_lookup_latency_ns": 272.06, "memory_bytes": 960000},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 0.817937, "insert_time_ms": 0.129058, "lookup_throughput_mops": 22.9535, "avg_lookup_latency_ns": 43.5663, "memory_bytes": 1120000}
+  ],
+  "json": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 1.09322, "insert_time_ms": 1.02087, "lookup_throughput_mops": 3.54524, "avg_lookup_latency_ns": 282.068, "memory_bytes": 1484837},
+    {"index_name": "HRT-LI v3", "load_time_ms": 4.16929, "insert_time_ms": 1.38562, "lookup_throughput_mops": 5.32016, "avg_lookup_latency_ns": 187.964, "memory_bytes": 1145373},
+    {"index_name": "sorted vector lower_bound", "load_time_ms": 0.487449, "insert_time_ms": 0.23525, "lookup_throughput_mops": 6.91334, "avg_lookup_latency_ns": 144.648, "memory_bytes": 634432},
+    {"index_name": "std::set", "load_time_ms": 0.282067, "insert_time_ms": 0.21827, "lookup_throughput_mops": 6.8468, "avg_lookup_latency_ns": 146.054, "memory_bytes": 920544},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 0.437012, "insert_time_ms": 0.110154, "lookup_throughput_mops": 29.9386, "avg_lookup_latency_ns": 33.4017, "memory_bytes": 1073968}
+  ],
+  "package": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 0.024042, "insert_time_ms": 0.015047, "lookup_throughput_mops": 5.43303, "avg_lookup_latency_ns": 184.06, "memory_bytes": 29872},
+    {"index_name": "HRT-LI v3", "load_time_ms": 0.039743, "insert_time_ms": 0.012576, "lookup_throughput_mops": 7.75265, "avg_lookup_latency_ns": 128.988, "memory_bytes": 24154},
+    {"index_name": "sorted vector lower_bound", "load_time_ms": 0.011383, "insert_time_ms": 0.002867, "lookup_throughput_mops": 11.3636, "avg_lookup_latency_ns": 88, "memory_bytes": 15268},
+    {"index_name": "std::set", "load_time_ms": 0.008921, "insert_time_ms": 0.004059, "lookup_throughput_mops": 11.0236, "avg_lookup_latency_ns": 90.7143, "memory_bytes": 16128},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 0.01354, "insert_time_ms": 0.002531, "lookup_throughput_mops": 30.4017, "avg_lookup_latency_ns": 32.8929, "memory_bytes": 18816}
+  ],
+  "wiki_ts": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 4622.62, "insert_time_ms": 20117.4, "lookup_throughput_mops": 0.601501, "avg_lookup_latency_ns": 1662.51, "memory_bytes": 1044644174},
+    {"index_name": "HRT-LI v3", "load_time_ms": 9469.77, "insert_time_ms": 2420.09, "lookup_throughput_mops": 0.373736, "avg_lookup_latency_ns": 2675.68, "memory_bytes": 943566798},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 3072.22, "insert_time_ms": 1058.16, "lookup_throughput_mops": 2.97861, "avg_lookup_latency_ns": 335.727, "memory_bytes": 990387104}
+  ],
+  "osm_cellids": [
+    {"index_name": "HRT-LI native rank transport", "load_time_ms": 3943.5, "insert_time_ms": 1838.53, "lookup_throughput_mops": 0.570398, "avg_lookup_latency_ns": 1753.16, "memory_bytes": 1434831770},
+    {"index_name": "HRT-LI v3", "load_time_ms": 8234.17, "insert_time_ms": 2777.24, "lookup_throughput_mops": 0.375819, "avg_lookup_latency_ns": 2660.85, "memory_bytes": 1067051682},
+    {"index_name": "std::unordered_map point lookup", "load_time_ms": 3425.27, "insert_time_ms": 1381.17, "lookup_throughput_mops": 2.87909, "avg_lookup_latency_ns": 347.332, "memory_bytes": 1120000000}
+  ]
+}

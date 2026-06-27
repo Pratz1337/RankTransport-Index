@@ -1,0 +1,4862 @@
+[
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.972712,
+    "latency_ns": 1028.05,
+    "time_ms": 102.805,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.395032,
+    "latency_ns": 2531.44,
+    "time_ms": 253.144,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 10.5418,
+    "latency_ns": 94.86,
+    "time_ms": 9.486,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.70009,
+    "latency_ns": 175.436,
+    "time_ms": 17.5436,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 0.837723,
+    "latency_ns": 1193.71,
+    "time_ms": 119.371,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.06484,
+    "latency_ns": 939.111,
+    "time_ms": 93.9111,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.648835,
+    "latency_ns": 1541.22,
+    "time_ms": 154.122,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.420082,
+    "latency_ns": 2380.49,
+    "time_ms": 238.049,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 7.0477,
+    "latency_ns": 141.89,
+    "time_ms": 14.189,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 1.68226,
+    "latency_ns": 594.438,
+    "time_ms": 59.4438,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 0.634811,
+    "latency_ns": 1575.27,
+    "time_ms": 157.527,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 0.894352,
+    "latency_ns": 1118.13,
+    "time_ms": 111.813,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.556498,
+    "latency_ns": 1796.95,
+    "time_ms": 179.695,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.408853,
+    "latency_ns": 2445.87,
+    "time_ms": 244.587,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 6.05842,
+    "latency_ns": 165.059,
+    "time_ms": 16.5059,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.1595,
+    "latency_ns": 240.413,
+    "time_ms": 24.0413,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 0.771034,
+    "latency_ns": 1296.96,
+    "time_ms": 129.696,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.31521,
+    "latency_ns": 760.334,
+    "time_ms": 76.0334,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.382006,
+    "latency_ns": 2617.76,
+    "time_ms": 261.776,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.429475,
+    "latency_ns": 2328.43,
+    "time_ms": 232.843,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 9.24843,
+    "latency_ns": 108.126,
+    "time_ms": 10.8126,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.52725,
+    "latency_ns": 283.507,
+    "time_ms": 28.3507,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 0.864761,
+    "latency_ns": 1156.39,
+    "time_ms": 115.639,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.14253,
+    "latency_ns": 875.25,
+    "time_ms": 87.525,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.364292,
+    "latency_ns": 2745.05,
+    "time_ms": 274.505,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.349507,
+    "latency_ns": 2861.17,
+    "time_ms": 286.117,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 5.37091,
+    "latency_ns": 186.188,
+    "time_ms": 18.6188,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.54525,
+    "latency_ns": 282.068,
+    "time_ms": 28.2068,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 0.670683,
+    "latency_ns": 1491.02,
+    "time_ms": 149.102,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.13908,
+    "latency_ns": 877.9,
+    "time_ms": 87.79,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.249797,
+    "latency_ns": 4003.25,
+    "time_ms": 400.325,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.367782,
+    "latency_ns": 2719,
+    "time_ms": 271.9,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.33298,
+    "latency_ns": 120.005,
+    "time_ms": 12.0005,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.74732,
+    "latency_ns": 266.857,
+    "time_ms": 26.6857,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 0.620499,
+    "latency_ns": 1611.61,
+    "time_ms": 161.161,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 0.989394,
+    "latency_ns": 1010.72,
+    "time_ms": 101.072,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.154427,
+    "latency_ns": 6475.53,
+    "time_ms": 647.553,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.380801,
+    "latency_ns": 2626.04,
+    "time_ms": 262.604,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 7.49933,
+    "latency_ns": 133.345,
+    "time_ms": 13.3345,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.68361,
+    "latency_ns": 213.51,
+    "time_ms": 21.351,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.4339,
+    "latency_ns": 697.399,
+    "time_ms": 69.7399,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.15072,
+    "latency_ns": 869.022,
+    "time_ms": 86.9022,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.101671,
+    "latency_ns": 9835.68,
+    "time_ms": 983.568,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.350368,
+    "latency_ns": 2854.14,
+    "time_ms": 285.414,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 8.15148,
+    "latency_ns": 122.677,
+    "time_ms": 12.2677,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.48534,
+    "latency_ns": 154.194,
+    "time_ms": 15.4194,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.85762,
+    "latency_ns": 538.323,
+    "time_ms": 53.8323,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.30007,
+    "latency_ns": 434.77,
+    "time_ms": 43.477,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.0978518,
+    "latency_ns": 10219.5,
+    "time_ms": 1021.95,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.544636,
+    "latency_ns": 1836.09,
+    "time_ms": 183.609,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 8.43742,
+    "latency_ns": 118.52,
+    "time_ms": 11.852,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 9.87801,
+    "latency_ns": 101.235,
+    "time_ms": 10.1235,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 3.4527,
+    "latency_ns": 289.628,
+    "time_ms": 28.9628,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 4.0549,
+    "latency_ns": 246.615,
+    "time_ms": 24.6615,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.778943,
+    "latency_ns": 1283.79,
+    "time_ms": 128.379,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.470571,
+    "latency_ns": 2125.08,
+    "time_ms": 212.508,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 9.87089,
+    "latency_ns": 101.308,
+    "time_ms": 10.1308,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.68423,
+    "latency_ns": 149.606,
+    "time_ms": 14.9606,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 1.05837,
+    "latency_ns": 944.852,
+    "time_ms": 94.4852,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.16453,
+    "latency_ns": 858.716,
+    "time_ms": 85.8716,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.701945,
+    "latency_ns": 1424.61,
+    "time_ms": 142.461,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.395044,
+    "latency_ns": 2531.36,
+    "time_ms": 253.136,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 8.70005,
+    "latency_ns": 114.942,
+    "time_ms": 11.4942,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.28355,
+    "latency_ns": 233.451,
+    "time_ms": 23.3451,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 1.07394,
+    "latency_ns": 931.148,
+    "time_ms": 93.1148,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 0.952641,
+    "latency_ns": 1049.71,
+    "time_ms": 104.971,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.79499,
+    "latency_ns": 1257.88,
+    "time_ms": 125.788,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.356644,
+    "latency_ns": 2803.91,
+    "time_ms": 280.391,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 8.17056,
+    "latency_ns": 122.391,
+    "time_ms": 12.2391,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.6689,
+    "latency_ns": 272.561,
+    "time_ms": 27.2561,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 0.769345,
+    "latency_ns": 1299.81,
+    "time_ms": 129.981,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.1534,
+    "latency_ns": 866.999,
+    "time_ms": 86.6999,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.974797,
+    "latency_ns": 1025.85,
+    "time_ms": 102.585,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.473237,
+    "latency_ns": 2113.11,
+    "time_ms": 211.311,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 8.97264,
+    "latency_ns": 111.45,
+    "time_ms": 11.145,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.55501,
+    "latency_ns": 281.293,
+    "time_ms": 28.1293,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 0.862915,
+    "latency_ns": 1158.86,
+    "time_ms": 115.886,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.16089,
+    "latency_ns": 861.408,
+    "time_ms": 86.1408,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.744859,
+    "latency_ns": 1342.54,
+    "time_ms": 134.254,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.464777,
+    "latency_ns": 2151.57,
+    "time_ms": 215.157,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 8.81902,
+    "latency_ns": 113.391,
+    "time_ms": 11.3391,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.52334,
+    "latency_ns": 283.822,
+    "time_ms": 28.3822,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 0.89411,
+    "latency_ns": 1118.43,
+    "time_ms": 111.843,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.26839,
+    "latency_ns": 788.404,
+    "time_ms": 78.8404,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.833304,
+    "latency_ns": 1200.04,
+    "time_ms": 120.004,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.454736,
+    "latency_ns": 2199.08,
+    "time_ms": 219.908,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 7.84255,
+    "latency_ns": 127.51,
+    "time_ms": 12.751,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.10782,
+    "latency_ns": 243.438,
+    "time_ms": 24.3438,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.08698,
+    "latency_ns": 919.981,
+    "time_ms": 91.9981,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.3866,
+    "latency_ns": 721.186,
+    "time_ms": 72.1186,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.633811,
+    "latency_ns": 1577.76,
+    "time_ms": 157.776,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.485943,
+    "latency_ns": 2057.86,
+    "time_ms": 205.786,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 7.96236,
+    "latency_ns": 125.591,
+    "time_ms": 12.5591,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.02872,
+    "latency_ns": 248.218,
+    "time_ms": 24.8218,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.18089,
+    "latency_ns": 846.816,
+    "time_ms": 84.6816,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.69061,
+    "latency_ns": 591.503,
+    "time_ms": 59.1503,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.580281,
+    "latency_ns": 1723.3,
+    "time_ms": 172.33,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.498436,
+    "latency_ns": 2006.27,
+    "time_ms": 200.627,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 7.9526,
+    "latency_ns": 125.745,
+    "time_ms": 12.5745,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.85563,
+    "latency_ns": 170.776,
+    "time_ms": 17.0776,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.77036,
+    "latency_ns": 564.856,
+    "time_ms": 56.4856,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.08706,
+    "latency_ns": 479.144,
+    "time_ms": 47.9144,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.571904,
+    "latency_ns": 1748.55,
+    "time_ms": 174.855,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.492302,
+    "latency_ns": 2031.27,
+    "time_ms": 203.127,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 12.2438,
+    "latency_ns": 81.6743,
+    "time_ms": 8.16743,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 10.2631,
+    "latency_ns": 97.4367,
+    "time_ms": 9.74367,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 2.56378,
+    "latency_ns": 390.049,
+    "time_ms": 39.0049,
+    "trial": 1
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 4.96981,
+    "latency_ns": 201.215,
+    "time_ms": 20.1215,
+    "trial": 1
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.876932,
+    "latency_ns": 1140.34,
+    "time_ms": 114.034,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.525793,
+    "latency_ns": 1901.89,
+    "time_ms": 190.189,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 9.99289,
+    "latency_ns": 100.071,
+    "time_ms": 10.0071,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 7.31611,
+    "latency_ns": 136.685,
+    "time_ms": 13.6685,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 0.932369,
+    "latency_ns": 1072.54,
+    "time_ms": 107.254,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.42761,
+    "latency_ns": 700.469,
+    "time_ms": 70.0469,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.706778,
+    "latency_ns": 1414.87,
+    "time_ms": 141.487,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.405508,
+    "latency_ns": 2466.04,
+    "time_ms": 246.604,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 9.63855,
+    "latency_ns": 103.75,
+    "time_ms": 10.375,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.70223,
+    "latency_ns": 270.107,
+    "time_ms": 27.0107,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 0.840981,
+    "latency_ns": 1189.09,
+    "time_ms": 118.909,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.33922,
+    "latency_ns": 746.701,
+    "time_ms": 74.6701,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.632464,
+    "latency_ns": 1581.12,
+    "time_ms": 158.112,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.525214,
+    "latency_ns": 1903.99,
+    "time_ms": 190.399,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 10.0344,
+    "latency_ns": 99.6567,
+    "time_ms": 9.96567,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.73717,
+    "latency_ns": 267.582,
+    "time_ms": 26.7582,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.04007,
+    "latency_ns": 961.475,
+    "time_ms": 96.1475,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.30705,
+    "latency_ns": 765.081,
+    "time_ms": 76.5081,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.558713,
+    "latency_ns": 1789.83,
+    "time_ms": 178.983,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.512511,
+    "latency_ns": 1951.18,
+    "time_ms": 195.118,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 8.88296,
+    "latency_ns": 112.575,
+    "time_ms": 11.2575,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.59763,
+    "latency_ns": 277.96,
+    "time_ms": 27.796,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 1.07867,
+    "latency_ns": 927.065,
+    "time_ms": 92.7065,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.35666,
+    "latency_ns": 737.102,
+    "time_ms": 73.7102,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.467684,
+    "latency_ns": 2138.2,
+    "time_ms": 213.82,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.529928,
+    "latency_ns": 1887.05,
+    "time_ms": 188.705,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 9.27124,
+    "latency_ns": 107.86,
+    "time_ms": 10.786,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.38793,
+    "latency_ns": 295.166,
+    "time_ms": 29.5166,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 1.06524,
+    "latency_ns": 938.754,
+    "time_ms": 93.8754,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.36177,
+    "latency_ns": 734.337,
+    "time_ms": 73.4337,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.301384,
+    "latency_ns": 3318.03,
+    "time_ms": 331.803,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.528307,
+    "latency_ns": 1892.84,
+    "time_ms": 189.284,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.29678,
+    "latency_ns": 120.529,
+    "time_ms": 12.0529,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.04876,
+    "latency_ns": 246.989,
+    "time_ms": 24.6989,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.11172,
+    "latency_ns": 899.504,
+    "time_ms": 89.9504,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.58596,
+    "latency_ns": 630.531,
+    "time_ms": 63.0531,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.187465,
+    "latency_ns": 5334.34,
+    "time_ms": 533.434,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.531838,
+    "latency_ns": 1880.27,
+    "time_ms": 188.027,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 7.92161,
+    "latency_ns": 126.237,
+    "time_ms": 12.6237,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.31333,
+    "latency_ns": 188.206,
+    "time_ms": 18.8206,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.39681,
+    "latency_ns": 715.917,
+    "time_ms": 71.5917,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.75121,
+    "latency_ns": 571.035,
+    "time_ms": 57.1035,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.14055,
+    "latency_ns": 7114.92,
+    "time_ms": 711.492,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.425727,
+    "latency_ns": 2348.92,
+    "time_ms": 234.892,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 7.62824,
+    "latency_ns": 131.092,
+    "time_ms": 13.1092,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 7.31812,
+    "latency_ns": 136.647,
+    "time_ms": 13.6647,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.66602,
+    "latency_ns": 600.234,
+    "time_ms": 60.0234,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 1.86131,
+    "latency_ns": 537.257,
+    "time_ms": 53.7257,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.0897418,
+    "latency_ns": 11143.1,
+    "time_ms": 1114.31,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.550283,
+    "latency_ns": 1817.25,
+    "time_ms": 181.725,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 7.34954,
+    "latency_ns": 136.063,
+    "time_ms": 13.6063,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 11.7079,
+    "latency_ns": 85.4127,
+    "time_ms": 8.54127,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 2.99941,
+    "latency_ns": 333.399,
+    "time_ms": 33.3399,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 5.08853,
+    "latency_ns": 196.52,
+    "time_ms": 19.652,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.982126,
+    "latency_ns": 1018.2,
+    "time_ms": 101.82,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.482029,
+    "latency_ns": 2074.56,
+    "time_ms": 207.456,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 9.42088,
+    "latency_ns": 106.147,
+    "time_ms": 10.6147,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 7.03174,
+    "latency_ns": 142.212,
+    "time_ms": 14.2212,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 1.00767,
+    "latency_ns": 992.39,
+    "time_ms": 99.239,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.32217,
+    "latency_ns": 756.334,
+    "time_ms": 75.6334,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.920374,
+    "latency_ns": 1086.52,
+    "time_ms": 108.652,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.499959,
+    "latency_ns": 2000.16,
+    "time_ms": 200.016,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 7.98807,
+    "latency_ns": 125.187,
+    "time_ms": 12.5187,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.14484,
+    "latency_ns": 317.981,
+    "time_ms": 31.7981,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 0.978653,
+    "latency_ns": 1021.81,
+    "time_ms": 102.181,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.3035,
+    "latency_ns": 767.163,
+    "time_ms": 76.7163,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.894909,
+    "latency_ns": 1117.43,
+    "time_ms": 111.743,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.487746,
+    "latency_ns": 2050.25,
+    "time_ms": 205.025,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 8.93734,
+    "latency_ns": 111.89,
+    "time_ms": 11.189,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.32519,
+    "latency_ns": 300.735,
+    "time_ms": 30.0735,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 0.929444,
+    "latency_ns": 1075.91,
+    "time_ms": 107.591,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.12369,
+    "latency_ns": 889.925,
+    "time_ms": 88.9925,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.864334,
+    "latency_ns": 1156.96,
+    "time_ms": 115.696,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.49049,
+    "latency_ns": 2038.78,
+    "time_ms": 203.878,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 7.89117,
+    "latency_ns": 126.724,
+    "time_ms": 12.6724,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 2.31194,
+    "latency_ns": 432.538,
+    "time_ms": 43.2538,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 0.925006,
+    "latency_ns": 1081.07,
+    "time_ms": 108.107,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.36322,
+    "latency_ns": 733.56,
+    "time_ms": 73.356,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.757674,
+    "latency_ns": 1319.83,
+    "time_ms": 131.983,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.462,
+    "latency_ns": 2164.5,
+    "time_ms": 216.45,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 8.05056,
+    "latency_ns": 124.215,
+    "time_ms": 12.4215,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.43423,
+    "latency_ns": 291.186,
+    "time_ms": 29.1186,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 0.90751,
+    "latency_ns": 1101.92,
+    "time_ms": 110.192,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.08876,
+    "latency_ns": 918.473,
+    "time_ms": 91.8473,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.783251,
+    "latency_ns": 1276.73,
+    "time_ms": 127.673,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.503943,
+    "latency_ns": 1984.35,
+    "time_ms": 198.435,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.11191,
+    "latency_ns": 123.275,
+    "time_ms": 12.3275,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.23338,
+    "latency_ns": 236.218,
+    "time_ms": 23.6218,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.14519,
+    "latency_ns": 873.217,
+    "time_ms": 87.3217,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.51007,
+    "latency_ns": 662.22,
+    "time_ms": 66.222,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.650541,
+    "latency_ns": 1537.18,
+    "time_ms": 153.718,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.492,
+    "latency_ns": 2032.52,
+    "time_ms": 203.252,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 6.6165,
+    "latency_ns": 151.137,
+    "time_ms": 15.1137,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.82041,
+    "latency_ns": 207.451,
+    "time_ms": 20.7451,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.03926,
+    "latency_ns": 962.22,
+    "time_ms": 96.222,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.41972,
+    "latency_ns": 704.366,
+    "time_ms": 70.4367,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.552092,
+    "latency_ns": 1811.29,
+    "time_ms": 181.129,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.438726,
+    "latency_ns": 2279.33,
+    "time_ms": 227.933,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 8.09746,
+    "latency_ns": 123.495,
+    "time_ms": 12.3495,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.33303,
+    "latency_ns": 157.902,
+    "time_ms": 15.7902,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.70479,
+    "latency_ns": 586.582,
+    "time_ms": 58.6582,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 1.66121,
+    "latency_ns": 601.972,
+    "time_ms": 60.1972,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.487592,
+    "latency_ns": 2050.89,
+    "time_ms": 205.089,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.616842,
+    "latency_ns": 1621.16,
+    "time_ms": 162.116,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 12.7334,
+    "latency_ns": 78.5339,
+    "time_ms": 7.85339,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 12.1915,
+    "latency_ns": 82.0243,
+    "time_ms": 8.20243,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 3.27086,
+    "latency_ns": 305.73,
+    "time_ms": 30.573,
+    "trial": 2
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 5.31959,
+    "latency_ns": 187.984,
+    "time_ms": 18.7984,
+    "trial": 2
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.965426,
+    "latency_ns": 1035.81,
+    "time_ms": 103.581,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.531136,
+    "latency_ns": 1882.76,
+    "time_ms": 188.276,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 10.3927,
+    "latency_ns": 96.2216,
+    "time_ms": 9.62216,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.96635,
+    "latency_ns": 143.547,
+    "time_ms": 14.3547,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 1.00906,
+    "latency_ns": 991.022,
+    "time_ms": 99.1022,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.42397,
+    "latency_ns": 702.261,
+    "time_ms": 70.2261,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.693811,
+    "latency_ns": 1441.31,
+    "time_ms": 144.131,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.541765,
+    "latency_ns": 1845.82,
+    "time_ms": 184.582,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 10.4159,
+    "latency_ns": 96.0067,
+    "time_ms": 9.60067,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.73057,
+    "latency_ns": 268.056,
+    "time_ms": 26.8056,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 1.05168,
+    "latency_ns": 950.859,
+    "time_ms": 95.0859,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.42301,
+    "latency_ns": 702.736,
+    "time_ms": 70.2736,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.656796,
+    "latency_ns": 1522.54,
+    "time_ms": 152.254,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.522959,
+    "latency_ns": 1912.2,
+    "time_ms": 191.22,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 9.98136,
+    "latency_ns": 100.187,
+    "time_ms": 10.0187,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.19609,
+    "latency_ns": 238.317,
+    "time_ms": 23.8317,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.06374,
+    "latency_ns": 940.077,
+    "time_ms": 94.0077,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.35962,
+    "latency_ns": 735.501,
+    "time_ms": 73.5501,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.532166,
+    "latency_ns": 1879.11,
+    "time_ms": 187.911,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.537775,
+    "latency_ns": 1859.51,
+    "time_ms": 185.951,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 9.86439,
+    "latency_ns": 101.375,
+    "time_ms": 10.1375,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.42108,
+    "latency_ns": 292.305,
+    "time_ms": 29.2305,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 1.07452,
+    "latency_ns": 930.652,
+    "time_ms": 93.0652,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.48833,
+    "latency_ns": 671.896,
+    "time_ms": 67.1896,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.464087,
+    "latency_ns": 2154.77,
+    "time_ms": 215.477,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.509559,
+    "latency_ns": 1962.48,
+    "time_ms": 196.248,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 9.4542,
+    "latency_ns": 105.773,
+    "time_ms": 10.5773,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.62023,
+    "latency_ns": 276.226,
+    "time_ms": 27.6226,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 1.00678,
+    "latency_ns": 993.269,
+    "time_ms": 99.3269,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.42668,
+    "latency_ns": 700.926,
+    "time_ms": 70.0926,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.286439,
+    "latency_ns": 3491.15,
+    "time_ms": 349.115,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.516661,
+    "latency_ns": 1935.5,
+    "time_ms": 193.55,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 7.90561,
+    "latency_ns": 126.493,
+    "time_ms": 12.6493,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.67302,
+    "latency_ns": 272.256,
+    "time_ms": 27.2256,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 0.932672,
+    "latency_ns": 1072.19,
+    "time_ms": 107.219,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.48355,
+    "latency_ns": 674.06,
+    "time_ms": 67.406,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.170894,
+    "latency_ns": 5851.56,
+    "time_ms": 585.156,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.49749,
+    "latency_ns": 2010.09,
+    "time_ms": 201.009,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 6.43085,
+    "latency_ns": 155.501,
+    "time_ms": 15.5501,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.12228,
+    "latency_ns": 195.226,
+    "time_ms": 19.5226,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.03539,
+    "latency_ns": 965.82,
+    "time_ms": 96.582,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.67187,
+    "latency_ns": 598.133,
+    "time_ms": 59.8133,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.133362,
+    "latency_ns": 7498.41,
+    "time_ms": 749.841,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.538887,
+    "latency_ns": 1855.68,
+    "time_ms": 185.568,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 7.72387,
+    "latency_ns": 129.469,
+    "time_ms": 12.9469,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.87134,
+    "latency_ns": 145.532,
+    "time_ms": 14.5532,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.57657,
+    "latency_ns": 634.29,
+    "time_ms": 63.429,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.48905,
+    "latency_ns": 401.759,
+    "time_ms": 40.1759,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.110953,
+    "latency_ns": 9012.82,
+    "time_ms": 901.282,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.625978,
+    "latency_ns": 1597.5,
+    "time_ms": 159.75,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 7.66655,
+    "latency_ns": 130.437,
+    "time_ms": 13.0437,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 12.789,
+    "latency_ns": 78.1921,
+    "time_ms": 7.81921,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 3.57742,
+    "latency_ns": 279.531,
+    "time_ms": 27.9531,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 5.86779,
+    "latency_ns": 170.422,
+    "time_ms": 17.0422,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.949231,
+    "latency_ns": 1053.48,
+    "time_ms": 105.348,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.492619,
+    "latency_ns": 2029.96,
+    "time_ms": 202.996,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 9.83834,
+    "latency_ns": 101.643,
+    "time_ms": 10.1643,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.14271,
+    "latency_ns": 162.795,
+    "time_ms": 16.2795,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 0.801892,
+    "latency_ns": 1247.05,
+    "time_ms": 124.705,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.29081,
+    "latency_ns": 774.706,
+    "time_ms": 77.4706,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.79786,
+    "latency_ns": 1253.35,
+    "time_ms": 125.335,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.441357,
+    "latency_ns": 2265.74,
+    "time_ms": 226.574,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 10.2953,
+    "latency_ns": 97.1321,
+    "time_ms": 9.71321,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.27935,
+    "latency_ns": 233.681,
+    "time_ms": 23.3681,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 1.06132,
+    "latency_ns": 942.222,
+    "time_ms": 94.2222,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.15245,
+    "latency_ns": 867.718,
+    "time_ms": 86.7719,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.736359,
+    "latency_ns": 1358.03,
+    "time_ms": 135.803,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.515072,
+    "latency_ns": 1941.47,
+    "time_ms": 194.147,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 10.0922,
+    "latency_ns": 99.0869,
+    "time_ms": 9.90869,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.79556,
+    "latency_ns": 263.466,
+    "time_ms": 26.3466,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.06717,
+    "latency_ns": 937.059,
+    "time_ms": 93.7059,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.39488,
+    "latency_ns": 716.905,
+    "time_ms": 71.6905,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.96734,
+    "latency_ns": 1033.76,
+    "time_ms": 103.376,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.525008,
+    "latency_ns": 1904.73,
+    "time_ms": 190.473,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 10.0273,
+    "latency_ns": 99.7278,
+    "time_ms": 9.97278,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.84574,
+    "latency_ns": 260.028,
+    "time_ms": 26.0028,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 0.938891,
+    "latency_ns": 1065.09,
+    "time_ms": 106.509,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.41751,
+    "latency_ns": 705.464,
+    "time_ms": 70.5464,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.790771,
+    "latency_ns": 1264.59,
+    "time_ms": 126.459,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.478045,
+    "latency_ns": 2091.85,
+    "time_ms": 209.185,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 9.10929,
+    "latency_ns": 109.778,
+    "time_ms": 10.9778,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.82755,
+    "latency_ns": 261.263,
+    "time_ms": 26.1263,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 1.0819,
+    "latency_ns": 924.296,
+    "time_ms": 92.4296,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.32065,
+    "latency_ns": 757.205,
+    "time_ms": 75.7205,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.668239,
+    "latency_ns": 1496.47,
+    "time_ms": 149.647,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.499576,
+    "latency_ns": 2001.7,
+    "time_ms": 200.17,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.78478,
+    "latency_ns": 113.833,
+    "time_ms": 11.3833,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.09369,
+    "latency_ns": 244.279,
+    "time_ms": 24.4279,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.13911,
+    "latency_ns": 877.88,
+    "time_ms": 87.788,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.39731,
+    "latency_ns": 715.662,
+    "time_ms": 71.5662,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.645113,
+    "latency_ns": 1550.12,
+    "time_ms": 155.012,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.5018,
+    "latency_ns": 1992.83,
+    "time_ms": 199.283,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 7.7638,
+    "latency_ns": 128.803,
+    "time_ms": 12.8803,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.34737,
+    "latency_ns": 187.008,
+    "time_ms": 18.7008,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.20528,
+    "latency_ns": 829.682,
+    "time_ms": 82.9682,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.70466,
+    "latency_ns": 586.626,
+    "time_ms": 58.6626,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.581056,
+    "latency_ns": 1721,
+    "time_ms": 172.1,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.496161,
+    "latency_ns": 2015.47,
+    "time_ms": 201.547,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 8.25102,
+    "latency_ns": 121.197,
+    "time_ms": 12.1197,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.79887,
+    "latency_ns": 147.083,
+    "time_ms": 14.7083,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.65377,
+    "latency_ns": 604.68,
+    "time_ms": 60.468,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 1.90125,
+    "latency_ns": 525.969,
+    "time_ms": 52.5969,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.468666,
+    "latency_ns": 2133.72,
+    "time_ms": 213.372,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.59858,
+    "latency_ns": 1670.62,
+    "time_ms": 167.062,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 12.6392,
+    "latency_ns": 79.1188,
+    "time_ms": 7.91188,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 10.9707,
+    "latency_ns": 91.1515,
+    "time_ms": 9.11515,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 3.07731,
+    "latency_ns": 324.959,
+    "time_ms": 32.4959,
+    "trial": 3
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 5.5172,
+    "latency_ns": 181.251,
+    "time_ms": 18.1251,
+    "trial": 3
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 1.01565,
+    "latency_ns": 984.593,
+    "time_ms": 98.4593,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.527027,
+    "latency_ns": 1897.43,
+    "time_ms": 189.743,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 10.6521,
+    "latency_ns": 93.8781,
+    "time_ms": 9.38781,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 7.65614,
+    "latency_ns": 130.614,
+    "time_ms": 13.0614,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 0.978245,
+    "latency_ns": 1022.24,
+    "time_ms": 102.224,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.23539,
+    "latency_ns": 809.464,
+    "time_ms": 80.9464,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.678592,
+    "latency_ns": 1473.64,
+    "time_ms": 147.364,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.567885,
+    "latency_ns": 1760.92,
+    "time_ms": 176.092,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 9.87819,
+    "latency_ns": 101.233,
+    "time_ms": 10.1233,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.90115,
+    "latency_ns": 256.334,
+    "time_ms": 25.6334,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 0.84746,
+    "latency_ns": 1180,
+    "time_ms": 118,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.41236,
+    "latency_ns": 708.034,
+    "time_ms": 70.8034,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.595737,
+    "latency_ns": 1678.59,
+    "time_ms": 167.859,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.49283,
+    "latency_ns": 2029.1,
+    "time_ms": 202.91,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 10.8893,
+    "latency_ns": 91.8336,
+    "time_ms": 9.18336,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.92317,
+    "latency_ns": 254.896,
+    "time_ms": 25.4896,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.03262,
+    "latency_ns": 968.413,
+    "time_ms": 96.8413,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.062,
+    "latency_ns": 941.617,
+    "time_ms": 94.1617,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.473031,
+    "latency_ns": 2114.03,
+    "time_ms": 211.403,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.4751,
+    "latency_ns": 2104.82,
+    "time_ms": 210.482,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 9.69727,
+    "latency_ns": 103.122,
+    "time_ms": 10.3122,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.56295,
+    "latency_ns": 280.666,
+    "time_ms": 28.0666,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 1.06123,
+    "latency_ns": 942.306,
+    "time_ms": 94.2306,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.43142,
+    "latency_ns": 698.609,
+    "time_ms": 69.8609,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.421489,
+    "latency_ns": 2372.54,
+    "time_ms": 237.254,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.529836,
+    "latency_ns": 1887.37,
+    "time_ms": 188.737,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 9.5244,
+    "latency_ns": 104.993,
+    "time_ms": 10.4993,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.85726,
+    "latency_ns": 259.252,
+    "time_ms": 25.9252,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 1.08533,
+    "latency_ns": 921.376,
+    "time_ms": 92.1376,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.49903,
+    "latency_ns": 667.097,
+    "time_ms": 66.7097,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.258043,
+    "latency_ns": 3875.32,
+    "time_ms": 387.532,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.525005,
+    "latency_ns": 1904.74,
+    "time_ms": 190.474,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 9.01577,
+    "latency_ns": 110.917,
+    "time_ms": 11.0917,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.2569,
+    "latency_ns": 307.04,
+    "time_ms": 30.704,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.21264,
+    "latency_ns": 824.649,
+    "time_ms": 82.4649,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.60393,
+    "latency_ns": 623.468,
+    "time_ms": 62.3468,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.194965,
+    "latency_ns": 5129.14,
+    "time_ms": 512.914,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.498232,
+    "latency_ns": 2007.1,
+    "time_ms": 200.71,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 7.60238,
+    "latency_ns": 131.538,
+    "time_ms": 13.1538,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.44086,
+    "latency_ns": 225.182,
+    "time_ms": 22.5182,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.28163,
+    "latency_ns": 780.254,
+    "time_ms": 78.0254,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 2.00841,
+    "latency_ns": 497.906,
+    "time_ms": 49.7906,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.134605,
+    "latency_ns": 7429.15,
+    "time_ms": 742.915,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.550194,
+    "latency_ns": 1817.54,
+    "time_ms": 181.754,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 8.1207,
+    "latency_ns": 123.142,
+    "time_ms": 12.3142,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.64393,
+    "latency_ns": 150.513,
+    "time_ms": 15.0513,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 2.0128,
+    "latency_ns": 496.82,
+    "time_ms": 49.682,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.39033,
+    "latency_ns": 418.353,
+    "time_ms": 41.8353,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.115102,
+    "latency_ns": 8687.92,
+    "time_ms": 868.792,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.62109,
+    "latency_ns": 1610.07,
+    "time_ms": 161.007,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 8.852,
+    "latency_ns": 112.969,
+    "time_ms": 11.2969,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 12.47,
+    "latency_ns": 80.1925,
+    "time_ms": 8.01925,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 3.54474,
+    "latency_ns": 282.108,
+    "time_ms": 28.2108,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 5.60071,
+    "latency_ns": 178.549,
+    "time_ms": 17.8549,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.741213,
+    "latency_ns": 1349.14,
+    "time_ms": 134.914,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.521114,
+    "latency_ns": 1918.96,
+    "time_ms": 191.896,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 9.69287,
+    "latency_ns": 103.169,
+    "time_ms": 10.3169,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.54452,
+    "latency_ns": 152.8,
+    "time_ms": 15.28,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 1.14667,
+    "latency_ns": 872.09,
+    "time_ms": 87.209,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.44273,
+    "latency_ns": 693.13,
+    "time_ms": 69.313,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.953009,
+    "latency_ns": 1049.31,
+    "time_ms": 104.931,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.502798,
+    "latency_ns": 1988.87,
+    "time_ms": 198.887,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 9.66871,
+    "latency_ns": 103.426,
+    "time_ms": 10.3426,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.8884,
+    "latency_ns": 257.175,
+    "time_ms": 25.7175,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 0.889522,
+    "latency_ns": 1124.2,
+    "time_ms": 112.42,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.37878,
+    "latency_ns": 725.28,
+    "time_ms": 72.528,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.766573,
+    "latency_ns": 1304.51,
+    "time_ms": 130.451,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.422968,
+    "latency_ns": 2364.24,
+    "time_ms": 236.424,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 10.1748,
+    "latency_ns": 98.2823,
+    "time_ms": 9.82823,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.75636,
+    "latency_ns": 266.215,
+    "time_ms": 26.6215,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.11611,
+    "latency_ns": 895.965,
+    "time_ms": 89.5965,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.08383,
+    "latency_ns": 922.654,
+    "time_ms": 92.2654,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.880022,
+    "latency_ns": 1136.34,
+    "time_ms": 113.634,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.418306,
+    "latency_ns": 2390.6,
+    "time_ms": 239.06,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 10.2146,
+    "latency_ns": 97.8989,
+    "time_ms": 9.78989,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.12502,
+    "latency_ns": 319.998,
+    "time_ms": 31.9998,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 1.11894,
+    "latency_ns": 893.701,
+    "time_ms": 89.3701,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.43714,
+    "latency_ns": 695.827,
+    "time_ms": 69.5827,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.788839,
+    "latency_ns": 1267.69,
+    "time_ms": 126.769,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.496601,
+    "latency_ns": 2013.69,
+    "time_ms": 201.369,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 9.49714,
+    "latency_ns": 105.295,
+    "time_ms": 10.5295,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.03968,
+    "latency_ns": 328.982,
+    "time_ms": 32.8982,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 1.09544,
+    "latency_ns": 912.872,
+    "time_ms": 91.2872,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.35694,
+    "latency_ns": 736.955,
+    "time_ms": 73.6955,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.706126,
+    "latency_ns": 1416.18,
+    "time_ms": 141.618,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.485223,
+    "latency_ns": 2060.91,
+    "time_ms": 206.091,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.24403,
+    "latency_ns": 121.3,
+    "time_ms": 12.13,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.08719,
+    "latency_ns": 244.667,
+    "time_ms": 24.4667,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 0.963965,
+    "latency_ns": 1037.38,
+    "time_ms": 103.738,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.34691,
+    "latency_ns": 742.441,
+    "time_ms": 74.2441,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.596918,
+    "latency_ns": 1675.27,
+    "time_ms": 167.527,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.45129,
+    "latency_ns": 2215.87,
+    "time_ms": 221.587,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 8.15748,
+    "latency_ns": 122.587,
+    "time_ms": 12.2587,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.10616,
+    "latency_ns": 195.842,
+    "time_ms": 19.5842,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.33888,
+    "latency_ns": 746.895,
+    "time_ms": 74.6895,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.53195,
+    "latency_ns": 652.765,
+    "time_ms": 65.2765,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.496005,
+    "latency_ns": 2016.11,
+    "time_ms": 201.611,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.544931,
+    "latency_ns": 1835.09,
+    "time_ms": 183.509,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 9.05099,
+    "latency_ns": 110.485,
+    "time_ms": 11.0485,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.38925,
+    "latency_ns": 156.513,
+    "time_ms": 15.6513,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.67357,
+    "latency_ns": 597.527,
+    "time_ms": 59.7527,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.39555,
+    "latency_ns": 417.441,
+    "time_ms": 41.7441,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.558617,
+    "latency_ns": 1790.14,
+    "time_ms": 179.014,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.631961,
+    "latency_ns": 1582.38,
+    "time_ms": 158.238,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 12.9539,
+    "latency_ns": 77.197,
+    "time_ms": 7.71969,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 10.4671,
+    "latency_ns": 95.5371,
+    "time_ms": 9.55371,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 2.81916,
+    "latency_ns": 354.716,
+    "time_ms": 35.4716,
+    "trial": 4
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 6.25143,
+    "latency_ns": 159.964,
+    "time_ms": 15.9964,
+    "trial": 4
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.939196,
+    "latency_ns": 1064.74,
+    "time_ms": 106.474,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.493447,
+    "latency_ns": 2026.56,
+    "time_ms": 202.656,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 10.2931,
+    "latency_ns": 97.152,
+    "time_ms": 9.7152,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 7.92358,
+    "latency_ns": 126.206,
+    "time_ms": 12.6206,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 1.05846,
+    "latency_ns": 944.766,
+    "time_ms": 94.4766,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.02375,
+    "latency_ns": 976.805,
+    "time_ms": 97.6805,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.600196,
+    "latency_ns": 1666.12,
+    "time_ms": 166.612,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.45253,
+    "latency_ns": 2209.8,
+    "time_ms": 220.98,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 11.0653,
+    "latency_ns": 90.3723,
+    "time_ms": 9.03723,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.4115,
+    "latency_ns": 293.126,
+    "time_ms": 29.3126,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 1.07556,
+    "latency_ns": 929.75,
+    "time_ms": 92.975,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.4566,
+    "latency_ns": 686.529,
+    "time_ms": 68.6529,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.690334,
+    "latency_ns": 1448.57,
+    "time_ms": 144.857,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.544517,
+    "latency_ns": 1836.49,
+    "time_ms": 183.649,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 10.3322,
+    "latency_ns": 96.7852,
+    "time_ms": 9.67852,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.82646,
+    "latency_ns": 261.338,
+    "time_ms": 26.1338,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.06907,
+    "latency_ns": 935.39,
+    "time_ms": 93.539,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.38061,
+    "latency_ns": 724.316,
+    "time_ms": 72.4316,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.493985,
+    "latency_ns": 2024.35,
+    "time_ms": 202.435,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.518318,
+    "latency_ns": 1929.32,
+    "time_ms": 192.932,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 10.3565,
+    "latency_ns": 96.558,
+    "time_ms": 9.6558,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.66632,
+    "latency_ns": 272.753,
+    "time_ms": 27.2753,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 0.988626,
+    "latency_ns": 1011.51,
+    "time_ms": 101.151,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.4905,
+    "latency_ns": 670.916,
+    "time_ms": 67.0916,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.462672,
+    "latency_ns": 2161.36,
+    "time_ms": 216.136,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.536374,
+    "latency_ns": 1864.37,
+    "time_ms": 186.437,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 8.64542,
+    "latency_ns": 115.668,
+    "time_ms": 11.5668,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.82649,
+    "latency_ns": 261.336,
+    "time_ms": 26.1336,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 1.04657,
+    "latency_ns": 955.505,
+    "time_ms": 95.5505,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.5484,
+    "latency_ns": 645.828,
+    "time_ms": 64.5828,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.263913,
+    "latency_ns": 3789.13,
+    "time_ms": 378.913,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.509201,
+    "latency_ns": 1963.86,
+    "time_ms": 196.386,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.59732,
+    "latency_ns": 116.315,
+    "time_ms": 11.6315,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.06737,
+    "latency_ns": 245.859,
+    "time_ms": 24.5859,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.09962,
+    "latency_ns": 909.406,
+    "time_ms": 90.9406,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.63494,
+    "latency_ns": 611.643,
+    "time_ms": 61.1643,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.186097,
+    "latency_ns": 5373.54,
+    "time_ms": 537.354,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.513433,
+    "latency_ns": 1947.67,
+    "time_ms": 194.767,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 6.34168,
+    "latency_ns": 157.687,
+    "time_ms": 15.7687,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 5.04129,
+    "latency_ns": 198.362,
+    "time_ms": 19.8362,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.05258,
+    "latency_ns": 950.045,
+    "time_ms": 95.0045,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.76167,
+    "latency_ns": 567.642,
+    "time_ms": 56.7642,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.133044,
+    "latency_ns": 7516.31,
+    "time_ms": 751.631,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.571375,
+    "latency_ns": 1750.16,
+    "time_ms": 175.016,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 6.74518,
+    "latency_ns": 148.254,
+    "time_ms": 14.8254,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.79642,
+    "latency_ns": 147.136,
+    "time_ms": 14.7136,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.71245,
+    "latency_ns": 583.959,
+    "time_ms": 58.3959,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.51259,
+    "latency_ns": 397.996,
+    "time_ms": 39.7996,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.104255,
+    "latency_ns": 9591.89,
+    "time_ms": 959.189,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.644492,
+    "latency_ns": 1551.61,
+    "time_ms": 155.161,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 8.41076,
+    "latency_ns": 118.895,
+    "time_ms": 11.8895,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 10.4551,
+    "latency_ns": 95.6475,
+    "time_ms": 9.56475,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 2.42489,
+    "latency_ns": 412.39,
+    "time_ms": 41.239,
+    "trial": 5
+  },
+  {
+    "dataset": "wiki_ts",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 6.54401,
+    "latency_ns": 152.812,
+    "time_ms": 15.2812,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI",
+    "throughput_mops": 1.01082,
+    "latency_ns": 989.294,
+    "time_ms": 98.9294,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.500178,
+    "latency_ns": 1999.29,
+    "time_ms": 199.929,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ALEX",
+    "throughput_mops": 9.85856,
+    "latency_ns": 101.435,
+    "time_ms": 10.1435,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 6.05728,
+    "latency_ns": 165.091,
+    "time_ms": 16.5091,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "HOT",
+    "throughput_mops": 0.94296,
+    "latency_ns": 1060.49,
+    "time_ms": 106.049,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0,
+    "index_name": "ART",
+    "throughput_mops": 1.52021,
+    "latency_ns": 657.806,
+    "time_ms": 65.7806,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.938633,
+    "latency_ns": 1065.38,
+    "time_ms": 106.538,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.445487,
+    "latency_ns": 2244.74,
+    "time_ms": 224.474,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ALEX",
+    "throughput_mops": 9.71489,
+    "latency_ns": 102.935,
+    "time_ms": 10.2935,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.34083,
+    "latency_ns": 230.371,
+    "time_ms": 23.0371,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "HOT",
+    "throughput_mops": 1.03043,
+    "latency_ns": 970.465,
+    "time_ms": 97.0465,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.01,
+    "index_name": "ART",
+    "throughput_mops": 1.07611,
+    "latency_ns": 929.275,
+    "time_ms": 92.9275,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.879318,
+    "latency_ns": 1137.25,
+    "time_ms": 113.725,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.505481,
+    "latency_ns": 1978.31,
+    "time_ms": 197.831,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ALEX",
+    "throughput_mops": 10.6902,
+    "latency_ns": 93.544,
+    "time_ms": 9.3544,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.15399,
+    "latency_ns": 240.732,
+    "time_ms": 24.0732,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "HOT",
+    "throughput_mops": 1.1082,
+    "latency_ns": 902.361,
+    "time_ms": 90.2361,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.02,
+    "index_name": "ART",
+    "throughput_mops": 1.40404,
+    "latency_ns": 712.232,
+    "time_ms": 71.2232,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.821078,
+    "latency_ns": 1217.91,
+    "time_ms": 121.791,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.494187,
+    "latency_ns": 2023.53,
+    "time_ms": 202.353,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ALEX",
+    "throughput_mops": 10.3117,
+    "latency_ns": 96.9771,
+    "time_ms": 9.69771,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.44671,
+    "latency_ns": 290.132,
+    "time_ms": 29.0132,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "HOT",
+    "throughput_mops": 1.02947,
+    "latency_ns": 971.374,
+    "time_ms": 97.1374,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.05,
+    "index_name": "ART",
+    "throughput_mops": 1.33273,
+    "latency_ns": 750.341,
+    "time_ms": 75.0341,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.846486,
+    "latency_ns": 1181.35,
+    "time_ms": 118.135,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.471947,
+    "latency_ns": 2118.88,
+    "time_ms": 211.888,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ALEX",
+    "throughput_mops": 6.4871,
+    "latency_ns": 154.152,
+    "time_ms": 15.4152,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 3.89808,
+    "latency_ns": 256.537,
+    "time_ms": 25.6537,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "HOT",
+    "throughput_mops": 0.958696,
+    "latency_ns": 1043.08,
+    "time_ms": 104.308,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.1,
+    "index_name": "ART",
+    "throughput_mops": 1.24446,
+    "latency_ns": 803.562,
+    "time_ms": 80.3562,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.648196,
+    "latency_ns": 1542.74,
+    "time_ms": 154.274,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.377972,
+    "latency_ns": 2645.7,
+    "time_ms": 264.57,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ALEX",
+    "throughput_mops": 8.67173,
+    "latency_ns": 115.317,
+    "time_ms": 11.5317,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.1211,
+    "latency_ns": 242.654,
+    "time_ms": 24.2654,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "HOT",
+    "throughput_mops": 1.21384,
+    "latency_ns": 823.831,
+    "time_ms": 82.3831,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.25,
+    "index_name": "ART",
+    "throughput_mops": 1.51378,
+    "latency_ns": 660.597,
+    "time_ms": 66.0597,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.535389,
+    "latency_ns": 1867.8,
+    "time_ms": 186.78,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.472783,
+    "latency_ns": 2115.13,
+    "time_ms": 211.513,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ALEX",
+    "throughput_mops": 7.5332,
+    "latency_ns": 132.746,
+    "time_ms": 13.2746,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 4.93298,
+    "latency_ns": 202.717,
+    "time_ms": 20.2717,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "HOT",
+    "throughput_mops": 1.41161,
+    "latency_ns": 708.413,
+    "time_ms": 70.8413,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.5,
+    "index_name": "ART",
+    "throughput_mops": 1.73232,
+    "latency_ns": 577.26,
+    "time_ms": 57.726,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.576851,
+    "latency_ns": 1733.55,
+    "time_ms": 173.355,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.49803,
+    "latency_ns": 2007.91,
+    "time_ms": 200.791,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ALEX",
+    "throughput_mops": 8.34453,
+    "latency_ns": 119.839,
+    "time_ms": 11.9839,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 7.20392,
+    "latency_ns": 138.813,
+    "time_ms": 13.8813,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "HOT",
+    "throughput_mops": 1.38607,
+    "latency_ns": 721.466,
+    "time_ms": 72.1466,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 0.75,
+    "index_name": "ART",
+    "throughput_mops": 2.24837,
+    "latency_ns": 444.766,
+    "time_ms": 44.4766,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI",
+    "throughput_mops": 0.528753,
+    "latency_ns": 1891.24,
+    "time_ms": 189.124,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HRT-LI v3",
+    "throughput_mops": 0.495244,
+    "latency_ns": 2019.2,
+    "time_ms": 201.92,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ALEX",
+    "throughput_mops": 12.2288,
+    "latency_ns": 81.7744,
+    "time_ms": 8.17744,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "Dynamic PGM",
+    "throughput_mops": 12.3756,
+    "latency_ns": 80.8043,
+    "time_ms": 8.08043,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "HOT",
+    "throughput_mops": 3.32406,
+    "latency_ns": 300.837,
+    "time_ms": 30.0837,
+    "trial": 5
+  },
+  {
+    "dataset": "osm_cellids",
+    "write_ratio": 1,
+    "index_name": "ART",
+    "throughput_mops": 4.76411,
+    "latency_ns": 209.903,
+    "time_ms": 20.9903,
+    "trial": 5
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "dataset": "url",
+  "results": [
+    {
+      "name": "HRT-LI native",
+      "trials": 5,
+      "load_ms_mean": 0.139825,
+      "load_ms_ci95": 0.124626,
+      "insert_ms_mean": 0.0721022,
+      "insert_ms_ci95": 0.11897,
+      "lookup_mops_mean": 5.94048,
+      "lookup_mops_ci95": 3.31561,
+      "latency_ns_mean": 285.008,
+      "latency_ns_ci95": 202.808
+    },
+    {
+      "name": "ALEX numeric surrogate",
+      "trials": 5,
+      "load_ms_mean": 0.0703502,
+      "load_ms_ci95": 0.113696,
+      "insert_ms_mean": 0.0509306,
+      "insert_ms_ci95": 0.0792297,
+      "lookup_mops_mean": 25.0318,
+      "lookup_mops_ci95": 8.79664,
+      "latency_ns_mean": 53.891,
+      "latency_ns_ci95": 38.6427
+    },
+    {
+      "name": "LIPP numeric surrogate",
+      "trials": 5,
+      "load_ms_mean": 0.030518,
+      "load_ms_ci95": 0.0443167,
+      "insert_ms_mean": 0.0224042,
+      "insert_ms_ci95": 0.0151066,
+      "lookup_mops_mean": 14.7407,
+      "lookup_mops_ci95": 4.2443,
+      "latency_ns_mean": 78.3846,
+      "latency_ns_ci95": 35.8435
+    },
+    {
+      "name": "PGM dynamic surrogate",
+      "trials": 5,
+      "load_ms_mean": 0.0066716,
+      "load_ms_ci95": 0.00928856,
+      "insert_ms_mean": 0.00554,
+      "insert_ms_ci95": 0.000183003,
+      "lookup_mops_mean": 22.269,
+      "lookup_mops_ci95": 1.63449,
+      "latency_ns_mean": 45.1513,
+      "latency_ns_ci95": 3.22071
+    },
+    {
+      "name": "ART string",
+      "trials": 5,
+      "load_ms_mean": 0.0288354,
+      "load_ms_ci95": 0.0052194,
+      "insert_ms_mean": 0.005023,
+      "insert_ms_ci95": 0.00010723,
+      "lookup_mops_mean": 17.6664,
+      "lookup_mops_ci95": 0.31754,
+      "latency_ns_mean": 56.6237,
+      "latency_ns_ci95": 1.01595
+    },
+    {
+      "name": "HOT string",
+      "trials": 5,
+      "load_ms_mean": 0.378102,
+      "load_ms_ci95": 0.585376,
+      "insert_ms_mean": 0.0142504,
+      "insert_ms_ci95": 0.000203856,
+      "lookup_mops_mean": 16.5011,
+      "lookup_mops_ci95": 1.88602,
+      "latency_ns_mean": 61.6058,
+      "latency_ns_ci95": 8.44341
+    }
+  ]
+}

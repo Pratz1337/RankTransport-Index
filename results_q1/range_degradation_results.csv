@@ -1,0 +1,36 @@
+dataset,deleted_ratio,index_name,total_scan_time_ms,avg_scan_time_us,ci95_avg_scan_time_us,total_returned,maintenance_time_ms,trials
+dns,0,Dynamic PGM (no compaction),0.0562826,0.281413,0.0805946,20000,0,5
+dns,0,Dynamic PGM (with compaction),0.0521778,0.260889,0.120609,20000,0.060327,5
+dns,0,std::set ordered tree,0.1661,0.830498,0.268008,20000,0,5
+dns,0,HOT string,0.141745,0.708724,0.148617,20000,0,5
+dns,0,HRT-LI (no consolidation),0.544388,2.72194,0.135976,20000,0,5
+dns,0,HRT-LI (step consolidation),0.541842,2.70921,0.156942,20000,0,5
+dns,0,HRT-LI v3,1.99537,9.97686,0.356923,20000,0,5
+dns,0.2,Dynamic PGM (no compaction),0.15668,0.783399,0.128626,20000,0,5
+dns,0.2,Dynamic PGM (with compaction),0.0432966,0.216483,0.00713618,20000,0.007645,5
+dns,0.2,std::set ordered tree,0.205133,1.02566,0.217088,20000,0,5
+dns,0.2,HOT string,0.146676,0.73338,0.131559,20000,0,5
+dns,0.2,HRT-LI (no consolidation),1.16617,5.83083,0.477705,20000,0,5
+dns,0.2,HRT-LI (step consolidation),0.640365,3.20182,0.240537,20000,3.34318,5
+dns,0.2,HRT-LI v3,2.69179,13.459,0.295118,20000,0,5
+dns,0.5,Dynamic PGM (no compaction),0.339816,1.69908,0.135354,20000,0,5
+dns,0.5,Dynamic PGM (with compaction),0.0371372,0.185686,0.0104464,20000,0.007527,5
+dns,0.5,std::set ordered tree,0.199312,0.996561,0.187822,20000,0,5
+dns,0.5,HOT string,0.145888,0.729439,0.155752,20000,0,5
+dns,0.5,HRT-LI (no consolidation),2.10803,10.5401,0.699864,20000,0,5
+dns,0.5,HRT-LI (step consolidation),0.660982,3.30491,0.19751,20000,2.06463,5
+dns,0.5,HRT-LI v3,3.14744,15.7372,1.32644,20000,0,5
+dns,0.8,Dynamic PGM (no compaction),0.304644,1.52322,0.134809,20000,0,5
+dns,0.8,Dynamic PGM (with compaction),0.0353448,0.176724,0.00814549,20000,0.003642,5
+dns,0.8,std::set ordered tree,0.174854,0.874272,0.0935969,20000,0,5
+dns,0.8,HOT string,0.148689,0.743444,0.10879,20000,0,5
+dns,0.8,HRT-LI (no consolidation),4.45149,22.2575,1.30048,20000,0,5
+dns,0.8,HRT-LI (step consolidation),0.660717,3.30358,0.217118,20000,1.46922,5
+dns,0.8,HRT-LI v3,3.33493,16.6746,0.51461,20000,0,5
+dns,0.95,Dynamic PGM (no compaction),0.602198,3.01099,0.547786,20000,0,5
+dns,0.95,Dynamic PGM (with compaction),0.041031,0.205155,0.0366836,20000,0.002207,5
+dns,0.95,std::set ordered tree,0.129946,0.64973,0.064718,20000,0,5
+dns,0.95,HOT string,0.125252,0.626259,0.0478986,20000,0,5
+dns,0.95,HRT-LI (no consolidation),18.0055,90.0275,2.8767,20000,0,5
+dns,0.95,HRT-LI (step consolidation),0.609251,3.04625,0.614997,20000,0.640754,5
+dns,0.95,HRT-LI v3,2.28137,11.4069,0.639997,20000,0,5

@@ -1,0 +1,82 @@
+[
+  {
+    "dataset": "synthetic",
+    "config": "Full HRT-LI (model + HP-SFC + delta)",
+    "point_lookup_mops": 3.57472,
+    "point_lookup_latency_ns": 279.742,
+    "rank_lookup_mops": 0.522863,
+    "rank_lookup_latency_ns": 1912.55,
+    "range_scan_us": 4.20586,
+    "memory_kb": 1407
+  },
+  {
+    "dataset": "synthetic",
+    "config": "No HP-SFC (model + binary search fallback)",
+    "point_lookup_mops": 3.50993,
+    "point_lookup_latency_ns": 284.906,
+    "rank_lookup_mops": 0.549249,
+    "rank_lookup_latency_ns": 1820.67,
+    "range_scan_us": 4.28878,
+    "memory_kb": 550
+  },
+  {
+    "dataset": "synthetic",
+    "config": "HP-SFC only (static point membership)",
+    "point_lookup_mops": 15.2664,
+    "point_lookup_latency_ns": 65.5035,
+    "rank_lookup_mops": 0,
+    "rank_lookup_latency_ns": 0,
+    "range_scan_us": 0,
+    "memory_kb": 512
+  },
+  {
+    "dataset": "synthetic",
+    "config": "Sorted vector only (no model, no HP-SFC)",
+    "point_lookup_mops": 7.14224,
+    "point_lookup_latency_ns": 140.012,
+    "rank_lookup_mops": 7.28398,
+    "rank_lookup_latency_ns": 137.287,
+    "range_scan_us": 0.133635,
+    "memory_kb": 550
+  },
+  {
+    "dataset": "dns",
+    "config": "Full HRT-LI (model + HP-SFC + delta)",
+    "point_lookup_mops": 4.96224,
+    "point_lookup_latency_ns": 201.522,
+    "rank_lookup_mops": 0.659118,
+    "rank_lookup_latency_ns": 1517.18,
+    "range_scan_us": 3.51878,
+    "memory_kb": 1357
+  },
+  {
+    "dataset": "dns",
+    "config": "No HP-SFC (model + binary search fallback)",
+    "point_lookup_mops": 4.20995,
+    "point_lookup_latency_ns": 237.532,
+    "rank_lookup_mops": 0.642104,
+    "rank_lookup_latency_ns": 1557.38,
+    "range_scan_us": 3.53361,
+    "memory_kb": 509
+  },
+  {
+    "dataset": "dns",
+    "config": "HP-SFC only (static point membership)",
+    "point_lookup_mops": 22.5692,
+    "point_lookup_latency_ns": 44.3082,
+    "rank_lookup_mops": 0,
+    "rank_lookup_latency_ns": 0,
+    "range_scan_us": 0,
+    "memory_kb": 512
+  },
+  {
+    "dataset": "dns",
+    "config": "Sorted vector only (no model, no HP-SFC)",
+    "point_lookup_mops": 7.33535,
+    "point_lookup_latency_ns": 136.326,
+    "rank_lookup_mops": 7.35116,
+    "rank_lookup_latency_ns": 136.033,
+    "range_scan_us": 0.13662,
+    "memory_kb": 509
+  }
+]

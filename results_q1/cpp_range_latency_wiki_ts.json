@@ -1,0 +1,65 @@
+{
+  "dataset": "wiki_ts",
+  "config": {
+    "base_keys": 8000000,
+    "inserts": 2000000,
+    "deletes": 1000,
+    "live_keys": 8841747,
+    "mutation_count": 1667791,
+    "ranges_per_selectivity": 200
+  },
+  "selectivities": {
+    "1": {
+      "target_result_size": 1,
+      "avg_result_size": 1,
+      "count_range": {"p50_ns": 14077.5, "p95_ns": 92419.7, "p99_ns": 129324, "avg_ns": 32265.4},
+      "scan_range": {"p50_ns": 921, "p95_ns": 1147.5, "p99_ns": 1541.52, "avg_ns": 1008.17}
+    },
+    "10": {
+      "target_result_size": 10,
+      "avg_result_size": 10,
+      "count_range": {"p50_ns": 8008, "p95_ns": 62047.8, "p99_ns": 128169, "avg_ns": 22847.4},
+      "scan_range": {"p50_ns": 1239, "p95_ns": 1879, "p99_ns": 3058.79, "avg_ns": 1264.74}
+    },
+    "100": {
+      "target_result_size": 100,
+      "avg_result_size": 100,
+      "count_range": {"p50_ns": 8320.5, "p95_ns": 66235.4, "p99_ns": 86218.9, "avg_ns": 22443.1},
+      "scan_range": {"p50_ns": 3639, "p95_ns": 9315.4, "p99_ns": 17231.5, "avg_ns": 4570.51}
+    },
+    "1000": {
+      "target_result_size": 1000,
+      "avg_result_size": 1000,
+      "count_range": {"p50_ns": 10576, "p95_ns": 86094.2, "p99_ns": 131987, "avg_ns": 31548.3},
+      "scan_range": {"p50_ns": 37180, "p95_ns": 72041.7, "p99_ns": 124678, "avg_ns": 39802}
+    }
+  },
+  "v3": {
+    "selectivities": {
+      "1": {
+        "target_result_size": 1,
+        "avg_result_size": 1,
+        "count_range": {"p50_ns": 5173, "p95_ns": 13149.5, "p99_ns": 17115.4, "avg_ns": 6680.35},
+        "scan_range": {"p50_ns": 4188.5, "p95_ns": 13415.8, "p99_ns": 18678.9, "avg_ns": 5771.26}
+      },
+      "10": {
+        "target_result_size": 10,
+        "avg_result_size": 10,
+        "count_range": {"p50_ns": 5746, "p95_ns": 12971.4, "p99_ns": 22025.3, "avg_ns": 6673.13},
+        "scan_range": {"p50_ns": 5259.5, "p95_ns": 15552.1, "p99_ns": 54512.3, "avg_ns": 7209.57}
+      },
+      "100": {
+        "target_result_size": 100,
+        "avg_result_size": 100,
+        "count_range": {"p50_ns": 6821, "p95_ns": 11737.8, "p99_ns": 14731.9, "avg_ns": 7309.82},
+        "scan_range": {"p50_ns": 12933, "p95_ns": 31324, "p99_ns": 44625.2, "avg_ns": 14807.6}
+      },
+      "1000": {
+        "target_result_size": 1000,
+        "avg_result_size": 1000,
+        "count_range": {"p50_ns": 8106, "p95_ns": 15609.8, "p99_ns": 98627.6, "avg_ns": 10535.6},
+        "scan_range": {"p50_ns": 69618.5, "p95_ns": 202468, "p99_ns": 319602, "avg_ns": 88234.3}
+      }
+    }
+  }
+}

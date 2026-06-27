@@ -1,0 +1,50 @@
+[
+  {
+    "dataset": "Synthetic hierarchy",
+    "n_base": 3000,
+    "errors": 0,
+    "build_rt_ms": 1.149999996414408,
+    "build_hpsfc_ms": 32.65409998130053,
+    "lookup_bs_throughput_mops": 0.6516214533242647,
+    "lookup_hpsfc_throughput_mops": 0.9698693883659556,
+    "speedup": 1.4883938879208782,
+    "probe_stats": {
+      "count": 3000,
+      "avg_probes": 0.257,
+      "max_probes": 6,
+      "load_factor": 0.3662109375
+    }
+  },
+  {
+    "dataset": "DNS paths",
+    "n_base": 3000,
+    "errors": 0,
+    "build_rt_ms": 0.5972000071778893,
+    "build_hpsfc_ms": 29.927199997473508,
+    "lookup_bs_throughput_mops": 0.854384418376238,
+    "lookup_hpsfc_throughput_mops": 0.7988496531960174,
+    "speedup": 0.9350002598528602,
+    "probe_stats": {
+      "count": 3000,
+      "avg_probes": 0.288,
+      "max_probes": 7,
+      "load_factor": 0.3662109375
+    }
+  },
+  {
+    "dataset": "JSON paths",
+    "n_base": 3000,
+    "errors": 0,
+    "build_rt_ms": 0.6948999944142997,
+    "build_hpsfc_ms": 106.77290000603534,
+    "lookup_bs_throughput_mops": 0.7614019956817364,
+    "lookup_hpsfc_throughput_mops": 0.8086689334621304,
+    "speedup": 1.0620788204502571,
+    "probe_stats": {
+      "count": 3000,
+      "avg_probes": 0.2663333333333333,
+      "max_probes": 7,
+      "load_factor": 0.3662109375
+    }
+  }
+]

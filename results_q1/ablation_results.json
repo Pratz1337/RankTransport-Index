@@ -1,0 +1,18 @@
+{
+  "Baseline": {
+    "mean_mops": 0.3859279376739072,
+    "std_mops": 0.016111537440320605
+  },
+  "Learned feature model only": {
+    "mean_mops": 0.02626663531954277,
+    "std_mops": 0.0057346720049913
+  },
+  "Feature model + transport": {
+    "mean_mops": 0.027582281215566155,
+    "std_mops": 0.0010466252461788534
+  },
+  "HRT-LI full": {
+    "mean_mops": 0.3924663573330037,
+    "std_mops": 0.005817236138741756
+  }
+}

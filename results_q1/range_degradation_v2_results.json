@@ -1,0 +1,632 @@
+[
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 0.230566,
+    "avg_scan_time_us": 1.15283,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.090011,
+    "avg_scan_time_us": 0.450055,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.273048,
+    "avg_scan_time_us": 1.36524,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 0.629404,
+    "avg_scan_time_us": 3.14702,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.644027,
+    "avg_scan_time_us": 3.22014,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.2,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 10.6764,
+    "avg_scan_time_us": 53.3818,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.2,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.091644,
+    "avg_scan_time_us": 0.45822,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.2,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.399615,
+    "avg_scan_time_us": 1.99808,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.2,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 1.39386,
+    "avg_scan_time_us": 6.96929,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.2,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.815095,
+    "avg_scan_time_us": 4.07547,
+    "total_returned": 20000,
+    "consolidation_time_ms": 3.69523
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.5,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 31.1916,
+    "avg_scan_time_us": 155.958,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.5,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.093059,
+    "avg_scan_time_us": 0.465295,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.5,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.383748,
+    "avg_scan_time_us": 1.91874,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.5,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 2.36941,
+    "avg_scan_time_us": 11.847,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.5,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.799627,
+    "avg_scan_time_us": 3.99813,
+    "total_returned": 20000,
+    "consolidation_time_ms": 2.20949
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.8,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 16.0517,
+    "avg_scan_time_us": 80.2587,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.8,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.109981,
+    "avg_scan_time_us": 0.549905,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.8,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.421924,
+    "avg_scan_time_us": 2.10962,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.8,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 6.64529,
+    "avg_scan_time_us": 33.2265,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.8,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 1.114,
+    "avg_scan_time_us": 5.57001,
+    "total_returned": 20000,
+    "consolidation_time_ms": 1.34556
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.95,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 32.6259,
+    "avg_scan_time_us": 163.13,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.95,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.087801,
+    "avg_scan_time_us": 0.439005,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.95,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.428049,
+    "avg_scan_time_us": 2.14025,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.95,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 18.2614,
+    "avg_scan_time_us": 91.3069,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "synthetic",
+    "deleted_ratio": 0.95,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.736942,
+    "avg_scan_time_us": 3.68471,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0.764949
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 0.101376,
+    "avg_scan_time_us": 0.50688,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.0867,
+    "avg_scan_time_us": 0.4335,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.264986,
+    "avg_scan_time_us": 1.32493,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 0.644594,
+    "avg_scan_time_us": 3.22297,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.586694,
+    "avg_scan_time_us": 2.93347,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.2,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 9.29123,
+    "avg_scan_time_us": 46.4561,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.2,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.085339,
+    "avg_scan_time_us": 0.426695,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.2,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.29913,
+    "avg_scan_time_us": 1.49565,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.2,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 1.13837,
+    "avg_scan_time_us": 5.69182,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.2,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.59842,
+    "avg_scan_time_us": 2.9921,
+    "total_returned": 20000,
+    "consolidation_time_ms": 2.94257
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.5,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 30.2633,
+    "avg_scan_time_us": 151.317,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.5,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.088085,
+    "avg_scan_time_us": 0.440425,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.5,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.427717,
+    "avg_scan_time_us": 2.13859,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.5,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 2.03673,
+    "avg_scan_time_us": 10.1836,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.5,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.714595,
+    "avg_scan_time_us": 3.57298,
+    "total_returned": 20000,
+    "consolidation_time_ms": 2.09507
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.8,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 16.7055,
+    "avg_scan_time_us": 83.5273,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.8,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.08184,
+    "avg_scan_time_us": 0.4092,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.8,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.308969,
+    "avg_scan_time_us": 1.54485,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.8,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 4.38771,
+    "avg_scan_time_us": 21.9386,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.8,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.621626,
+    "avg_scan_time_us": 3.10813,
+    "total_returned": 20000,
+    "consolidation_time_ms": 1.24379
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.95,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 29.8653,
+    "avg_scan_time_us": 149.327,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.95,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.079641,
+    "avg_scan_time_us": 0.398205,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.95,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.213756,
+    "avg_scan_time_us": 1.06878,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.95,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 16.3417,
+    "avg_scan_time_us": 81.7085,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "dns",
+    "deleted_ratio": 0.95,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.719995,
+    "avg_scan_time_us": 3.59998,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0.627541
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 0.081174,
+    "avg_scan_time_us": 0.40587,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.079046,
+    "avg_scan_time_us": 0.39523,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.169071,
+    "avg_scan_time_us": 0.845355,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 0.969813,
+    "avg_scan_time_us": 4.84906,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.756814,
+    "avg_scan_time_us": 3.78407,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.2,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 0.760954,
+    "avg_scan_time_us": 3.80477,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.2,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.079809,
+    "avg_scan_time_us": 0.399045,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.2,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.174043,
+    "avg_scan_time_us": 0.870215,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.2,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 1.31078,
+    "avg_scan_time_us": 6.5539,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.2,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.906099,
+    "avg_scan_time_us": 4.53049,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0.572945
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.5,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 1.99651,
+    "avg_scan_time_us": 9.98256,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.5,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.093123,
+    "avg_scan_time_us": 0.465615,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.5,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.160852,
+    "avg_scan_time_us": 0.80426,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.5,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 2.89279,
+    "avg_scan_time_us": 14.464,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.5,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.997228,
+    "avg_scan_time_us": 4.98614,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0.304636
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.8,
+    "index_name": "Dynamic PGM (no compaction)",
+    "total_scan_time_ms": 0.23117,
+    "avg_scan_time_us": 1.15585,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.8,
+    "index_name": "Dynamic PGM (with compaction)",
+    "total_scan_time_ms": 0.07582,
+    "avg_scan_time_us": 0.3791,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.8,
+    "index_name": "std::set (ordered tree proxy)",
+    "total_scan_time_ms": 0.12561,
+    "avg_scan_time_us": 0.62805,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.8,
+    "index_name": "HRT-LI (no consolidation)",
+    "total_scan_time_ms": 5.06776,
+    "avg_scan_time_us": 25.3388,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0
+  },
+  {
+    "dataset": "filesystem",
+    "deleted_ratio": 0.8,
+    "index_name": "HRT-LI (with consolidation)",
+    "total_scan_time_ms": 0.677425,
+    "avg_scan_time_us": 3.38713,
+    "total_returned": 20000,
+    "consolidation_time_ms": 0.28376
+  }
+]

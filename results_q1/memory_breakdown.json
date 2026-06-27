@@ -1,0 +1,52 @@
+{
+  "datasets": {
+    "synthetic": {
+      "base_array": 56.1487,
+      "model_segments": 12.7066,
+      "hpsfc_table": 0,
+      "delta_nodes": 40.0299
+    },
+    "filesystem": {
+      "base_array": 92.3798,
+      "model_segments": 15.3489,
+      "hpsfc_table": 0,
+      "delta_nodes": 40.5319
+    },
+    "url": {
+      "base_array": 52.9808,
+      "model_segments": 11.3077,
+      "hpsfc_table": 0,
+      "delta_nodes": 42.9295
+    },
+    "dns": {
+      "base_array": 52.1044,
+      "model_segments": 12.2143,
+      "hpsfc_table": 0,
+      "delta_nodes": 40.0226
+    },
+    "json": {
+      "base_array": 66.0228,
+      "model_segments": 13.3049,
+      "hpsfc_table": 0,
+      "delta_nodes": 40.1188
+    },
+    "package": {
+      "base_array": 85.6667,
+      "model_segments": 14.2262,
+      "hpsfc_table": 0,
+      "delta_nodes": 43.881
+    },
+    "wiki_ts": {
+      "base_array": 53.9946,
+      "model_segments": 12.7023,
+      "hpsfc_table": 0,
+      "delta_nodes": 40.0044
+    },
+    "osm_cellids": {
+      "base_array": 53.9968,
+      "model_segments": 12.7024,
+      "hpsfc_table": 0,
+      "delta_nodes": 40.0013
+    }
+  }
+}

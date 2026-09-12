@@ -1,0 +1,31 @@
+{
+  "command": [
+    "/tmp/hrtli_current_competitors_Pmjw3A/adapters_isolated_art_hot",
+    "/tmp/hrtli_current_competitors_Pmjw3A",
+    "hrtli"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788717197.6945567,
+  "elapsed_seconds": 0.774306058883667,
+  "sources_sha256": {
+    "results_q1/current_competitors_20260906/source_v3/benchmark_lits_comparison.cpp": "ffc2e000edce47fddfde5890760d2f2f010cda188e500e988d9dc5fd84332346",
+    "results_q1/current_competitors_20260906/source_v3/test_competitor_set_adapters.cpp": "a01eb01ef62247e59e9b6804fa94e8bc0b008617bec8cdb5bddb454057ee9b7b",
+    "results_q1/current_competitors_20260906/source_v3/packed_rank_transport.hpp": "bc3fb8183b32ee73c865c40258be764fae05e2056334a9a81c90fed3add0377d",
+    "results_q1/current_competitors_20260906/source_v3/prefix_radix_delta.hpp": "eec8b4aab89db3f39bdc98912aa4b62d87bde05f2c3c678929eeeea8d877a891",
+    "results_q1/current_competitors_20260906/art_hot_dependencies.d": "0a701a4692afbb85eaa54522aebddf1f400898e044350becccf191299edc9b49",
+    "/tmp/hrtli_current_competitors_Pmjw3A/adapters_isolated_art_hot": "a8cf9183d40054ca6725ca7e72330b5426214024efb548894c6759594c6da3f6"
+  },
+  "exit_code": 0,
+  "stdout": "HRT-LI PASS: 6005 prefix/ASCII/254-byte keys, 30000 mixed operations, full-state checks\n",
+  "stderr": "",
+  "resource_usage": {
+    "max_rss_kib": 39680,
+    "user_seconds": 0.737259,
+    "system_seconds": 0.031993,
+    "major_faults": 19,
+    "minor_faults": 11762,
+    "voluntary_context_switches": 15,
+    "involuntary_context_switches": 4
+  },
+  "result": null
+}

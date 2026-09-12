@@ -121,6 +121,11 @@ class HPSFCRankTransportIndex:
     - HPSFCTable for expected O(1) base-key lookup
     - Signed ordered delta layer for exact rank transport of inserts/deletes
     - Certified epsilon-bound guarantee for transported base-model predictions
+
+    Automatic consolidation is maintenance after a committed write. Ordinary
+    startup failures do not change insert/delete results: wait_rebuild reports
+    the error until a new rebuild starts. Explicit consolidation calls still
+    raise startup errors directly. Process-control exceptions are not caught.
     """
 
     def __init__(
@@ -138,6 +143,7 @@ class HPSFCRankTransportIndex:
         if consolidation_threshold is not None and consolidation_threshold <= 0:
             raise ValueError("consolidation threshold must be positive")
         self._consolidation_threshold = consolidation_threshold
+        self._automatic_consolidation_error: Exception | None = None
 
     def __len__(self) -> int:
         return len(self._rt)
@@ -175,6 +181,11 @@ class HPSFCRankTransportIndex:
             return tuple(self._rt.base_keys)
 
     def wait_rebuild(self) -> None:
+        """Report the latest automatic startup failure or wait for the rebuild."""
+        with self._rt.lock:
+            error = self._automatic_consolidation_error
+        if error is not None:
+            raise error
         self._rt.wait_rebuild()
 
     def consolidate(self, base_epsilon: int | None = None) -> int:
@@ -184,11 +195,15 @@ class HPSFCRankTransportIndex:
         def publish_hpsfc(_base_keys: list[str], table: HPSFCTable) -> None:
             self._hpsfc = table
 
-        return self._rt.consolidate(
-            base_epsilon,
-            rebuild_hook=rebuild_hpsfc,
-            publish_hook=publish_hpsfc,
-        )
+        with self._rt.lock:
+            mutations = self._rt.consolidate(
+                base_epsilon,
+                rebuild_hook=rebuild_hpsfc,
+                publish_hook=publish_hpsfc,
+            )
+            if mutations:
+                self._automatic_consolidation_error = None
+            return mutations
 
     def maybe_consolidate(self, threshold: float) -> bool:
         def rebuild_hpsfc(base_keys: list[str]) -> HPSFCTable:
@@ -197,15 +212,23 @@ class HPSFCRankTransportIndex:
         def publish_hpsfc(_base_keys: list[str], table: HPSFCTable) -> None:
             self._hpsfc = table
 
-        return self._rt.maybe_consolidate(
-            threshold,
-            rebuild_hook=rebuild_hpsfc,
-            publish_hook=publish_hpsfc,
-        )
+        with self._rt.lock:
+            started = self._rt.maybe_consolidate(
+                threshold,
+                rebuild_hook=rebuild_hpsfc,
+                publish_hook=publish_hpsfc,
+            )
+            if started:
+                self._automatic_consolidation_error = None
+            return started
 
     def _maybe_consolidate(self) -> None:
         if self._consolidation_threshold is not None:
-            self.maybe_consolidate(self._consolidation_threshold)
+            with self._rt.lock:
+                try:
+                    self.maybe_consolidate(self._consolidation_threshold)
+                except Exception as error:
+                    self._automatic_consolidation_error = error
 
     def lookup(self, key: str) -> int:
         """

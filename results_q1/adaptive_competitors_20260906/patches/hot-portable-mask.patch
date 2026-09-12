@@ -1,0 +1,34 @@
+diff --git a/libs/hot/commons/include/hot/commons/SingleMaskPartialKeyMapping.hpp b/libs/hot/commons/include/hot/commons/SingleMaskPartialKeyMapping.hpp
+--- a/libs/hot/commons/include/hot/commons/SingleMaskPartialKeyMapping.hpp
++++ b/libs/hot/commons/include/hot/commons/SingleMaskPartialKeyMapping.hpp
+@@ -75,6 +75,7 @@
+ template<typename PartialKeyType> inline PartialKeyType
+ SingleMaskPartialKeyMapping::getPrefixBitsMask(DiscriminativeBit const &significantKeyInformation) const {
+ 	int relativeMissmatchingByteIndex = significantKeyInformation.mByteIndex - mOffsetInBytes;
++	if (relativeMissmatchingByteIndex < 0) return 0;
+ 
+ 	//Extracts a bit masks corresponding to 111111111|00000000 with the first zero bit marking the missmatching bit index.
+ 
+@@ -156,7 +157,9 @@
+ }
+ 
+ inline __attribute__((always_inline)) uint32_t SingleMaskPartialKeyMapping::extractMask(uint8_t const * keyBytes) const {
+-	return  extractMaskFromSuccessiveBytes(*reinterpret_cast<uint64_t const*>(keyBytes + mOffsetInBytes));
++	uint64_t bytes;
++	std::memcpy(&bytes, keyBytes + mOffsetInBytes, sizeof(bytes));
++	return extractMaskFromSuccessiveBytes(bytes);
+ }
+ 
+ inline std::array<uint8_t, 256> SingleMaskPartialKeyMapping::createIntermediateKeyWithOnlySignificantBitsSet() const {
+diff --git a/libs/hot/commons/include/hot/commons/BitMask32.hpp b/libs/hot/commons/include/hot/commons/BitMask32.hpp
+--- a/libs/hot/commons/include/hot/commons/BitMask32.hpp
++++ b/libs/hot/commons/include/hot/commons/BitMask32.hpp
+@@ -171,7 +171,7 @@
+ }
+ 
+ inline int BitMask32::getFirstUsedSlot() const {
+-	return __builtin_ctz(mUsedSlots);
++	return mUsedSlots == 0 ? TOTAL_NUMBER_SLOTS : __builtin_ctz(mUsedSlots);
+ }
+ 
+ inline int BitMask32::consumeFirst() {

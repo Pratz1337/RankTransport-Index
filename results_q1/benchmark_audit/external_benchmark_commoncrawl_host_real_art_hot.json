@@ -1,0 +1,63 @@
+{
+  "dataset": "commoncrawl_host_real",
+  "ci_method": "two-sided 95% Student-t interval around the arithmetic mean",
+  "results": [
+    {
+      "name": "HRT-LI native",
+      "trials": 3,
+      "timed_lookup_operations": 9039571,
+      "load_ms_mean": 9605.63,
+      "load_ms_ci95": 3983.59,
+      "insert_ms_mean": 10137.9,
+      "insert_ms_ci95": 1725.16,
+      "lookup_mops_mean": 0.559594,
+      "lookup_mops_ci95": 0.0448902,
+      "latency_ns_mean": 1788.24,
+      "latency_ns_ci95": 141.907,
+      "samples": {
+      "load_ms": [9680.75, 7965.88, 11170.2],
+      "insert_ms": [10925, 9876.84, 9611.84],
+      "lookup_mops": [0.544151, 0.555165, 0.579466],
+      "latency_ns": [1837.72, 1801.27, 1725.73]
+      }
+    },
+    {
+      "name": "ART string",
+      "trials": 3,
+      "timed_lookup_operations": 9039571,
+      "load_ms_mean": 976.448,
+      "load_ms_ci95": 352.342,
+      "insert_ms_mean": 422.325,
+      "insert_ms_ci95": 241.717,
+      "lookup_mops_mean": 0.747684,
+      "lookup_mops_ci95": 0.215951,
+      "latency_ns_mean": 1349.64,
+      "latency_ns_ci95": 391.084,
+      "samples": {
+      "load_ms": [1119.7, 836.094, 973.545],
+      "insert_ms": [503.096, 314.311, 449.567],
+      "lookup_mops": [0.745939, 0.835469, 0.661645],
+      "latency_ns": [1340.59, 1196.93, 1511.38]
+      }
+    },
+    {
+      "name": "HOT string",
+      "trials": 3,
+      "timed_lookup_operations": 9039571,
+      "load_ms_mean": 1571.76,
+      "load_ms_ci95": 341.507,
+      "insert_ms_mean": 559.713,
+      "insert_ms_ci95": 86.1629,
+      "lookup_mops_mean": 0.802287,
+      "lookup_mops_ci95": 0.254543,
+      "latency_ns_mean": 1260.6,
+      "latency_ns_ci95": 414.253,
+      "samples": {
+      "load_ms": [1722.37, 1453.06, 1539.83],
+      "insert_ms": [593.814, 524.477, 560.848],
+      "lookup_mops": [0.896272, 0.817528, 0.693061],
+      "latency_ns": [1115.73, 1223.2, 1442.87]
+      }
+    }
+  ]
+}

@@ -1,0 +1,151 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/hrtli_controlled_queries_20260905",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_initial.txt",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_insert.txt",
+    "199900000",
+    "2000",
+    "64",
+    "1000000",
+    "4",
+    "learned_binary"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788568619.089365,
+  "elapsed_seconds": 254.02129435539246,
+  "sources_sha256": {
+    "scripts/record_experiment.py": "379a82265ed587e3c536cd1c18966b690c6c5ee86dfd606eaa2bb241d501c6c4",
+    "scripts/run_controlled_queries.sh": "efcebeffd292cbbdfde717e694a5767831e1aee81ee9145ab8ef7d95cdda8bb7",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/source/packed_rank_transport.hpp": "bd73a2b9df68be3a39dae92ddd763f9825d7c8ce754edb4077c29cf71dab9542",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/source/prefix_radix_delta.hpp": "159d7408bd352dc315c7da936ff5f6eb3609831019e23af6df194e6c8dd3380a",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/source/benchmark_packed_query_paths.cpp": "4f65bbc6abde4a26a943ddbcaa97c4302b231e67d876ab3765c2c9f5c4aa88c9",
+    "/tmp/hrtli_controlled_queries_20260905": "7e24e812e0522c5b946fbed87951c7ca8b3c511dbc5eaf887db5e367fca42734"
+  },
+  "exit_code": 0,
+  "stdout": "{\"base_keys\":199900000,\"selected_keys\":200000000,\"epsilon\":64,\"model_segments\":3008305,\"repaired_segments\":0,\"construction_ms\":62047.423588,\"insert_ms\":816.984057,\"base_delete_ms\":917.449607,\"queries\":1000000,\"range_queries\":100000,\"seed\":20260905,\"query_paths\":\"learned_binary\",\"fingerprint_capacity\":0,\"stored_query_fallbacks\":0,\"inserted_query_fallbacks\":0,\"trial_design\":\"paired same-state rotated query paths; not independent builds\",\"rows\":[{\"trial\":1,\"mode\":\"learned\",\"uniform_membership_ns\":6419.347193,\"balanced_membership_ns\":3730.213193,\"deleted_membership_ns\":1020.145685,\"uniform_rank_ns\":6807.037984,\"range_ns\":8318.08832,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":1,\"mode\":\"binary\",\"uniform_membership_ns\":7631.183307,\"balanced_membership_ns\":4661.138666,\"deleted_membership_ns\":1001.405065,\"uniform_rank_ns\":9382.368861,\"range_ns\":11949.90553,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":2,\"mode\":\"binary\",\"uniform_membership_ns\":8056.34458,\"balanced_membership_ns\":4705.768422,\"deleted_membership_ns\":954.105262,\"uniform_rank_ns\":8533.469674,\"range_ns\":10951.99092,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":2,\"mode\":\"learned\",\"uniform_membership_ns\":6086.663344,\"balanced_membership_ns\":3783.419973,\"deleted_membership_ns\":972.634971,\"uniform_rank_ns\":6852.913867,\"range_ns\":9065.86041,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":3,\"mode\":\"learned\",\"uniform_membership_ns\":6879.936477,\"balanced_membership_ns\":4019.037858,\"deleted_membership_ns\":998.856748,\"uniform_rank_ns\":6684.622874,\"range_ns\":8222.07885,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":3,\"mode\":\"binary\",\"uniform_membership_ns\":7790.450634,\"balanced_membership_ns\":4569.69448,\"deleted_membership_ns\":912.882953,\"uniform_rank_ns\":8377.049644,\"range_ns\":11132.65747,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":4,\"mode\":\"binary\",\"uniform_membership_ns\":7878.743377,\"balanced_membership_ns\":4538.566375,\"deleted_membership_ns\":920.723541,\"uniform_rank_ns\":8324.084404,\"range_ns\":10779.26189,\"rank_checksum\":100011364934217,\"range_checksum\":461343032},{\"trial\":4,\"mode\":\"learned\",\"uniform_membership_ns\":5933.331337,\"balanced_membership_ns\":3707.353734,\"deleted_membership_ns\":936.57366,\"uniform_rank_ns\":6702.42122,\"range_ns\":8760.35114,\"rank_checksum\":100011364934217,\"range_checksum\":461343032}],\"base_reinsert_ms\":888.410987,\"inserted_delete_ms\":139.070157,\"final_mutation_count\":0,\"all_oracles_passed\":true}\n",
+  "stderr": "",
+  "resource_usage": {
+    "max_rss_kib": 6280944,
+    "user_seconds": 211.300104,
+    "system_seconds": 7.31798,
+    "major_faults": 72418,
+    "minor_faults": 580752,
+    "voluntary_context_switches": 72714,
+    "involuntary_context_switches": 471
+  },
+  "result": {
+    "base_keys": 199900000,
+    "selected_keys": 200000000,
+    "epsilon": 64,
+    "model_segments": 3008305,
+    "repaired_segments": 0,
+    "construction_ms": 62047.423588,
+    "insert_ms": 816.984057,
+    "base_delete_ms": 917.449607,
+    "queries": 1000000,
+    "range_queries": 100000,
+    "seed": 20260905,
+    "query_paths": "learned_binary",
+    "fingerprint_capacity": 0,
+    "stored_query_fallbacks": 0,
+    "inserted_query_fallbacks": 0,
+    "trial_design": "paired same-state rotated query paths; not independent builds",
+    "rows": [
+      {
+        "trial": 1,
+        "mode": "learned",
+        "uniform_membership_ns": 6419.347193,
+        "balanced_membership_ns": 3730.213193,
+        "deleted_membership_ns": 1020.145685,
+        "uniform_rank_ns": 6807.037984,
+        "range_ns": 8318.08832,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 1,
+        "mode": "binary",
+        "uniform_membership_ns": 7631.183307,
+        "balanced_membership_ns": 4661.138666,
+        "deleted_membership_ns": 1001.405065,
+        "uniform_rank_ns": 9382.368861,
+        "range_ns": 11949.90553,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 2,
+        "mode": "binary",
+        "uniform_membership_ns": 8056.34458,
+        "balanced_membership_ns": 4705.768422,
+        "deleted_membership_ns": 954.105262,
+        "uniform_rank_ns": 8533.469674,
+        "range_ns": 10951.99092,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 2,
+        "mode": "learned",
+        "uniform_membership_ns": 6086.663344,
+        "balanced_membership_ns": 3783.419973,
+        "deleted_membership_ns": 972.634971,
+        "uniform_rank_ns": 6852.913867,
+        "range_ns": 9065.86041,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 3,
+        "mode": "learned",
+        "uniform_membership_ns": 6879.936477,
+        "balanced_membership_ns": 4019.037858,
+        "deleted_membership_ns": 998.856748,
+        "uniform_rank_ns": 6684.622874,
+        "range_ns": 8222.07885,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 3,
+        "mode": "binary",
+        "uniform_membership_ns": 7790.450634,
+        "balanced_membership_ns": 4569.69448,
+        "deleted_membership_ns": 912.882953,
+        "uniform_rank_ns": 8377.049644,
+        "range_ns": 11132.65747,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 4,
+        "mode": "binary",
+        "uniform_membership_ns": 7878.743377,
+        "balanced_membership_ns": 4538.566375,
+        "deleted_membership_ns": 920.723541,
+        "uniform_rank_ns": 8324.084404,
+        "range_ns": 10779.26189,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      },
+      {
+        "trial": 4,
+        "mode": "learned",
+        "uniform_membership_ns": 5933.331337,
+        "balanced_membership_ns": 3707.353734,
+        "deleted_membership_ns": 936.57366,
+        "uniform_rank_ns": 6702.42122,
+        "range_ns": 8760.35114,
+        "rank_checksum": 100011364934217,
+        "range_checksum": 461343032
+      }
+    ],
+    "base_reinsert_ms": 888.410987,
+    "inserted_delete_ms": 139.070157,
+    "final_mutation_count": 0,
+    "all_oracles_passed": true
+  }
+}

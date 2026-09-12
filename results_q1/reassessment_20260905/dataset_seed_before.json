@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:/Program Files/Python311/python.exe",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_dataset_seed.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788610789.6167698,
+  "elapsed_seconds": 3.233685255050659,
+  "sources_sha256": {
+    "hli\\datasets.py": "7ce6da71b1043573792a7e7582974f292923ce3d56bc5d80f3d86b4244a8a290",
+    "tests\\test_dataset_seed.py": "c4a8217e865aa0f535865ebce31616264840029b3744ec9338fa11b6c015026d"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "test_different_seeds_change_tree (test_dataset_seed.SyntheticTreeSeedTests.test_different_seeds_change_tree) ... ok\ntest_generation_does_not_consume_global_rng (test_dataset_seed.SyntheticTreeSeedTests.test_generation_does_not_consume_global_rng) ... FAIL\ntest_same_seed_ignores_global_rng_state (test_dataset_seed.SyntheticTreeSeedTests.test_same_seed_ignores_global_rng_state) ... FAIL\n\n======================================================================\nFAIL: test_generation_does_not_consume_global_rng (test_dataset_seed.SyntheticTreeSeedTests.test_generation_does_not_consume_global_rng)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\sayal\\OneDrive\\Desktop\\research\\tests\\test_dataset_seed.py\", line 26, in test_generation_does_not_consume_global_rng\n    self.assertEqual(random.getstate(), self.global_state)\nAssertionError: Tuples differ: (3, (3411554714, 2008540157, 1875949611, 33872[7291 chars]None) != (3, (2147483648, 1896840163, 3684864317, 57267[7293 chars]None)\n\nFirst differing element 1:\n(3411554714, 2008540157, 1875949611, 33872[7284 chars] 284)\n(2147483648, 1896840163, 3684864317, 57267[7286 chars] 624)\n\nDiff is 20245 characters long. Set self.maxDiff to None to see it.\n\n======================================================================\nFAIL: test_same_seed_ignores_global_rng_state (test_dataset_seed.SyntheticTreeSeedTests.test_same_seed_ignores_global_rng_state)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"C:\\Users\\sayal\\OneDrive\\Desktop\\research\\tests\\test_dataset_seed.py\", line 20, in test_same_seed_ignores_global_rng_state\n    self.assertEqual(first, second)\nAssertionError: Lists differ: ['/ro[251 chars]nn/n8m', '/root/n1/nn/n8m/n1h6', '/root/n1/nn/[47253 chars]16g'] != ['/ro[251 chars]nn/n8l/n1a5', '/root/n1/nn/n8l/n1a6', '/root/n[47076 chars]n8a']\n\nFirst differing element 14:\n'/root/n1/nn/n8m'\n'/root/n1/nn/n8l/n1a5'\n\nDiff is 88770 characters long. Set self.maxDiff to None to see it.\n\n----------------------------------------------------------------------\nRan 3 tests in 3.065s\n\nFAILED (failures=2)\n",
+  "result": null
+}

@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/tmp/hrtli_adaptive_competitors_yB5PtJ/adapters",
+    "/tmp/hrtli_adaptive_competitors_yB5PtJ",
+    "hrtli"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788718296.4913192,
+  "elapsed_seconds": 6.312179088592529,
+  "sources_sha256": {
+    "results_q1/adaptive_competitors_20260906/source_measured/benchmark_lits_comparison.cpp": "a8bc073935c02dd9acd127e30db520ca2aa812a03d392a8b23b852097ef181c0",
+    "results_q1/adaptive_competitors_20260906/source_measured/prefix_radix_delta.hpp": "f10ebc9ba87468c22ea352938668b967688864e678a9ddce99d4ca8dbf8cf32c",
+    "results_q1/adaptive_competitors_20260906/source_measured/packed_rank_transport.hpp": "bc3fb8183b32ee73c865c40258be764fae05e2056334a9a81c90fed3add0377d",
+    "/tmp/hrtli_adaptive_competitors_yB5PtJ/adapters": "b84707ecc8ab98d69f928758a7800494e21b14f33dad085c69df47c7c9cc3ad0"
+  },
+  "exit_code": 0,
+  "stdout": "HRT-LI PASS: 6005 prefix/ASCII/254-byte keys, 30000 mixed operations, full-state checks\n",
+  "stderr": "",
+  "resource_usage": {
+    "max_rss_kib": 48768,
+    "user_seconds": 6.273315,
+    "system_seconds": 0.037263,
+    "major_faults": 0,
+    "minor_faults": 12619,
+    "voluntary_context_switches": 5,
+    "involuntary_context_switches": 26
+  },
+  "result": null
+}

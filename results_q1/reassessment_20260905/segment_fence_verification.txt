@@ -1,0 +1,26 @@
+Temporary check directory: /tmp/hrtli_segment_fence_PXAJHp
+epsilon=0 realized=0 segments=7967
+epsilon=1 realized=1 segments=3163
+epsilon=2 realized=2 segments=1897
+epsilon=4 realized=4 segments=1091
+epsilon=16 realized=16 segments=339
+epsilon=32 realized=32 segments=125
+epsilon=64 realized=64 segments=62
+epsilon=128 realized=128 segments=31
+PASS segment_fence_checks=21824 fallback_checks=21736
+PASS default learned queries, opt-in fingerprints, explicit binary controls, certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild
+PASS injected out-of-window predictions recover through exact segment fences
+Temporary check directory: /tmp/hrtli_default_queries_Q3K78E
+epsilon=0 realized=0 segments=7967
+epsilon=1 realized=1 segments=3163
+epsilon=2 realized=2 segments=1897
+epsilon=4 realized=4 segments=1091
+epsilon=16 realized=16 segments=339
+epsilon=32 realized=32 segments=125
+epsilon=64 realized=64 segments=62
+epsilon=128 realized=128 segments=31
+PASS segment_fence_checks=21824 fallback_checks=0
+PASS default learned queries, opt-in fingerprints, explicit binary controls, certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild
+PASS: dependent drivers compile with explicit legacy/control query paths
+Natural 200000-key API regression only; these timings are not manuscript evidence.
+{"base_keys":199900,"selected_keys":200000,"epsilon":64,"model_segments":2306,"repaired_segments":0,"construction_ms":33.92786,"insert_ms":0.169616,"base_delete_ms":0.08074,"queries":20000,"range_queries":20000,"seed":20260905,"query_paths":"all","fingerprint_capacity":524288,"stored_query_fallbacks":0,"inserted_query_fallbacks":0,"trial_design":"paired same-state rotated query paths; not independent builds","rows":[{"trial":1,"mode":"learned","uniform_membership_ns":417.6599,"balanced_membership_ns":315.1474,"deleted_membership_ns":93.09815,"uniform_rank_ns":629.16945,"range_ns":988.86345,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":1,"mode":"binary","uniform_membership_ns":583.921,"balanced_membership_ns":260.99815,"deleted_membership_ns":76.7484,"uniform_rank_ns":690.47245,"range_ns":977.752,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":1,"mode":"fingerprint","uniform_membership_ns":206.9562,"balanced_membership_ns":180.35295,"deleted_membership_ns":57.03455,"uniform_rank_ns":711.5296,"range_ns":827.26385,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":2,"mode":"binary","uniform_membership_ns":413.96035,"balanced_membership_ns":292.5505,"deleted_membership_ns":59.37695,"uniform_rank_ns":618.68435,"range_ns":869.75935,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":2,"mode":"fingerprint","uniform_membership_ns":298.92585,"balanced_membership_ns":125.27535,"deleted_membership_ns":66.5044,"uniform_rank_ns":500.0464,"range_ns":892.801,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":2,"mode":"learned","uniform_membership_ns":528.6154,"balanced_membership_ns":324.721,"deleted_membership_ns":68.3728,"uniform_rank_ns":650.57875,"range_ns":1136.50915,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":3,"mode":"fingerprint","uniform_membership_ns":184.81895,"balanced_membership_ns":206.74025,"deleted_membership_ns":57.27375,"uniform_rank_ns":590.8848,"range_ns":915.8687,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":3,"mode":"learned","uniform_membership_ns":501.5531,"balanced_membership_ns":325.60065,"deleted_membership_ns":74.51055,"uniform_rank_ns":556.45565,"range_ns":904.6169,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":3,"mode":"binary","uniform_membership_ns":562.0804,"balanced_membership_ns":252.83045,"deleted_membership_ns":51.65945,"uniform_rank_ns":561.536,"range_ns":758.1971,"rank_checksum":2012512278,"range_checksum":90568817}],"base_reinsert_ms":0.102044,"inserted_delete_ms":0.032277,"final_mutation_count":0,"all_oracles_passed":true}

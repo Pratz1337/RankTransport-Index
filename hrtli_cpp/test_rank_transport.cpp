@@ -1,5 +1,6 @@
 #include <cassert>
 #include <algorithm>
+#include <cmath>
 #include <iostream>
 #include <map>
 #include <string>
@@ -78,6 +79,23 @@ int main() {
     assert(index.lookup("/c") == -1);
     assert(index.exact_rank("/b") == 1);
     assert(index.exact_rank("/e") == 2);
+    assert(std::abs(index.transported_predict("/a") - index.exact_rank("/a")) <= index.certified_epsilon());
+    assert(std::abs(index.transported_predict("/e") - index.exact_rank("/e")) <= index.certified_epsilon());
+    assert(std::abs(index.transported_predict("/g") - index.exact_rank("/g")) <= index.certified_epsilon());
+    bool inserted_prediction_rejected = false;
+    try {
+        (void)index.transported_predict("/b");
+    } catch (const std::runtime_error&) {
+        inserted_prediction_rejected = true;
+    }
+    assert(inserted_prediction_rejected);
+    bool deleted_prediction_rejected = false;
+    try {
+        (void)index.transported_predict("/c");
+    } catch (const std::runtime_error&) {
+        deleted_prediction_rejected = true;
+    }
+    assert(deleted_prediction_rejected);
     assert(index.mutation_count() == 3);
     assert(index.count_range("/a", "/f") == 4);
     std::vector<std::string> expected_scan = {"/a", "/b", "/e", "/f"};
@@ -95,6 +113,7 @@ int main() {
     assert(index.lookup("/b") == 1);
     assert(index.lookup("/c") == -1);
     assert(index.exact_rank("/g") == 4);
+    assert(std::abs(index.transported_predict("/b") - index.exact_rank("/b")) <= index.certified_epsilon());
 
     assert(!index.maybe_consolidate(0.5));
     assert(index.insert("/c"));

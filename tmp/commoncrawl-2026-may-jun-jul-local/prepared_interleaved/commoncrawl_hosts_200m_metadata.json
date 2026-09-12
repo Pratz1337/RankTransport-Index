@@ -1,0 +1,456 @@
+{
+  "dataset": "Common Crawl host-level Web Graph May-June-July 2026",
+  "release": "cc-main-2026-may-jun-jul",
+  "official_announcement": "https://commoncrawl.org/blog/host--and-domain-level-web-graphs-may-june-and-july-2026",
+  "accessed": "2026-08-27",
+  "source_representation": "official <host ID, reverse-domain host> vertex records",
+  "key_order": "strict ascending raw UTF-8 byte order, verified over the full release",
+  "selection": "contiguous official host IDs 0 through 199999999; every 2000th selected key is held out for insertion, leaving 199900000 frozen-base keys",
+  "insert_stride": 2000,
+  "release_records": 240380987,
+  "selected_records": 200000000,
+  "initial_keys": 199900000,
+  "insert_keys": 100000,
+  "first_key": "aaa.11111.www",
+  "last_selected_key": "online.cpgce",
+  "last_release_key": "zw.zu.guv.bil",
+  "release_stream_sha256": "f013d3b7051e9865ade5a36d1081e766413056c55e7bb74e6f5b87e6668f9cb6",
+  "initial_sha256": "6840d31de6bfe01fd742f651298b29f0b62e6ca8ce218187a667dcbb542eeab7",
+  "insert_sha256": "aff541a159e1f012a6034a0afbeb06eaa928f7d776c0124d6618d56bd0f15d38",
+  "initial_bytes": 4448034075,
+  "insert_bytes": 2225913,
+  "shards": [
+    {
+      "file": "part-00000-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00000-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 26299037,
+      "sha256": "174ead8d733c9cb16fc4299a645fef6e1de2e02ac04dddb48cce3a9af4b75ade",
+      "records": 3461800,
+      "first_host_id": 0,
+      "last_host_id": 3461799
+    },
+    {
+      "file": "part-00001-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00001-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 44065061,
+      "sha256": "05583961b3e5e012bbbcb91ee88eadc7b4ce7b83417c333e2211564135e18e8a",
+      "records": 5577771,
+      "first_host_id": 3461800,
+      "last_host_id": 9039570
+    },
+    {
+      "file": "part-00002-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00002-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 35401627,
+      "sha256": "8d9d71bf8de7fe41004e8483aa361c500664e3575924efb9e12876f955eb8bbe",
+      "records": 4690761,
+      "first_host_id": 9039571,
+      "last_host_id": 13730331
+    },
+    {
+      "file": "part-00003-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00003-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 54958797,
+      "sha256": "2ed1441add81fa9c209180dbb0ade5a99ed5c3e9d2ce1c158a5cf1dae4fc3406",
+      "records": 7731756,
+      "first_host_id": 13730332,
+      "last_host_id": 21462087
+    },
+    {
+      "file": "part-00004-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00004-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 32053901,
+      "sha256": "128ee0f2876ec5da7b80dc549dfef593d4fe283bd5fdd1ac1f57abd3168dfaf7",
+      "records": 4380198,
+      "first_host_id": 21462088,
+      "last_host_id": 25842285
+    },
+    {
+      "file": "part-00005-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00005-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 24985243,
+      "sha256": "9bfd405f13eada0f15633bb694344fba4f1fd6b2f749141209c04aedd19d16fe",
+      "records": 3635803,
+      "first_host_id": 25842286,
+      "last_host_id": 29478088
+    },
+    {
+      "file": "part-00006-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00006-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 26701268,
+      "sha256": "45ecb77b789a5e7262179270202ec6c6076d122fe55324d3dd88014445827813",
+      "records": 3631821,
+      "first_host_id": 29478089,
+      "last_host_id": 33109909
+    },
+    {
+      "file": "part-00007-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00007-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 52742975,
+      "sha256": "dd45ff86a2b0f596bb3c634562adefaa4e12ec7eeaec17cac02e6ceb0d9e9e6c",
+      "records": 6685346,
+      "first_host_id": 33109910,
+      "last_host_id": 39795255
+    },
+    {
+      "file": "part-00008-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00008-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 37892531,
+      "sha256": "a8f6c2e9dfdf7899c9b5f4a0c5e0433f8f08c95a877bb4dae6ccc6faedf4b115",
+      "records": 5049016,
+      "first_host_id": 39795256,
+      "last_host_id": 44844271
+    },
+    {
+      "file": "part-00009-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00009-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 41863528,
+      "sha256": "40bc7dbef1b6f59f2affa6ba186af9d2f91d35cfc2b5b681f9df0590d28bbbaf",
+      "records": 3995112,
+      "first_host_id": 44844272,
+      "last_host_id": 48839383
+    },
+    {
+      "file": "part-00010-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00010-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 45237892,
+      "sha256": "4b17655f42a11f3f22489e9750de39af41b236c94238a4027100a8dc2f7db029",
+      "records": 5028339,
+      "first_host_id": 48839384,
+      "last_host_id": 53867722
+    },
+    {
+      "file": "part-00011-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00011-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 26070995,
+      "sha256": "cefb3c80bf449a2d4c45cba5d16c92f3ad0540173673a575b82cbb02b6f1c802",
+      "records": 3464290,
+      "first_host_id": 53867723,
+      "last_host_id": 57332012
+    },
+    {
+      "file": "part-00012-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00012-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 30252703,
+      "sha256": "d6d90561f49e199ebc3c86011bc7c9a7ac932c5e176849a2149af3ded45271a1",
+      "records": 4028743,
+      "first_host_id": 57332013,
+      "last_host_id": 61360755
+    },
+    {
+      "file": "part-00013-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00013-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 54448483,
+      "sha256": "3b062d91cdbbdf9763beefcd7b5eb4b30ec990695ecd92cef96dc8889b3649d5",
+      "records": 7033210,
+      "first_host_id": 61360756,
+      "last_host_id": 68393965
+    },
+    {
+      "file": "part-00014-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00014-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 46907437,
+      "sha256": "cba87070d46e5e37d99caa4ee4812a281845371eb5bf38c588cae7b241c5d0aa",
+      "records": 5673297,
+      "first_host_id": 68393966,
+      "last_host_id": 74067262
+    },
+    {
+      "file": "part-00015-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00015-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 39246972,
+      "sha256": "19c9f77187fc2a64b49a1fce66afe9997c10b559e2a3359ecf61f48747e5ccba",
+      "records": 4773356,
+      "first_host_id": 74067263,
+      "last_host_id": 78840618
+    },
+    {
+      "file": "part-00016-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00016-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 42197370,
+      "sha256": "f1a586dcce327c6177c9adb74431ac4ce6538cd0dc8e473cf8cdb4c974bfb37a",
+      "records": 5566899,
+      "first_host_id": 78840619,
+      "last_host_id": 84407517
+    },
+    {
+      "file": "part-00017-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00017-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 39622874,
+      "sha256": "645b3857c9122ffadcc33b057164eeda4b014414afafb1faa3a4e41f50231f34",
+      "records": 5088707,
+      "first_host_id": 84407518,
+      "last_host_id": 89496224
+    },
+    {
+      "file": "part-00018-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00018-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 39742002,
+      "sha256": "b17db247fda6822d89a917191f830b3684827e2fbc607c269e21747ae2d16564",
+      "records": 5388014,
+      "first_host_id": 89496225,
+      "last_host_id": 94884238
+    },
+    {
+      "file": "part-00019-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00019-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 54907334,
+      "sha256": "937e3d79ad22468a805a9553581648036aa0ab8792f34223760eb13672323ace",
+      "records": 6968803,
+      "first_host_id": 94884239,
+      "last_host_id": 101853041
+    },
+    {
+      "file": "part-00020-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00020-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 46158250,
+      "sha256": "e3f8e64810fe4767241d12dbe6f9fdec46299c8c3aadd276c5358e32261301ae",
+      "records": 5731636,
+      "first_host_id": 101853042,
+      "last_host_id": 107584677
+    },
+    {
+      "file": "part-00021-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00021-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 35673429,
+      "sha256": "b0e9d24b4f1d56ae913762ce6d44d541380a5eceb60eeddabd3faaea89233a6b",
+      "records": 4434421,
+      "first_host_id": 107584678,
+      "last_host_id": 112019098
+    },
+    {
+      "file": "part-00022-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00022-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 39802008,
+      "sha256": "298b3c4beb4e412d9bb6fc671d8c837423f99c565e4542cf082cb884d450c5a9",
+      "records": 4978522,
+      "first_host_id": 112019099,
+      "last_host_id": 116997620
+    },
+    {
+      "file": "part-00023-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00023-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 20596532,
+      "sha256": "6a68a4523becd6846fcd3b9b1d77fc92a0e30932b5412d85f8b7957ae58ab2b8",
+      "records": 2777672,
+      "first_host_id": 116997621,
+      "last_host_id": 119775292
+    },
+    {
+      "file": "part-00024-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00024-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 32361020,
+      "sha256": "8a68fed1234cbbe9e37624281f9dcd4e173c0baba16e1af05b19c9cdba3106b2",
+      "records": 3887205,
+      "first_host_id": 119775293,
+      "last_host_id": 123662497
+    },
+    {
+      "file": "part-00025-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00025-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 38774886,
+      "sha256": "eb7f7d50d2139b3c652b9b13704631e1031b8e598a534f3e59f3ccb6cc57be3f",
+      "records": 5017384,
+      "first_host_id": 123662498,
+      "last_host_id": 128679881
+    },
+    {
+      "file": "part-00026-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00026-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 40105154,
+      "sha256": "d5394aaa777d71d31b5b7426b5995a0c79a102e4b0ab107f39223cf6ed486e37",
+      "records": 4869195,
+      "first_host_id": 128679882,
+      "last_host_id": 133549076
+    },
+    {
+      "file": "part-00027-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00027-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 39515610,
+      "sha256": "9e1d6c2f07065359a75dfbcabdd59a07bfce4b7a6b2cbebf08db5607a34cf2a6",
+      "records": 4610224,
+      "first_host_id": 133549077,
+      "last_host_id": 138159300
+    },
+    {
+      "file": "part-00028-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00028-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 30334971,
+      "sha256": "726cd96dfabca4176d409c8abc86ff292c3300b9ad9bfe71a6291435ab9df8c3",
+      "records": 3107608,
+      "first_host_id": 138159301,
+      "last_host_id": 141266908
+    },
+    {
+      "file": "part-00029-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00029-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 36822655,
+      "sha256": "faf25828ee973186838a3daca12baee63e5b378f2d89b95ed79faf9dd30ce944",
+      "records": 4297742,
+      "first_host_id": 141266909,
+      "last_host_id": 145564650
+    },
+    {
+      "file": "part-00030-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00030-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 35702713,
+      "sha256": "4406c270c8ceb76f5058e2e668974419ff1aeb358d68e7b87fd9a91efa5a4da3",
+      "records": 5562587,
+      "first_host_id": 145564651,
+      "last_host_id": 151127237
+    },
+    {
+      "file": "part-00031-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00031-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 46597621,
+      "sha256": "f6405ef4c9973b1a1dbc5ffc034584cd41b4ef0242cf3a5e22f287baa1fe6310",
+      "records": 6246180,
+      "first_host_id": 151127238,
+      "last_host_id": 157373417
+    },
+    {
+      "file": "part-00032-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00032-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 35402452,
+      "sha256": "1c0c35f5ea4e71d44e89fe8389e67a0cc66800c36159863aeacdf4fb68b24e94",
+      "records": 4517843,
+      "first_host_id": 157373418,
+      "last_host_id": 161891260
+    },
+    {
+      "file": "part-00033-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00033-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 22462167,
+      "sha256": "6b34b1412605591c9fbbb4d8951f4ffb13ead5d1f90b162abf534bce2759859c",
+      "records": 2950193,
+      "first_host_id": 161891261,
+      "last_host_id": 164841453
+    },
+    {
+      "file": "part-00034-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00034-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 30585534,
+      "sha256": "ec9ada59547b96ff66ce3c5ed26b82e1238209d247c8be746c2f5519512f920d",
+      "records": 3965111,
+      "first_host_id": 164841454,
+      "last_host_id": 168806564
+    },
+    {
+      "file": "part-00035-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00035-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 49382035,
+      "sha256": "bfac64e915225dfc1b292bb42dee53837d59fce0f8002ecc21a893d9d7b46a64",
+      "records": 6294055,
+      "first_host_id": 168806565,
+      "last_host_id": 175100619
+    },
+    {
+      "file": "part-00036-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00036-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 43755165,
+      "sha256": "18931d12d380adcdb7b913480687010f932fa3cf5b4331209eab01ee70685fdb",
+      "records": 5736269,
+      "first_host_id": 175100620,
+      "last_host_id": 180836888
+    },
+    {
+      "file": "part-00037-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00037-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 69002278,
+      "sha256": "e76b29039f8b8163601e169d4a3cad55341bff8e78be600b6eb1219dcd843ed2",
+      "records": 8422863,
+      "first_host_id": 180836889,
+      "last_host_id": 189259751
+    },
+    {
+      "file": "part-00038-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00038-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 50271526,
+      "sha256": "b3957d97438abfbd6efb03375e9193086214b12cb9b21c30ac0752fc45f2fb5e",
+      "records": 6466062,
+      "first_host_id": 189259752,
+      "last_host_id": 195725813
+    },
+    {
+      "file": "part-00039-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00039-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 31981361,
+      "sha256": "84b26e9fac85ca98d8ca11d7bb26fbb9af81dd625096095cf2916f555044951a",
+      "records": 4276779,
+      "first_host_id": 195725814,
+      "last_host_id": 200002592
+    },
+    {
+      "file": "part-00040-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00040-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 41192918,
+      "sha256": "cad18bdc431dc38e89de8768836e49d470dba7b12d54174e24270ead8e5e3033",
+      "records": 5404478,
+      "first_host_id": 200002593,
+      "last_host_id": 205407070
+    },
+    {
+      "file": "part-00041-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00041-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 37283583,
+      "sha256": "2a70c209c07548fa02564e7b76369aa7a6ccbf714ff495016c1f8b6cd1ad4a86",
+      "records": 4980715,
+      "first_host_id": 205407071,
+      "last_host_id": 210387785
+    },
+    {
+      "file": "part-00042-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00042-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 42581404,
+      "sha256": "59bbc1e6dbeb621b9993e5d22a7b6535a20d210c3a3727aa4089c2ae71b5ff8c",
+      "records": 5651099,
+      "first_host_id": 210387786,
+      "last_host_id": 216038884
+    },
+    {
+      "file": "part-00043-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00043-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 35879965,
+      "sha256": "1585b3abf0cf85e6499909be1137cc126b6d362b19ed3a6579044b7ab183fd1a",
+      "records": 4888199,
+      "first_host_id": 216038885,
+      "last_host_id": 220927083
+    },
+    {
+      "file": "part-00044-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00044-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 39025454,
+      "sha256": "e23757d957ebb971bc2cd0fcb9e7cf294fa3f68b659670b3e123aad8124ba3ec",
+      "records": 5141345,
+      "first_host_id": 220927084,
+      "last_host_id": 226068428
+    },
+    {
+      "file": "part-00045-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00045-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 44157543,
+      "sha256": "0b63f89787b813c525a7293b17165f6aa913f61888d324e9ccf63dcca2160cd4",
+      "records": 6023366,
+      "first_host_id": 226068429,
+      "last_host_id": 232091794
+    },
+    {
+      "file": "part-00046-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00046-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 27031552,
+      "sha256": "144fb20879b2e25098072ffc8284d5a91f481ee417b6efa8aa74be974145b3bf",
+      "records": 3596382,
+      "first_host_id": 232091795,
+      "last_host_id": 235688176
+    },
+    {
+      "file": "part-00047-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "url": "https://data.commoncrawl.org/projects/hyperlinkgraph/cc-main-2026-may-jun-jul/host/vertices/part-00047-cd19c308-c8f8-4bc0-b0a8-7e281e46331c-c000.txt.gz",
+      "compressed_bytes": 35546506,
+      "sha256": "3566a37968bb01fb3a46931c6fc94512acda7cc57de872e3e69e985d2d8e1078",
+      "records": 4692810,
+      "first_host_id": 235688177,
+      "last_host_id": 240380986
+    }
+  ]
+}

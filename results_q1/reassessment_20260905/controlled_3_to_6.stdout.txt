@@ -1,0 +1,12 @@
+START trial 3 UTC 2026-09-05T00:43:22Z
+PASS correctness gate: /mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/trial_3.json
+COMPLETE trial 3 UTC 2026-09-05T00:47:25Z
+START trial 4 UTC 2026-09-05T00:47:25Z
+PASS correctness gate: /mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/trial_4.json
+COMPLETE trial 4 UTC 2026-09-05T00:51:27Z
+START trial 5 UTC 2026-09-05T00:51:27Z
+PASS correctness gate: /mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/trial_5.json
+COMPLETE trial 5 UTC 2026-09-05T00:55:33Z
+START trial 6 UTC 2026-09-05T00:55:33Z
+PASS correctness gate: /mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/trial_6.json
+COMPLETE trial 6 UTC 2026-09-05T00:59:39Z

@@ -1,0 +1,32 @@
+Traceback (most recent call last):
+  File "/mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/source/record_experiment.py", line 49, in <module>
+    main()
+    ~~~~^^
+  File "/mnt/c/Users/sayal/OneDrive/Desktop/research/results_q1/controlled_queries_20260905/source/record_experiment.py", line 33, in main
+    completed = subprocess.run(command, capture_output=True, text=True)
+  File "/usr/lib/python3.13/subprocess.py", line 554, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 1039, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                        pass_fds, cwd, env,
+                        ^^^^^^^^^^^^^^^^^^^
+    ...<5 lines>...
+                        gid, gids, uid, umask,
+                        ^^^^^^^^^^^^^^^^^^^^^^
+                        start_new_session, process_group)
+                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 1876, in _execute_child
+    self._posix_spawn(args, executable, env, restore_signals, close_fds,
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+                      p2cread, p2cwrite,
+                      ^^^^^^^^^^^^^^^^^^
+                      c2pread, c2pwrite,
+                      ^^^^^^^^^^^^^^^^^^
+                      errread, errwrite)
+                      ^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/subprocess.py", line 1820, in _posix_spawn
+    self.pid = os.posix_spawn(executable, args, env, **kwargs)
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/usr/bin/time'

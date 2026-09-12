@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:\\Program Files\\Python311\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_benchmark_hrtli_audit.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788566912.2863314,
+  "elapsed_seconds": 2.7446398735046387,
+  "sources_sha256": {
+    "benchmark_hrtli.py": "00fe2c359233db8673fe29355ed94ea563509678c1d4a5bc5992c52a8bc78a76",
+    "tests\\test_benchmark_hrtli_audit.py": "68857cf07fcfd3d84e789548fdbbac91148df8e72d7f9451119d5eebc6dd4652",
+    "hli\\rank_transport.py": "e53df1150b19544cc596985f6dcd71c7238149c2231bef090608d1d84d8e1a25"
+  },
+  "exit_code": 0,
+  "stdout": "\n========================================================================\nHRT-LI dynamic experiment: regression only\n========================================================================\nBase learned model: N=5, epsilon=2, mean_error=0.80, segments=1\nRound 1: size=110, stale_error=72, transported_error=2, bound=True, inserted_exact=True\nRound 2: size=215, stale_error=142, transported_error=2, bound=True, inserted_exact=True\nRound 3: size=318, stale_error=106, transported_error=1, bound=True, inserted_exact=True\nRound 4: size=423, stale_error=141, transported_error=1, bound=True, inserted_exact=True\nRound 5: size=528, stale_error=176, transported_error=1, bound=True, inserted_exact=True\nRound 6: size=633, stale_error=211, transported_error=1, bound=True, inserted_exact=True\n",
+  "stderr": "test_checks_insertions_beyond_old_64_key_sample (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_checks_insertions_beyond_old_64_key_sample) ... ok\ntest_oracle_does_not_read_index_snapshot (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_oracle_does_not_read_index_snapshot) ... ok\ntest_rejects_transport_error_even_when_exact_ranks_agree (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_rejects_transport_error_even_when_exact_ranks_agree) ... ok\ntest_rejects_unrequested_error_instead_of_widening_certificate (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_rejects_unrequested_error_instead_of_widening_certificate) ... ok\ntest_rejects_wrong_live_size (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_rejects_wrong_live_size) ... ok\ntest_reports_actual_prefix_closed_base_size (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_reports_actual_prefix_closed_base_size) ... ok\ntest_update_comparison_constructs_fresh_hrt_state (test_benchmark_hrtli_audit.BenchmarkAuditTests.test_update_comparison_constructs_fresh_hrt_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 1.758s\n\nOK\n",
+  "result": null
+}

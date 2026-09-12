@@ -16,6 +16,7 @@
 #include <cstdlib>
 #include <cstdint>
 #include <fstream>
+#include <functional>
 #include <iomanip>
 #include <iostream>
 #include <memory>
@@ -35,7 +36,15 @@ struct Result {
     double insert_ms = 0.0;
     double lookup_mops = 0.0;
     double latency_ns = 0.0;
+    size_t timed_lookup_operations = 0;
 };
+
+size_t min_timed_lookup_operations = 1000000;
+
+size_t timed_lookup_repetitions(size_t query_count) {
+    if (query_count == 0) return 0;
+    return std::max<size_t>(1, (min_timed_lookup_operations + query_count - 1) / query_count);
+}
 
 #if defined(HRTLI_WITH_HOT)
 struct StringPayload {
@@ -111,12 +120,17 @@ Result bench_hrtli(const std::vector<std::string>& initial,
     result.insert_ms = ms_since(start, end);
 
     volatile int64_t sink = 0;
+    for (const auto& key : lookups) sink += (index.point_lookup(key) ? 1 : 0);
+    const size_t repetitions = timed_lookup_repetitions(lookups.size());
     start = Clock::now();
-    for (const auto& key : lookups) {
-        sink += (index.point_lookup(key) ? 1 : 0);
+    for (size_t repetition = 0; repetition < repetitions; ++repetition) {
+        for (const auto& key : lookups) {
+            sink += (index.point_lookup(key) ? 1 : 0);
+        }
     }
     end = Clock::now();
-    fill_lookup(result, lookups.size(), ms_since(start, end));
+    result.timed_lookup_operations = lookups.size() * repetitions;
+    fill_lookup(result, result.timed_lookup_operations, ms_since(start, end));
     (void)sink;
     return result;
 }
@@ -268,14 +282,23 @@ Result bench_art(const std::vector<std::string>& initial,
     result.insert_ms = ms_since(start, end);
 
     volatile uintptr_t sink = 0;
-    start = Clock::now();
     for (const auto& key : lookups) {
         sink += reinterpret_cast<uintptr_t>(
             art_search(&index, reinterpret_cast<const unsigned char*>(key.c_str()),
                        static_cast<int>(key.size())));
     }
+    const size_t repetitions = timed_lookup_repetitions(lookups.size());
+    start = Clock::now();
+    for (size_t repetition = 0; repetition < repetitions; ++repetition) {
+        for (const auto& key : lookups) {
+            sink += reinterpret_cast<uintptr_t>(
+                art_search(&index, reinterpret_cast<const unsigned char*>(key.c_str()),
+                           static_cast<int>(key.size())));
+        }
+    }
     end = Clock::now();
-    fill_lookup(result, lookups.size(), ms_since(start, end));
+    result.timed_lookup_operations = lookups.size() * repetitions;
+    fill_lookup(result, result.timed_lookup_operations, ms_since(start, end));
     art_tree_destroy(&index);
     (void)sink;
     return result;
@@ -355,15 +378,23 @@ Result bench_hot(const std::vector<std::string>& initial,
     result.insert_ms = ms_since(start, end);
 
     volatile uint64_t sink = 0;
-    start = Clock::now();
     for (const auto& key : lookups) {
         auto found = index.lookup(key.c_str());
-        if (found.mIsValid) {
-            sink += found.mValue->value;
+        if (found.mIsValid) sink += found.mValue->value;
+    }
+    const size_t repetitions = timed_lookup_repetitions(lookups.size());
+    start = Clock::now();
+    for (size_t repetition = 0; repetition < repetitions; ++repetition) {
+        for (const auto& key : lookups) {
+            auto found = index.lookup(key.c_str());
+            if (found.mIsValid) {
+                sink += found.mValue->value;
+            }
         }
     }
     end = Clock::now();
-    fill_lookup(result, lookups.size(), ms_since(start, end));
+    result.timed_lookup_operations = lookups.size() * repetitions;
+    fill_lookup(result, result.timed_lookup_operations, ms_since(start, end));
     (void)sink;
     return result;
 }
@@ -385,7 +416,16 @@ struct Stats {
         return values.size() <= 1 ? 0.0 : std::sqrt(sum / (values.size() - 1));
     }
     double ci95() const {
-        return values.empty() ? 0.0 : 1.96 * stddev() / std::sqrt(values.size());
+        if (values.size() <= 1) return 0.0;
+        static const double t95[] = {
+            0.0, 12.706, 4.303, 3.182, 2.776, 2.571, 2.447, 2.365,
+            2.306, 2.262, 2.228, 2.201, 2.179, 2.160, 2.145, 2.131,
+            2.120, 2.110, 2.101, 2.093, 2.086, 2.080, 2.074, 2.069,
+            2.064, 2.060, 2.056, 2.052, 2.048, 2.045, 2.042
+        };
+        const size_t degrees_of_freedom = values.size() - 1;
+        const double critical = degrees_of_freedom <= 30 ? t95[degrees_of_freedom] : 1.96;
+        return critical * stddev() / std::sqrt(values.size());
     }
 };
 
@@ -395,6 +435,7 @@ struct TrialResult {
     Stats insert_ms;
     Stats lookup_mops;
     Stats latency_ns;
+    size_t timed_lookup_operations = 0;
 };
 
 std::string format_stat(const Stats& s) {
@@ -443,17 +484,27 @@ std::string json_escape(const std::string& value) {
     return out;
 }
 
-void write_trial_results_json(const std::string& dataset, const std::vector<TrialResult>& results) {
-    std::ofstream out("results_q1/external_benchmark_" + dataset + ".json");
+void write_trial_results_json(const std::string& dataset, const std::vector<TrialResult>& results,
+                              const std::string& output_path) {
+    std::ofstream out(output_path);
     if (!out) {
         return;
     }
     out << "{\n  \"dataset\": \"" << json_escape(dataset) << "\",\n  \"results\": [\n";
+    const auto write_samples = [&out](const char* name, const std::vector<double>& values) {
+        out << "      \"" << name << "\": [";
+        for (size_t i = 0; i < values.size(); ++i) {
+            if (i > 0) out << ", ";
+            out << values[i];
+        }
+        out << "]";
+    };
     for (size_t i = 0; i < results.size(); ++i) {
         const auto& res = results[i];
         out << "    {\n";
         out << "      \"name\": \"" << json_escape(res.name) << "\",\n";
         out << "      \"trials\": " << res.load_ms.values.size() << ",\n";
+        out << "      \"timed_lookup_operations\": " << res.timed_lookup_operations << ",\n";
         out << "      \"load_ms_mean\": " << res.load_ms.mean() << ",\n";
         out << "      \"load_ms_ci95\": " << res.load_ms.ci95() << ",\n";
         out << "      \"insert_ms_mean\": " << res.insert_ms.mean() << ",\n";
@@ -461,7 +512,13 @@ void write_trial_results_json(const std::string& dataset, const std::vector<Tria
         out << "      \"lookup_mops_mean\": " << res.lookup_mops.mean() << ",\n";
         out << "      \"lookup_mops_ci95\": " << res.lookup_mops.ci95() << ",\n";
         out << "      \"latency_ns_mean\": " << res.latency_ns.mean() << ",\n";
-        out << "      \"latency_ns_ci95\": " << res.latency_ns.ci95() << "\n";
+        out << "      \"latency_ns_ci95\": " << res.latency_ns.ci95() << ",\n";
+        out << "      \"samples\": {\n";
+        write_samples("load_ms", res.load_ms.values); out << ",\n";
+        write_samples("insert_ms", res.insert_ms.values); out << ",\n";
+        write_samples("lookup_mops", res.lookup_mops.values); out << ",\n";
+        write_samples("latency_ns", res.latency_ns.values); out << "\n";
+        out << "      }\n";
         out << "    }" << (i + 1 == results.size() ? "\n" : ",\n");
     }
     out << "  ]\n}\n";
@@ -469,6 +526,7 @@ void write_trial_results_json(const std::string& dataset, const std::vector<Tria
 
 void append_result(TrialResult& trial, const Result& result) {
     trial.name = result.name;
+    trial.timed_lookup_operations = result.timed_lookup_operations;
     if (result.name.find("skipped") != std::string::npos) {
         return;
     }
@@ -503,6 +561,9 @@ int main(int argc, char** argv) {
     auto surrogate = build_surrogate_keys(lookups);
 
     int num_trials = parse_trials(argc, argv);
+    if (const char* env_min_lookups = std::getenv("HRTLI_EXTERNAL_MIN_LOOKUPS")) {
+        min_timed_lookup_operations = std::max<size_t>(1, std::stoull(env_min_lookups));
+    }
     std::vector<TrialResult> results;
     results.push_back(TrialResult{"HRT-LI native"});
     const size_t hrtli_idx = results.size() - 1;
@@ -531,34 +592,44 @@ int main(int argc, char** argv) {
     const size_t hot_idx = results.size() - 1;
 #endif
 
-    for (int t = 0; t < num_trials; ++t) {
-        std::cout << "Running trial " << (t + 1) << "/" << num_trials << " for dataset: " << dataset << "..." << std::endl;
-        
-        append_result(results[hrtli_idx], bench_hrtli(initial, inserts, lookups));
+    using Bench = std::pair<size_t, std::function<Result()>>;
+    std::vector<Bench> benches;
+    benches.push_back({hrtli_idx, [&] { return bench_hrtli(initial, inserts, lookups); }});
 #if defined(HRTLI_WITH_ALEX)
-        append_result(results[alex_idx], bench_alex(initial, inserts, lookups, surrogate));
+    benches.push_back({alex_idx, [&] { return bench_alex(initial, inserts, lookups, surrogate); }});
 #endif
 #if defined(HRTLI_WITH_LIPP)
-        append_result(results[lipp_idx], bench_lipp(initial, inserts, lookups, surrogate));
+    benches.push_back({lipp_idx, [&] { return bench_lipp(initial, inserts, lookups, surrogate); }});
 #endif
 #if defined(HRTLI_WITH_PGM)
-        append_result(results[pgm_idx], bench_pgm(initial, inserts, lookups, surrogate));
+    benches.push_back({pgm_idx, [&] { return bench_pgm(initial, inserts, lookups, surrogate); }});
 #endif
 #if defined(HRTLI_WITH_ART)
-        append_result(results[art_idx], bench_art(initial, inserts, lookups));
+    benches.push_back({art_idx, [&] { return bench_art(initial, inserts, lookups); }});
 #endif
 #if defined(HRTLI_WITH_LITS)
-        append_result(results[lits_idx], bench_lits(initial, inserts, lookups));
+    benches.push_back({lits_idx, [&] { return bench_lits(initial, inserts, lookups); }});
 #endif
 #if defined(HRTLI_WITH_HOT)
-        append_result(results[hot_idx], bench_hot(initial, inserts, lookups));
+    benches.push_back({hot_idx, [&] { return bench_hot(initial, inserts, lookups); }});
 #endif
+
+    for (int t = 0; t < num_trials; ++t) {
+        std::cout << "Running trial " << (t + 1) << "/" << num_trials << " for dataset: " << dataset << "..." << std::endl;
+        for (size_t step = 0; step < benches.size(); ++step) {
+            const size_t index = (static_cast<size_t>(t) + step) % benches.size();
+            append_result(results[benches[index].first], benches[index].second());
+        }
     }
 
     print_trial_results(dataset, results);
     const char* write_json = std::getenv("HRTLI_EXTERNAL_WRITE_JSON");
     if (write_json != nullptr && std::string(write_json) == "1") {
-        write_trial_results_json(dataset, results);
+        const char* env_output = std::getenv("HRTLI_EXTERNAL_OUTPUT");
+        const std::string output_path = env_output == nullptr
+            ? "results_q1/external_benchmark_" + dataset + ".json"
+            : env_output;
+        write_trial_results_json(dataset, results, output_path);
     }
     return 0;
 }

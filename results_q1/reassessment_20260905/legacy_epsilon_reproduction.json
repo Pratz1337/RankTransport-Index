@@ -1,0 +1,12 @@
+{
+  "evidence": "Fresh execution of preserved legacy benchmark on 5 September 2026, before rebuilding binary",
+  "command": "taskset -c 2 hrtli_cpp/benchmark_commoncrawl_200m_epsilon tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_initial.txt 199900000",
+  "exit_code": 0,
+  "dataset_keys": 199900000,
+  "rows": [
+    {"epsilon":16,"segments":11757393,"certified_max_error":17,"bound_holds":false,"build_ms":5567.799009,"certify_ms":4572.126903},
+    {"epsilon":32,"segments":6056215,"certified_max_error":39,"bound_holds":false,"build_ms":4860.022796,"certify_ms":4349.916115},
+    {"epsilon":64,"segments":3073987,"certified_max_error":64,"bound_holds":true,"build_ms":4432.272066,"certify_ms":4231.857262},
+    {"epsilon":128,"segments":1548257,"certified_max_error":128,"bound_holds":true,"build_ms":4318.593518,"certify_ms":4539.434515}
+  ]
+}

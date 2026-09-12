@@ -1,0 +1,21 @@
+diff --git a/lits/lits_model.hpp b/lits/lits_model.hpp
+--- a/lits/lits_model.hpp
++++ b/lits/lits_model.hpp
+@@ -167,7 +167,7 @@
+         double c = size * b;
+ 
+         for (int i = gcpl; key[i] && ps >= 1; ++i) {
+-            const auto &uni = m[i & PS_MASK][key[i - 1] & FC_MASK][key[i]];
++            const auto &uni = m[i & PS_MASK][i == 0 ? 0 : (key[i - 1] & FC_MASK)][key[i]];
+             c += ps * uni.CDF;
+             ps *= uni.PRO;
+         }
+@@ -201,7 +201,7 @@
+         double cdf = 0;
+         static constexpr double min_double = 1. / (1UL << 52);
+         for (int i = gcpl; key[i] && pro >= min_double; ++i) {
+-            const auto &uni = m[i & PS_MASK][key[i - 1] & FC_MASK][key[i]];
++            const auto &uni = m[i & PS_MASK][i == 0 ? 0 : (key[i - 1] & FC_MASK)][key[i]];
+             cdf += pro * uni.CDF;
+             pro *= uni.PRO;
+         }

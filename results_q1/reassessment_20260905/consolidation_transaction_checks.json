@@ -1,0 +1,26 @@
+{
+  "command": [
+    "C:/Program Files/Python311/python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_consolidation_failure.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788609460.0809486,
+  "elapsed_seconds": 0.20404410362243652,
+  "sources_sha256": {
+    "hli\\signed_delta.py": "c7b31c5d4a9f34467bb1e190fcde6fda86903605a2d866d917410dfd1754f5bd",
+    "hli\\rank_transport.py": "f43a6b4b0755de05ad09ee71226915686d9bfa9e3e323b744d6edd2bc2dbc6d1",
+    "hli\\hpsfc.py": "8667ffdd541ed9204202a39616adb7fe0a1f65d530e4b7e980289cc94b99b711",
+    "tests\\test_consolidation_failure.py": "d74a3a5633b7fd07b573ccbb0e35d209b7f0e87526375ee30222a5a1e67d126b"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_hpsfc_failed_rebuild_keeps_hash_and_rank_generation_aligned (test_consolidation_failure.ConsolidationFailureTests.test_hpsfc_failed_rebuild_keeps_hash_and_rank_generation_aligned) ... ok\ntest_old_completion_callback_failure_cannot_reset_new_rebuild (test_consolidation_failure.ConsolidationFailureTests.test_old_completion_callback_failure_cannot_reset_new_rebuild) ... ok\ntest_pending_failure_preserves_both_ledgers_before_and_after_publish (test_consolidation_failure.ConsolidationFailureTests.test_pending_failure_preserves_both_ledgers_before_and_after_publish) ... ok\ntest_publication_failure_does_not_replace_core_generation (test_consolidation_failure.ConsolidationFailureTests.test_publication_failure_does_not_replace_core_generation) ... ok\ntest_rebuild_failure_preserves_concurrent_writes_and_allows_retry (test_consolidation_failure.ConsolidationFailureTests.test_rebuild_failure_preserves_concurrent_writes_and_allows_retry) ... ok\ntest_successful_staged_writes_are_the_delta_published_by_worker (test_consolidation_failure.ConsolidationFailureTests.test_successful_staged_writes_are_the_delta_published_by_worker) ... ok\ntest_thread_start_failure_restores_idle_state (test_consolidation_failure.ConsolidationFailureTests.test_thread_start_failure_restores_idle_state) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.008s\n\nOK\n",
+  "result": null
+}

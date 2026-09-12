@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:\\Program Files\\Python311\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_hpsfc.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788567743.2980142,
+  "elapsed_seconds": 0.2414686679840088,
+  "sources_sha256": {
+    "hli\\rank_transport.py": "1561e5c69f8f1e1200f220051d02c7e8b879c675ec73f46ca6bf0f54eef89877",
+    "hli\\hpsfc.py": "8667ffdd541ed9204202a39616adb7fe0a1f65d530e4b7e980289cc94b99b711",
+    "tests\\test_hpsfc.py": "c675e761645db4fab900e8bc00a97bf589406eb0f4966ef02b792dd044ac995b"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_probe_stats_are_low (test_hpsfc.TestHPSFCProbeStats.test_probe_stats_are_low)\nVerify that average probes are less than 1.0 on large datasets. ... ok\ntest_consolidation_rebuilds_hpsfc_table (test_hpsfc.TestHPSFCRankTransportIndex.test_consolidation_rebuilds_hpsfc_table) ... ok\ntest_delete_base_key (test_hpsfc.TestHPSFCRankTransportIndex.test_delete_base_key)\nAfter deleting a base key, lookup must return -1. ... ok\ntest_dns_paths (test_hpsfc.TestHPSFCRankTransportIndex.test_dns_paths)\nHP-SFC must work correctly on DNS-style paths. ... ok\ntest_insert_and_lookup (test_hpsfc.TestHPSFCRankTransportIndex.test_insert_and_lookup)\nAfter inserting a new key, HP-SFC index must return its correct logical rank. ... ok\ntest_json_paths (test_hpsfc.TestHPSFCRankTransportIndex.test_json_paths)\nHP-SFC must work correctly on JSON-style paths. ... ok\ntest_lookup_matches_exact_rank_base_keys (test_hpsfc.TestHPSFCRankTransportIndex.test_lookup_matches_exact_rank_base_keys)\nHP-SFC lookup must produce same result as exact_rank for all base keys. ... ok\ntest_lookup_returns_minus1_for_absent_keys (test_hpsfc.TestHPSFCRankTransportIndex.test_lookup_returns_minus1_for_absent_keys) ... ok\ntest_manual_consolidation_rebuilds_hpsfc_table (test_hpsfc.TestHPSFCRankTransportIndex.test_manual_consolidation_rebuilds_hpsfc_table) ... ok\ntest_rank_transport_all_base_keys_after_inserts (test_hpsfc.TestHPSFCRankTransportIndex.test_rank_transport_all_base_keys_after_inserts)\nInsert 50 keys and verify rank-transport correctness for ALL live base keys. ... ok\ntest_threshold_consolidation_after_mutations (test_hpsfc.TestHPSFCRankTransportIndex.test_threshold_consolidation_after_mutations) ... ok\ntest_all_base_keys_found (test_hpsfc.TestHPSFCTable.test_all_base_keys_found) ... ok\ntest_contains (test_hpsfc.TestHPSFCTable.test_contains) ... ok\ntest_low_collision_rate (test_hpsfc.TestHPSFCTable.test_low_collision_rate) ... ok\ntest_non_keys_return_none (test_hpsfc.TestHPSFCTable.test_non_keys_return_none) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.068s\n\nOK\n",
+  "result": null
+}

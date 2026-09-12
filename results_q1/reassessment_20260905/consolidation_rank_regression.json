@@ -1,0 +1,24 @@
+{
+  "command": [
+    "C:\\Program Files\\Python311\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_rank_transport.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788567742.5086045,
+  "elapsed_seconds": 0.16221141815185547,
+  "sources_sha256": {
+    "hli\\rank_transport.py": "1561e5c69f8f1e1200f220051d02c7e8b879c675ec73f46ca6bf0f54eef89877",
+    "tests\\test_rank_transport.py": "944923fd642bc9c717283594eb1d28bfad0d47013701b048e2f95b4e4aa3608f"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_rank_matches_sorted_list_after_mutations (test_rank_transport.OrderStatisticTreapTests.test_rank_matches_sorted_list_after_mutations) ... ok\ntest_base_delete_and_restore (test_rank_transport.RankTransportIndexTests.test_base_delete_and_restore) ... ok\ntest_concurrent_mutations_during_rebuild (test_rank_transport.RankTransportIndexTests.test_concurrent_mutations_during_rebuild) ... ok\ntest_consolidation_absorbs_live_deltas (test_rank_transport.RankTransportIndexTests.test_consolidation_absorbs_live_deltas) ... ok\ntest_consolidation_rebuilds_base_and_resets_delta (test_rank_transport.RankTransportIndexTests.test_consolidation_rebuilds_base_and_resets_delta) ... ok\ntest_delete_absorbed_insert_during_background_rebuild_stays_deleted (test_rank_transport.RankTransportIndexTests.test_delete_absorbed_insert_during_background_rebuild_stays_deleted) ... ok\ntest_inserted_keys_have_exact_delta_rank (test_rank_transport.RankTransportIndexTests.test_inserted_keys_have_exact_delta_rank) ... ok\ntest_post_consolidation_uses_fresh_base_certificate (test_rank_transport.RankTransportIndexTests.test_post_consolidation_uses_fresh_base_certificate) ... ok\ntest_transported_error_bound_survives_inserts_and_deletes (test_rank_transport.RankTransportIndexTests.test_transported_error_bound_survives_inserts_and_deletes) ... ok\ntest_annihilation_removes_mutation_entry (test_rank_transport.SignedDeltaTreapTests.test_annihilation_removes_mutation_entry) ... ok\ntest_prefix_delta_matches_insert_minus_delete_ranks (test_rank_transport.SignedDeltaTreapTests.test_prefix_delta_matches_insert_minus_delete_ranks) ... ok\ntest_random_signed_updates_match_dict_model (test_rank_transport.SignedDeltaTreapTests.test_random_signed_updates_match_dict_model) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.010s\n\nOK\n",
+  "result": null
+}

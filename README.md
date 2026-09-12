@@ -1,89 +1,129 @@
-# HRT-LI: Hierarchical Rank-Transport Learned Index
+# HRT-LI: Certified Rank Transport
 
-HRT-LI is a prototype for exact dynamic learned indexing over
-hierarchical string keys such as file paths, DNS records, and JSON paths.
+Research code and reproducibility records for **Certified rank transport for
+hierarchical strings**, by Prathmesh Sayal and Kshiraja Nelapati.
 
+HRT-LI separates a frozen learned base from a signed prefix-mass ledger. For a
+query key `k`, the ledger stores the exact change in the number of live keys
+strictly below `k`:
 
-## Quickstart
-
-```bash
-make data
-make test
-make cpp-test
-make cpp-benchmark
-make cpp-range-benchmark
-make cpp-external-smoke
-python benchmark_q1.py
-python benchmark_range_latency.py
+```text
+rank_t(k) = rank_0(k) + Delta_t(k)
+p_t(k)    = p_0(k)    + Delta_t(k)
 ```
 
-Benchmark outputs are written to `results_q1/`.
+For surviving base keys, applying the same correction preserves the base
+prediction's certified error. Inserted keys and absent query boundaries use
+exact recovery; they do not inherit the stored-base prediction certificate.
+The set contract uses unsigned-byte lexicographic order and excludes duplicates.
 
-## Key Files
+## Implementation
 
-- `hli/rank_transport.py` - exact dynamic rank correction layer.
-- `hli/lexicode.py` - exact sparse-radix lexicographic path code.
-- `hli/hpsfc.py` - expected-O(1) base-key fingerprint table, rank transport,
-  and threshold-triggered consolidation.
-- `hli/order_stat_tree.py` - expected `O(log n)` order-statistic treap.
-- `benchmark_hrtli.py` - Q1-facing dynamic benchmark.
-- `benchmark_q1.py` - compatibility entry point for `benchmark_hrtli.py`.
-- `benchmark_range_latency.py` - preliminary range count/scan latency artifact.
-- `download_publishable_corpora.py` - downloads redistributable URL, DNS, JSON,
-  and package-manager sources and records `data_sources/SOURCES.md`.
-- `export_datasets.py` - exports synthetic hierarchy, filesystem, and
-  publishable URL/DNS/JSON/package-manager path corpora.
-- `Makefile` - Linux/WSL targets for Python tests, data export, benchmarks,
-  and native C++ smoke checks.
-- `hrtli_cpp/test_rank_transport.cpp` - C++ delta-layer and consolidation smoke
-  test.
-- `hrtli_cpp/benchmark_range.cpp` - native range count/scan latency benchmark.
-- `hrtli_cpp/benchmark_external.cpp` - optional native bindings for pinned
-  ALEX/LIPP/PGM/ART/LITS/HOT checkouts under `external/competitors`.
-- `hrtli_cpp/BASELINES.lock.md` - exact competitor commits and license notes.
-- `hrtli_cpp/README.md` - native benchmark build commands and fairness caveats.
-- `legacy_cdhli_benchmark.py` - preserved rejected Mobius-warp diagnostic.
-- `Q1_HRTLI_METHODOLOGY.md` - paper-facing methodology, novelty boundary, and validation plan.
-- `paper/novelty_check.md` - bounded current literature check for the exact
-  rank-transport claim.
+The serial C++17 implementation is in
+[`hrtli_cpp/packed_rank_transport.hpp`](hrtli_cpp/packed_rank_transport.hpp), with
+the compressed radix ledger in
+[`hrtli_cpp/prefix_radix_delta.hpp`](hrtli_cpp/prefix_radix_delta.hpp).
+The default query path uses guarded learned recovery without the optional
+fingerprint table. The refined implementation includes segment-fence recovery
+and fanout-aware sibling accounting: direct sums at up to 16 children and a
+Fenwick array above that threshold. These are distinct from the earlier
+implementation measured in the 200M-key query trials.
 
-## Verified Result
+The packed implementation requires Linux/POSIX facilities such as memory mapping.
+The newline-delimited base-file format cannot represent a newline within a key.
+This is an in-memory, single-threaded research index, not a concurrent or
+crash-safe storage engine. Offline consolidation is blocking.
 
-On the included benchmark, stale learned predictions drift after six write
-rounds, while HRT-LI keeps transported error at the original base certificate.
-Inserted-key ranks are checked exactly.
+The Python reference implementations are in `hli/rank_transport.py`,
+`hli/signed_delta.py`, and `hli/hpsfc.py`.
 
-| Workload | Base keys | Base epsilon | Stale max error | HRT-LI max error |
-|---|---:|---:|---:|---:|
-| Synthetic hierarchy | 2600 | 64 | 681 | 64 |
-| Filesystem paths | 863 | 64 | 681 | 64 |
-| URL paths | 502 | 64 | 674 | 64 |
-| DNS hierarchy | 2880 | 64 | 681 | 64 |
-| JSON paths | 2602 | 64 | 681 | 64 |
-| Package paths | 704 | 64 | 681 | 64 |
+## Match each result to its build
 
-URL, DNS, JSON, and package-manager rows come from the publishable corpus
-builder. The current source manifest is `data_sources/SOURCES.md`.
+| Evidence | Location | Scope |
+|---|---|---|
+| 200M selected Common Crawl keys; five process trials | [`controlled_queries_20260905`](results_q1/controlled_queries_20260905) | Learned-versus-binary recovery inside the same index; 164M timed answers checked. Uses linear sibling sums and predates segment-fence refinement. |
+| Refined HRT-LI versus ART, HOT and LITS | [`adaptive_competitors_20260906`](results_q1/adaptive_competitors_20260906) | 10M natural keys: 8M base and 2M eligible arrivals; four seeds, three workloads, 48 processes. Membership contract, not rank/range comparison. |
+| Linear, all-node Fenwick and fanout-aware ledgers | [`adaptive_ledger_20260906`](results_q1/adaptive_ledger_20260906) | 200K natural signed keys, six seeds and 18 processes. Query time, update time and estimated ledger memory. |
+| Error-budget sweep and offline consolidation | [`reassessment_20260905`](results_q1/reassessment_20260905) | Separate frozen builds and verification records; consolidation timing is one observation. |
 
-The current Python ablation is stored in `results_q1/ablation_results.json`:
+The [build provenance table](docs/BUILD_PROVENANCE.md) and
+[full source/binary digest map](docs/BUILD_PROVENANCE.json) identify experiment-time
+sources. Use the corresponding frozen `source/`, `source_measured/`, or variant
+directory to reproduce a measured build. A newly compiled binary need not have
+the historical binary digest. The repository commit identifies this release;
+it is not retroactively the commit used by those experiments.
 
-| Variant | Throughput |
-|---|---:|
-| Baseline | 0.383 Mops/s |
-| Learned feature model only | 0.038 Mops/s |
-| Feature model + transport | 0.041 Mops/s |
-| HRT-LI full | 0.571 Mops/s |
+The 200M experiment is an internal ablation, not a competitive benchmark.
+In the refined membership comparison, ART, HOT and LITS finish every measured
+workload faster than HRT-LI. The fanout-aware ledger has overlapping observed
+query-time ranges with linear sums and higher estimated memory use. These
+measurements do not establish universal throughput superiority.
 
-The current native range benchmark is stored in
-`results_q1/cpp_range_latency_synthetic.json`. With 8,000 base keys, 2,000
-inserts, and 1,000 deletes, `count_range` stayed near constant latency while
-`scan_range` scaled with output size:
+Timing summaries use medians and observed ranges, not population confidence
+intervals. The experiments use one laptop and systematic selections from one
+Common Crawl release. Windows-host memory pressure is retained in the telemetry;
+the records do not establish portable latency or steady-state service behavior.
 
-| Target result size | count p99 | scan p99 |
-|---:|---:|---:|
-| 1 | 3.21 us | 0.86 us |
-| 10 | 1.61 us | 1.84 us |
-| 100 | 1.10 us | 11.19 us |
-| 1000 | 3.67 us | 132.87 us |
+## Lightweight checks: no corpus download or benchmark rerun
 
-The Python cross-check remains in `results_q1/range_latency_results.json`.
+From the repository root, with Python 3.11:
+
+```sh
+python -m pip install -r requirements-audit.txt
+python -m ipykernel install --user --name python3
+python scripts/verify_release.py
+python -m unittest tests.test_rank_transport tests.test_hpsfc tests.test_consolidation_failure tests.test_benchmark_hrtli_audit tests.test_signed_delta_transactions tests.test_hpsfc_automatic_failure tests.test_dataset_seed
+python scripts/audit_current_comparisons.py --adaptive
+python scripts/summarize_query_runs_descriptively.py
+```
+
+The notebook audit validates all 48 specialist records, 18 ledger records, source
+identities and shared traces, and regenerates the descriptive summary. The final
+command recomputes the five-process query summaries. These commands inspect
+recorded experiments; they do not independently rerun their timed operations.
+Audit scripts regenerate the notebook/summary files, so run them in a disposable
+checkout if you want to preserve the release checkout byte-for-byte.
+
+For the current native correctness/sanitizer fixtures on Linux with GCC/G++:
+
+```sh
+bash scripts/verify_radix_fenwick.sh
+```
+
+The focused Python suite and both record-summary audits were rerun for this
+release. Native sanitizer and full-scale performance reruns were not performed
+during release packaging; their retained records are dated separately.
+
+## Reproduce the real-corpus experiments
+
+See [data and 200M-query reproduction](docs/DATA_AND_200M_REPRODUCTION.md) and
+[specialist/ledger reproduction](docs/CURRENT_COMPARISON_REPRODUCTION.md).
+They identify source URLs, selection rules, input checksums, pinned third-party
+revisions, patches, build separation, operation streams and resource limits.
+
+The multi-gigabyte Common Crawl corpus and third-party baseline checkouts are
+not redistributed. The repository includes all 48 upstream shard URLs and
+checksums, preparation code, frozen HRT-LI sources, process-level measurements,
+host telemetry, and audit notebooks.
+
+## Historical material
+
+Existing root-level exploratory drivers, `analysis/`, `results_dynamic/`, older
+undated `results_q1/` files and the legacy `Makefile` are retained for history.
+They are not the reproduction entry points for the manuscript's main tables.
+The dated `current_competitors_20260906` directory contains the superseded
+all-node-Fenwick prototype, despite its historical name; the refined results
+are in `adaptive_competitors_20260906`.
+
+The historical `controlled_query_audit.ipynb` and
+`scripts/analyze_controlled_queries.py` retain an earlier bootstrap analysis.
+Use `scripts/summarize_query_runs_descriptively.py` and
+`results_q1/reviewer_response_20260906/query_descriptive.json` for the manuscript's
+five-run descriptive summaries. Failed/preflight diagnostics remain labelled
+and must not be counted as successful performance trials.
+
+## License
+
+The authors' original HRT-LI code is released under the [MIT License](LICENSE).
+Third-party software and Common Crawl data retain their upstream terms; see
+[third-party notices](THIRD_PARTY_NOTICES.md).

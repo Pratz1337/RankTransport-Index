@@ -1,0 +1,22 @@
+diff --git a/lits/hot_src/include/SingleMaskPartialKeyMapping.hpp b/lits/hot_src/include/SingleMaskPartialKeyMapping.hpp
+--- a/lits/hot_src/include/SingleMaskPartialKeyMapping.hpp
++++ b/lits/hot_src/include/SingleMaskPartialKeyMapping.hpp
+@@ -75,6 +75,7 @@
+ template<typename PartialKeyType> inline PartialKeyType
+ SingleMaskPartialKeyMapping::getPrefixBitsMask(DiscriminativeBit const &significantKeyInformation) const {
+ 	int relativeMissmatchingByteIndex = significantKeyInformation.mByteIndex - mOffsetInBytes;
++	if (relativeMissmatchingByteIndex < 0) return 0;
+ 
+ 	//Extracts a bit masks corresponding to 111111111|00000000 with the first zero bit marking the missmatching bit index.
+ 
+@@ -156,7 +157,9 @@
+ }
+ 
+ inline __attribute__((always_inline)) uint32_t SingleMaskPartialKeyMapping::extractMask(uint8_t const * keyBytes) const {
+-	return  extractMaskFromSuccessiveBytes(*reinterpret_cast<uint64_t const*>(keyBytes + mOffsetInBytes));
++	uint64_t bytes;
++	std::memcpy(&bytes, keyBytes + mOffsetInBytes, sizeof(bytes));
++	return extractMaskFromSuccessiveBytes(bytes);
+ }
+ 
+ inline std::array<uint8_t, 256> SingleMaskPartialKeyMapping::createIntermediateKeyWithOnlySignificantBitsSet() const {

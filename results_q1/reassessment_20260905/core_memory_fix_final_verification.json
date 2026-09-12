@@ -1,0 +1,26 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "kali-linux",
+    "--",
+    "bash",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/scripts/verify_core_memory_fixes.sh"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788567406.5609887,
+  "elapsed_seconds": 14.597187757492065,
+  "sources_sha256": {
+    "hrtli_cpp\\prefix_radix_delta.hpp": "159d7408bd352dc315c7da936ff5f6eb3609831019e23af6df194e6c8dd3380a",
+    "hrtli_cpp\\packed_rank_transport.hpp": "d0ab607ec1bb0c8b68ce155cf8669501d30d142ae76710c679c9481368f6e07f",
+    "hrtli_cpp\\test_prefix_radix_allocation.cpp": "3484f7d312ea0227de23c827edcd158c46e0e517330fab0921a002974c4e73ad",
+    "hrtli_cpp\\test_mapped_allocation.cpp": "93ea687f63d63ae35ab39680609dad70b7233b31b1281c2c3c6a112d32dc973e",
+    "hrtli_cpp\\test_prefix_radix_delta.cpp": "b2750b09511fd4d06823eb73b44727ab0891906ee47ab85695f3e6e61ce0577f",
+    "hrtli_cpp\\test_packed_certification.cpp": "099eac637b3a79347f3589822d7ea47ca12a5b4af6f186d46ecbb24974bf1ab6",
+    "scripts\\verify_core_memory_fixes.sh": "de3372cd60f606abba263ee6fdedbbc1bfc708eaf51314700c406c9c63d7f149"
+  },
+  "exit_code": 0,
+  "stdout": "Temporary check directory: /tmp/hrtli_core_memory_yLPmGr\nPASS: seven mutation scenarios, allocation-failure sweeps and recovery writes\nPASS: nonempty and empty mapped-store allocation failures release resources\nPASS: existing 5000-operation radix oracle\nepsilon=0 realized=0 segments=7967\nepsilon=1 realized=1 segments=3163\nepsilon=2 realized=2 segments=1897\nepsilon=4 realized=4 segments=1091\nepsilon=16 realized=16 segments=339\nepsilon=32 realized=32 segments=125\nepsilon=64 realized=64 segments=62\nepsilon=128 realized=128 segments=31\nPASS certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild\nPASS: pre-fix ledger rejected by the same allocation-failure regression\nPASS: pre-fix mapped constructor rejected by the same allocation-failure regression\n",
+  "stderr": "failed allocation changed ledger size or subtree masses\nfailed constructor leaked a descriptor or mapping\n",
+  "result": null
+}

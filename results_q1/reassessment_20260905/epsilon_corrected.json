@@ -1,0 +1,62 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/hrtli_epsilon_corrected",
+    "tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_initial.txt",
+    "199900000"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788563438.1061368,
+  "elapsed_seconds": 107.82594108581543,
+  "sources_sha256": {
+    "hrtli_cpp/packed_rank_transport.hpp": "9dc271e2070edca3f35377b281d726f0e2aa0fc6b5ec74dfc50cbbaf4c764726",
+    "hrtli_cpp/benchmark_commoncrawl_200m_epsilon.cpp": "7696cf30fefcbfc9e2eae81e32332d81b37948f48842f8749c317f35f7a1c1e3",
+    "/tmp/hrtli_epsilon_corrected": "41c5378e8ca2efb7b7b38542e4f18ebe9bb504052185cd6d2ab857604f0089ec"
+  },
+  "exit_code": 0,
+  "stdout": "{\"dataset_keys\":199900000,\"rows\":[{\"epsilon\":16,\"segments\":11641793,\"repaired_segments\":0,\"certified_max_error\":16,\"bound_holds\":true,\"build_ms\":9846.258994,\"certify_ms\":4757.320234},{\"epsilon\":32,\"segments\":5967550,\"repaired_segments\":0,\"certified_max_error\":32,\"bound_holds\":true,\"build_ms\":9307.690666,\"certify_ms\":4722.203874},{\"epsilon\":64,\"segments\":3008305,\"repaired_segments\":0,\"certified_max_error\":64,\"bound_holds\":true,\"build_ms\":8585.746230,\"certify_ms\":4242.123379},{\"epsilon\":128,\"segments\":1500788,\"repaired_segments\":0,\"certified_max_error\":128,\"bound_holds\":true,\"build_ms\":8357.876597,\"certify_ms\":4201.011792}]}\n",
+  "stderr": "",
+  "result": {
+    "dataset_keys": 199900000,
+    "rows": [
+      {
+        "epsilon": 16,
+        "segments": 11641793,
+        "repaired_segments": 0,
+        "certified_max_error": 16,
+        "bound_holds": true,
+        "build_ms": 9846.258994,
+        "certify_ms": 4757.320234
+      },
+      {
+        "epsilon": 32,
+        "segments": 5967550,
+        "repaired_segments": 0,
+        "certified_max_error": 32,
+        "bound_holds": true,
+        "build_ms": 9307.690666,
+        "certify_ms": 4722.203874
+      },
+      {
+        "epsilon": 64,
+        "segments": 3008305,
+        "repaired_segments": 0,
+        "certified_max_error": 64,
+        "bound_holds": true,
+        "build_ms": 8585.74623,
+        "certify_ms": 4242.123379
+      },
+      {
+        "epsilon": 128,
+        "segments": 1500788,
+        "repaired_segments": 0,
+        "certified_max_error": 128,
+        "bound_holds": true,
+        "build_ms": 8357.876597,
+        "certify_ms": 4201.011792
+      }
+    ]
+  }
+}

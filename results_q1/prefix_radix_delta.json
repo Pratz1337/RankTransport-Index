@@ -1,0 +1,58 @@
+{
+  "trials": 7,
+  "query_count_per_trial": 500000,
+  "scenarios": [
+    {
+      "name": "dns",
+      "mutations": 4000,
+      "flat_update_ns": 414.561,
+      "radix_update_ns": 218.058,
+      "flat_prefix_ns": 294.515,
+      "radix_prefix_ns": 222.902,
+      "flat_memory_bytes": 887369,
+      "radix_memory_bytes": 474547,
+      "prefix_speedup": 1.32128,
+      "update_speedup": 1.90115,
+      "memory_ratio": 0.53478
+    },
+    {
+      "name": "json",
+      "mutations": 3836,
+      "flat_update_ns": 692.425,
+      "radix_update_ns": 287.346,
+      "flat_prefix_ns": 421.306,
+      "radix_prefix_ns": 448.567,
+      "flat_memory_bytes": 895208,
+      "radix_memory_bytes": 442241,
+      "prefix_speedup": 0.939226,
+      "update_speedup": 2.40972,
+      "memory_ratio": 0.494009
+    },
+    {
+      "name": "shared_hierarchy_100k",
+      "mutations": 100000,
+      "flat_update_ns": 688.364,
+      "radix_update_ns": 947.735,
+      "flat_prefix_ns": 1282.12,
+      "radix_prefix_ns": 989.899,
+      "flat_memory_bytes": 24219320,
+      "radix_memory_bytes": 13089038,
+      "prefix_speedup": 1.29521,
+      "update_speedup": 0.726326,
+      "memory_ratio": 0.540438
+    },
+    {
+      "name": "shallow_100k",
+      "mutations": 100000,
+      "flat_update_ns": 881.054,
+      "radix_update_ns": 721.136,
+      "flat_prefix_ns": 746.235,
+      "radix_prefix_ns": 643.309,
+      "flat_memory_bytes": 15951066,
+      "radix_memory_bytes": 12124649,
+      "prefix_speedup": 1.16,
+      "update_speedup": 1.22176,
+      "memory_ratio": 0.760115
+    }
+  ]
+}

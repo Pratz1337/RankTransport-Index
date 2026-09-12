@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:\\Program Files\\Python311\\python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_consolidation_failure.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788567698.8107438,
+  "elapsed_seconds": 0.21163606643676758,
+  "sources_sha256": {
+    "hli\\rank_transport.py": "1561e5c69f8f1e1200f220051d02c7e8b879c675ec73f46ca6bf0f54eef89877",
+    "hli\\hpsfc.py": "8667ffdd541ed9204202a39616adb7fe0a1f65d530e4b7e980289cc94b99b711",
+    "tests\\test_consolidation_failure.py": "2fdbd0fed28fee9f1148502434acc793b37d3fbc57fda2d65773859e36ca9982"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_hpsfc_failed_rebuild_keeps_hash_and_rank_generation_aligned (test_consolidation_failure.ConsolidationFailureTests.test_hpsfc_failed_rebuild_keeps_hash_and_rank_generation_aligned) ... ok\ntest_old_completion_callback_failure_cannot_reset_new_rebuild (test_consolidation_failure.ConsolidationFailureTests.test_old_completion_callback_failure_cannot_reset_new_rebuild) ... ok\ntest_publication_failure_does_not_replace_core_generation (test_consolidation_failure.ConsolidationFailureTests.test_publication_failure_does_not_replace_core_generation) ... ok\ntest_rebuild_failure_preserves_concurrent_writes_and_allows_retry (test_consolidation_failure.ConsolidationFailureTests.test_rebuild_failure_preserves_concurrent_writes_and_allows_retry) ... ok\ntest_thread_start_failure_restores_idle_state (test_consolidation_failure.ConsolidationFailureTests.test_thread_start_failure_restores_idle_state) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.004s\n\nOK\n",
+  "result": null
+}

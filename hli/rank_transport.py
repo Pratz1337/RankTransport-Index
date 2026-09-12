@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from bisect import bisect_left
+from concurrent.futures import Future
 from dataclasses import dataclass
 import threading
 from typing import Mapping, Sequence
@@ -47,15 +48,21 @@ class RankTransportIndex:
         self.lock = threading.RLock()
         self.rebuilding = False
         self.rebuild_thread: threading.Thread | None = None
+        self._rebuild_result: Future[None] | None = None
         self.pending_delta = SignedDeltaTreap(seed=self._delta_seed)
         self._rebuild_base_set: set[str] | None = None
         
         self.consolidation_count = 0
 
     def wait_rebuild(self) -> None:
-        thread = self.rebuild_thread
+        """Wait for the observed rebuild, propagating its worker/callback failure."""
+        with self.lock:
+            thread = self.rebuild_thread
+            result = self._rebuild_result
         if thread is not None and thread is not threading.current_thread():
             thread.join()
+            if result is not None:
+                result.result()
 
     def __len__(self) -> int:
         with self.lock:
@@ -91,6 +98,14 @@ class RankTransportIndex:
 
         Writes that arrive while the rebuild is running are recorded against the
         rebuilding snapshot and atomically published as the next delta layer.
+        Each write prepares path-copied active and pending ledgers before either
+        is installed, so preparation failure changes neither visible state.
+        Rebuild/publication failure retains the old generation and all writes;
+        wait_rebuild() reports the error. Hooks must not mutate the supplied
+        snapshot or call index mutations. The publish hook runs under the index
+        lock before the core generation is replaced and must itself be exception
+        atomic: it must leave external state unchanged if it raises. A failing
+        on_complete callback is reported after an already committed generation.
         """
         with self.lock:
             if self.rebuilding:
@@ -105,33 +120,58 @@ class RankTransportIndex:
             snapshot_base = set(snapshot)
             next_epsilon = self.base_epsilon if base_epsilon is None else int(base_epsilon)
 
-            self.rebuilding = True
-            self._rebuild_base_set = snapshot_base
-            self.pending_delta = SignedDeltaTreap(seed=self._delta_seed)
+            pending_delta = SignedDeltaTreap(seed=self._delta_seed)
+            empty_delta = SignedDeltaTreap(seed=self._delta_seed)
+            result: Future[None] = Future()
+            next_count = self.consolidation_count + 1
 
             def rebuild_worker():
                 try:
                     artifact = rebuild_hook(snapshot) if rebuild_hook is not None else None
-                except Exception:
                     with self.lock:
+                        # Publish the prepared side index first. Its exception-
+                        # atomic hook may fail without replacing the live base.
+                        if publish_hook is not None:
+                            publish_hook(snapshot, artifact)
+                        self.base_keys = snapshot
+                        self.base_epsilon = next_epsilon
+                        self.delta = self.pending_delta
+                        self.pending_delta = empty_delta
                         self._rebuild_base_set = None
                         self.rebuilding = False
-                    raise
-                with self.lock:
-                    self.base_keys = snapshot
-                    self.base_epsilon = next_epsilon
-                    self.delta = self.pending_delta
-                    self.pending_delta = SignedDeltaTreap(seed=self._delta_seed)
-                    self._rebuild_base_set = None
-                    if publish_hook is not None:
-                        publish_hook(snapshot, artifact)
-                    self.rebuilding = False
-                    self.consolidation_count += 1
-                if on_complete:
-                    on_complete()
+                        self.consolidation_count = next_count
+                except BaseException as error:
+                    with self.lock:
+                        self.pending_delta = empty_delta
+                        self._rebuild_base_set = None
+                        self.rebuilding = False
+                    result.set_exception(error)
+                    return
+                # This callback is outside the commit. A newer rebuild may be
+                # running by now, so its state must not be reset on callback error.
+                try:
+                    if on_complete:
+                        on_complete()
+                except BaseException as error:
+                    result.set_exception(error)
+                else:
+                    result.set_result(None)
 
-            self.rebuild_thread = threading.Thread(target=rebuild_worker)
-            self.rebuild_thread.start()
+            thread = threading.Thread(target=rebuild_worker)
+            self.rebuilding = True
+            self._rebuild_base_set = snapshot_base
+            self.pending_delta = pending_delta
+            self.rebuild_thread = thread
+            self._rebuild_result = result
+            try:
+                thread.start()
+            except BaseException:
+                self.pending_delta = empty_delta
+                self._rebuild_base_set = None
+                self.rebuilding = False
+                self.rebuild_thread = None
+                self._rebuild_result = None
+                raise
             return mutations
 
     def maybe_consolidate(
@@ -166,27 +206,33 @@ class RankTransportIndex:
     def insert(self, key: str) -> bool:
         """Insert key, or restore a deleted base key. Returns True if state changed."""
         with self.lock:
-            res = False
+            delta = self.delta.fork() if self.rebuilding else self.delta
             if self.contains_base(key):
-                res = self.delta.discard_deleted(key)
-                if res and self.rebuilding:
-                    self._record_pending_insert_unlocked(key)
+                res = delta.discard_deleted(key)
             else:
-                res = self.delta.mark_inserted(key)
-                if res and self.rebuilding:
-                    self._record_pending_insert_unlocked(key)
+                res = delta.mark_inserted(key)
+            if res and self.rebuilding:
+                pending = self.pending_delta.fork()
+                self._record_pending_insert_unlocked(key, pending)
+                # Both paths are prepared before publishing either root.
+                self.delta = delta
+                self.pending_delta = pending
             return res
 
     def delete(self, key: str) -> bool:
         """Delete a live key. Returns True if state changed."""
         with self.lock:
+            delta = self.delta.fork() if self.rebuilding else self.delta
             res = False
-            if self.delta.discard_inserted(key):
+            if delta.discard_inserted(key):
                 res = True
-            elif self.contains_base(key) and not self.delta.contains_deleted(key):
-                res = self.delta.mark_deleted(key)
+            elif self.contains_base(key) and not delta.contains_deleted(key):
+                res = delta.mark_deleted(key)
             if res and self.rebuilding:
-                self._record_pending_delete_unlocked(key)
+                pending = self.pending_delta.fork()
+                self._record_pending_delete_unlocked(key, pending)
+                self.delta = delta
+                self.pending_delta = pending
             return res
 
     def delta_before(self, key: str) -> int:
@@ -293,14 +339,14 @@ class RankTransportIndex:
         merged.extend(self.delta.to_inserted_list())
         return sorted(merged)
 
-    def _record_pending_insert_unlocked(self, key: str) -> None:
+    def _record_pending_insert_unlocked(self, key: str, pending: SignedDeltaTreap) -> None:
         if self._rebuild_base_set is not None and key in self._rebuild_base_set:
-            self.pending_delta.discard_deleted(key)
+            pending.discard_deleted(key)
         else:
-            self.pending_delta.mark_inserted(key)
+            pending.mark_inserted(key)
 
-    def _record_pending_delete_unlocked(self, key: str) -> None:
+    def _record_pending_delete_unlocked(self, key: str, pending: SignedDeltaTreap) -> None:
         if self._rebuild_base_set is not None and key in self._rebuild_base_set:
-            self.pending_delta.mark_deleted(key)
+            pending.mark_deleted(key)
         else:
-            self.pending_delta.discard_inserted(key)
+            pending.discard_inserted(key)

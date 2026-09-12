@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 import random
 from typing import Iterator, Optional
 
@@ -64,11 +64,22 @@ def _rotate_left(root: _Node) -> _Node:
 
 
 class SignedDeltaTreap:
-    """Signed mutation tree: +1 for inserts, -1 for base-key deletes."""
+    """Signed mutation tree with path-copying updates and atomic root replacement."""
 
     def __init__(self, seed: int = 42):
         self._root: Optional[_Node] = None
         self._rng = random.Random(seed)
+
+    def fork(self) -> SignedDeltaTreap:
+        """Share immutable nodes for a staged update; priorities share an RNG.
+
+        Callers must synchronize branches. Failed preparation can consume a
+        priority, but cannot change either branch's keys, counts or prefix sums.
+        """
+        branch = object.__new__(SignedDeltaTreap)
+        branch._root = self._root
+        branch._rng = self._rng
+        return branch
 
     def __len__(self) -> int:
         return _size(self._root)
@@ -169,6 +180,7 @@ class SignedDeltaTreap:
     def _insert_or_update(self, root: Optional[_Node], key: str, weight: int) -> tuple[Optional[_Node], bool]:
         if root is None:
             return _refresh(_Node(key, weight, self._rng.random())), True
+        root = replace(root)
         if key == root.key:
             if root.weight == weight:
                 return root, False
@@ -189,6 +201,7 @@ class SignedDeltaTreap:
     def _erase_weight(self, root: Optional[_Node], key: str, weight: int) -> tuple[Optional[_Node], bool]:
         if root is None:
             return None, False
+        root = replace(root)
         if key < root.key:
             left, erased = self._erase_weight(root.left, key, weight)
             root.left = left
@@ -209,8 +222,10 @@ class SignedDeltaTreap:
         if right is None:
             return left
         if left.priority < right.priority:
+            left = replace(left)
             left.right = self._merge(left.right, right)
             return _refresh(left)
+        right = replace(right)
         right.left = self._merge(left, right.left)
         return _refresh(right)
 
@@ -244,4 +259,3 @@ class SignedDeltaTreap:
                 break
             yield node.key, node.weight
             node = node.right
-

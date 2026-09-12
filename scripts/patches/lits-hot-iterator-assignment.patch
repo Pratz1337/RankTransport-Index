@@ -1,0 +1,21 @@
+diff --git a/lits/hot_src/HOTSingleThreadedIterator.hpp b/lits/hot_src/HOTSingleThreadedIterator.hpp
+--- a/lits/hot_src/HOTSingleThreadedIterator.hpp
++++ b/lits/hot_src/HOTSingleThreadedIterator.hpp
+@@ -70,6 +70,17 @@
+         mCurrentDepth = other.mCurrentDepth;
+     }
+ 
++    HOTSingleThreadedIterator& operator=(HOTSingleThreadedIterator const& other) {
++        if (this != &other) {
++            std::memcpy(mRawNodeStack, other.mRawNodeStack,
++                        sizeof(HOTSingleThreadedIteratorStackEntry) *
++                            (other.mCurrentDepth + 1));
++            mNodeStack = reinterpret_cast<HOTSingleThreadedIteratorStackEntry*>(mRawNodeStack);
++            mCurrentDepth = other.mCurrentDepth;
++        }
++        return *this;
++    }
++
+     HOTSingleThreadedIterator()
+         : mNodeStack(reinterpret_cast<HOTSingleThreadedIteratorStackEntry*>(
+               mRawNodeStack)) {

@@ -1,0 +1,40 @@
+{
+  "command": [
+    "/tmp/hrtli_current_competitors_Pmjw3A/adapters_portable_art_hot",
+    "/tmp/hrtli_current_competitors_Pmjw3A",
+    "hot"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788717368.8070605,
+  "elapsed_seconds": 1.437333106994629,
+  "sources_sha256": {
+    "results_q1/current_competitors_20260906/source_measured/benchmark_lits_comparison.cpp": "a8bc073935c02dd9acd127e30db520ca2aa812a03d392a8b23b852097ef181c0",
+    "results_q1/current_competitors_20260906/source_measured/test_competitor_set_adapters.cpp": "a01eb01ef62247e59e9b6804fa94e8bc0b008617bec8cdb5bddb454057ee9b7b",
+    "results_q1/current_competitors_20260906/source_measured/packed_rank_transport.hpp": "bc3fb8183b32ee73c865c40258be764fae05e2056334a9a81c90fed3add0377d",
+    "results_q1/current_competitors_20260906/source_measured/prefix_radix_delta.hpp": "eec8b4aab89db3f39bdc98912aa4b62d87bde05f2c3c678929eeeea8d877a891",
+    "results_q1/current_competitors_20260906/source_measured/approx_local_delta.hpp": "629815cf11dd90f655916d2b0522fa6ca2c9fb839ef118e46f8609c3bf277e25",
+    "results_q1/current_competitors_20260906/source_measured/build_current_competitors.sh": "9eaa56f3918ba1482ccf79739bfa859e25eca8be38a0823c306c1bc9427ecea8",
+    "results_q1/current_competitors_20260906/upstream_revisions.txt": "e6ed9dc50b5bfa5aaf0cecab52a39cb35401a865ec8957ad3b269aa84102b4d3",
+    "results_q1/current_competitors_20260906/patches/hot-portable-mask.patch": "f5da20c4106c3c1d319a465114033718fbd2a3703eeb2cf1e26af4ea264fe4b6",
+    "results_q1/current_competitors_20260906/patches/lits-hot-empty-mask.patch": "ba5306201c2c51d2183713bc75c44e4b554d84f5561cb1c327b7874e6bf72473",
+    "results_q1/current_competitors_20260906/patches/lits-hot-iterator-assignment.patch": "d8282af93a659903388bbce98a5eeb2ac9b3dffd92fdbf901f6107e802e77d3c",
+    "results_q1/current_competitors_20260906/patches/lits-hot-portability.patch": "60d90711ede861d47f50a4316a4fbb2129c9b7bff8b82542ebc4c271ef7f99a0",
+    "results_q1/current_competitors_20260906/patches/lits-iterator-root.patch": "62bf8b1c80505d71b9a845474315a74ce255358c1434f012d16283e03f61d984",
+    "results_q1/current_competitors_20260906/patches/lits-pmss-bounds.patch": "9d13f2acbc3208c9c08a6d8895033df4aa1dfe51e360709aaab6261deb69a8f2",
+    "results_q1/current_competitors_20260906/patches/lits-zero-prefix-context.patch": "e3ffdd7335bcd2cb8cc4f83702605fcb6b39333d152bcb4b2026fb8175013bd2",
+    "/tmp/hrtli_current_competitors_Pmjw3A/adapters_portable_art_hot": "295dd549e24323e30e3cb9228301115e67a1be98436be63535fc8d16f8fc4944"
+  },
+  "exit_code": 0,
+  "stdout": "HOT PASS: 6005 prefix/ASCII/254-byte keys, 30000 mixed operations, full-state checks\n",
+  "stderr": "",
+  "resource_usage": {
+    "max_rss_kib": 50944,
+    "user_seconds": 1.407219,
+    "system_seconds": 0.023864999999999997,
+    "major_faults": 0,
+    "minor_faults": 12507,
+    "voluntary_context_switches": 5,
+    "involuntary_context_switches": 8
+  },
+  "result": null
+}

@@ -1,0 +1,49 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/benchmark_signed_consolidation",
+    "tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_initial.txt",
+    "tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_insert.txt",
+    "199900000",
+    "2000",
+    "64",
+    "/tmp/hrtli_signed_generation_200m_20260905.txt"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788564855.424097,
+  "elapsed_seconds": 185.96156311035156,
+  "sources_sha256": {
+    "hrtli_cpp/packed_rank_transport.hpp": "5ab95cf262f3e08262253091afaef43fc649c49fe52fb0296d209eccc894d396",
+    "hrtli_cpp/prefix_radix_delta.hpp": "f21894d9b550bdd17a4fa34e04a4ce311bc6af9b460c6113951a195a31d6707d",
+    "hrtli_cpp/benchmark_signed_consolidation.cpp": "1719b8f3ac5e8eb42c15ae19d242ec16e090a83505ea7c57ebc3edf2f833a569",
+    "/tmp/benchmark_signed_consolidation": "486bfc4df5856b36d24789a5c13be935be9a9d18df741058ae6c0d8f7681e378"
+  },
+  "exit_code": 0,
+  "stdout": "{\"mode\":\"signed_stop_the_world_consolidation\",\"fingerprints\":false,\"base_keys\":199900000,\"insertions\":100000,\"base_deletions\":100000,\"materialized_keys_checked\":199900000,\"epsilon\":64,\"initial_build_ms\":49338.937603,\"insert_ms\":798.674153,\"base_delete_ms\":231.809861,\"merge_write_flush_ms\":102686.478688,\"rebuild_ms\":27473.500989,\"certify_ms\":3855.934199,\"transition_total_ms\":134858.638625,\"transported_checks\":100000,\"transported_max_error\":64,\"rebuilt_max_error\":64,\"rebuilt_rank_checks\":100000,\"peak_rss_kib\":6103768,\"post_rebuild_mutations\":0,\"all_oracles_passed\":true}\n",
+  "stderr": "built certified hash-free base; applying signed mutations\nmaterializing live ledger; checking every emitted key against source merge\nmaterialized exact live set; rebuilding hash-free generation\n",
+  "result": {
+    "mode": "signed_stop_the_world_consolidation",
+    "fingerprints": false,
+    "base_keys": 199900000,
+    "insertions": 100000,
+    "base_deletions": 100000,
+    "materialized_keys_checked": 199900000,
+    "epsilon": 64,
+    "initial_build_ms": 49338.937603,
+    "insert_ms": 798.674153,
+    "base_delete_ms": 231.809861,
+    "merge_write_flush_ms": 102686.478688,
+    "rebuild_ms": 27473.500989,
+    "certify_ms": 3855.934199,
+    "transition_total_ms": 134858.638625,
+    "transported_checks": 100000,
+    "transported_max_error": 64,
+    "rebuilt_max_error": 64,
+    "rebuilt_rank_checks": 100000,
+    "peak_rss_kib": 6103768,
+    "post_rebuild_mutations": 0,
+    "all_oracles_passed": true
+  }
+}

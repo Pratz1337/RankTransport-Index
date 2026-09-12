@@ -1,0 +1,19 @@
+Build directory: /tmp/hrtli_radix_fenwick_NkoWja
+eec8b4aab89db3f39bdc98912aa4b62d87bde05f2c3c678929eeeea8d877a891  hrtli_cpp/prefix_radix_delta.hpp
+bc3fb8183b32ee73c865c40258be764fae05e2056334a9a81c90fed3add0377d  hrtli_cpp/packed_rank_transport.hpp
+PASS test_prefix_radix_delta
+PASS: seven mutation scenarios, allocation-failure sweeps and recovery writes
+PASS test_prefix_radix_allocation
+PASS: 256-way fanout, all byte values, 4000 signed mutations, independent prefix oracle, complete cancellation
+PASS test_prefix_radix_fanout
+epsilon=0 realized=0 segments=7967
+epsilon=1 realized=1 segments=3163
+epsilon=2 realized=2 segments=1897
+epsilon=4 realized=4 segments=1091
+epsilon=16 realized=16 segments=339
+epsilon=32 realized=32 segments=125
+epsilon=64 realized=64 segments=62
+epsilon=128 realized=128 segments=31
+PASS segment_fence_checks=21824 fallback_checks=0
+PASS default learned queries, opt-in fingerprints, explicit binary controls, certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild
+PASS test_packed_certification

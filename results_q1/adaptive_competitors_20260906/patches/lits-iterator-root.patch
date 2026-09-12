@@ -1,0 +1,24 @@
+diff --git a/lits/lits_iter.hpp b/lits/lits_iter.hpp
+--- a/lits/lits_iter.hpp
++++ b/lits/lits_iter.hpp
+@@ -242,6 +242,20 @@
+      * A valid item must can be found.
+      */
+     void FIRST(const Item &father) {
++        if (father.is_empty()) {
++            is_end = true;
++            return;
++        }
++        if (father.get_itype() == ITYP_Sing) {
++            data = father.get_entry();
++            return;
++        }
++        if (father.get_itype() == ITYP_Trie) {
++            coded_subtrie = father.get_coded_index();
++            in_sub_trie = true;
++            subtrie_iter = HOTBegin((HOTIndex &)coded_subtrie);
++            return;
++        }
+         /*
+          * If the father is a compact node, we simply record the information and
+          * return.

@@ -1,0 +1,26 @@
+Temporary check directory: /tmp/hrtli_default_queries_5U7KhY
+epsilon=0 realized=0 segments=7967
+epsilon=1 realized=1 segments=3163
+epsilon=2 realized=2 segments=1897
+epsilon=4 realized=4 segments=1091
+epsilon=16 realized=16 segments=339
+epsilon=32 realized=32 segments=125
+epsilon=64 realized=64 segments=62
+epsilon=128 realized=128 segments=31
+PASS segment_fence_checks=21824 fallback_checks=0
+PASS default learned queries, opt-in fingerprints, explicit binary controls, certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild
+PASS: dependent drivers compile with explicit legacy/control query paths
+Natural 200000-key API regression only; these timings are not manuscript evidence.
+{"base_keys":199900,"selected_keys":200000,"epsilon":64,"model_segments":2306,"repaired_segments":0,"construction_ms":21.102134,"insert_ms":0.06932,"base_delete_ms":0.061138,"queries":20000,"range_queries":20000,"seed":20260905,"query_paths":"all","fingerprint_capacity":524288,"stored_query_fallbacks":0,"inserted_query_fallbacks":0,"trial_design":"paired same-state rotated query paths; not independent builds","rows":[{"trial":1,"mode":"learned","uniform_membership_ns":403.6859,"balanced_membership_ns":245.80825,"deleted_membership_ns":62.2942,"uniform_rank_ns":464.07405,"range_ns":824.6931,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":1,"mode":"binary","uniform_membership_ns":387.6336,"balanced_membership_ns":260.8363,"deleted_membership_ns":53.21985,"uniform_rank_ns":452.48985,"range_ns":831.4747,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":1,"mode":"fingerprint","uniform_membership_ns":322.4305,"balanced_membership_ns":161.5823,"deleted_membership_ns":55.58935,"uniform_rank_ns":522.38505,"range_ns":789.2373,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":2,"mode":"binary","uniform_membership_ns":472.20665,"balanced_membership_ns":244.81605,"deleted_membership_ns":64.6653,"uniform_rank_ns":465.2993,"range_ns":725.559,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":2,"mode":"fingerprint","uniform_membership_ns":161.83135,"balanced_membership_ns":114.1018,"deleted_membership_ns":55.00025,"uniform_rank_ns":462.42755,"range_ns":722.60645,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":2,"mode":"learned","uniform_membership_ns":346.3443,"balanced_membership_ns":212.6392,"deleted_membership_ns":60.48585,"uniform_rank_ns":490.0234,"range_ns":737.5981,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":3,"mode":"fingerprint","uniform_membership_ns":190.675,"balanced_membership_ns":119.86765,"deleted_membership_ns":53.1118,"uniform_rank_ns":447.53805,"range_ns":723.9554,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":3,"mode":"learned","uniform_membership_ns":354.5217,"balanced_membership_ns":263.6924,"deleted_membership_ns":60.7976,"uniform_rank_ns":537.5886,"range_ns":862.8172,"rank_checksum":2012512278,"range_checksum":90568817},{"trial":3,"mode":"binary","uniform_membership_ns":376.393,"balanced_membership_ns":316.46355,"deleted_membership_ns":54.29655,"uniform_rank_ns":644.185,"range_ns":757.55475,"rank_checksum":2012512278,"range_checksum":90568817}],"base_reinsert_ms":0.100393,"inserted_delete_ms":0.024899,"final_mutation_count":0,"all_oracles_passed":true}
+Temporary check directory: /tmp/hrtli_segment_fence_M7hdot
+epsilon=0 realized=0 segments=7967
+epsilon=1 realized=1 segments=3163
+epsilon=2 realized=2 segments=1897
+epsilon=4 realized=4 segments=1091
+epsilon=16 realized=16 segments=339
+epsilon=32 realized=32 segments=125
+epsilon=64 realized=64 segments=62
+epsilon=128 realized=128 segments=31
+PASS segment_fence_checks=21824 fallback_checks=21736
+PASS default learned queries, opt-in fingerprints, explicit binary controls, certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild
+PASS injected out-of-window predictions recover through exact segment fences

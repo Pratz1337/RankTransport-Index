@@ -438,7 +438,7 @@ def generate_scalable_tree(num_nodes: int = 100000,
             
             # Periodically shuffle queue to keep tree somewhat balanced but random
             if len(paths) % 1000 == 0:
-                random.shuffle(queue)
+                rng.shuffle(queue)
     
     return sorted(paths)
 

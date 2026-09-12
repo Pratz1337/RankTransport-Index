@@ -1,0 +1,25 @@
+{
+  "command": [
+    "C:/Program Files/Python311/python.exe",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "tests",
+    "-p",
+    "test_signed_delta_transactions.py",
+    "-v"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788609459.361557,
+  "elapsed_seconds": 0.6195023059844971,
+  "sources_sha256": {
+    "hli\\signed_delta.py": "c7b31c5d4a9f34467bb1e190fcde6fda86903605a2d866d917410dfd1754f5bd",
+    "hli\\rank_transport.py": "f43a6b4b0755de05ad09ee71226915686d9bfa9e3e323b744d6edd2bc2dbc6d1",
+    "tests\\test_signed_delta_transactions.py": "636fe2a226a494d9ee3714b60da9050ffe917c6f2f26bfd4cdab7f8f6d5eec7f"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_every_preparation_failure_preserves_published_tree (test_signed_delta_transactions.SignedDeltaTransactionTests.test_every_preparation_failure_preserves_published_tree) ... ok\ntest_forks_remain_independent_through_rotations_and_erasures (test_signed_delta_transactions.SignedDeltaTransactionTests.test_forks_remain_independent_through_rotations_and_erasures) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.427s\n\nOK\n",
+  "result": null
+}

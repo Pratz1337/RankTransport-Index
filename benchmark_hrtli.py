@@ -2,7 +2,6 @@
 
 from __future__ import annotations
 
-from bisect import bisect_left
 import json
 import os
 import random
@@ -75,6 +74,8 @@ def build_certified_base_model(base_keys: list[str], epsilon: int = 64) -> tuple
         "segments": len(model.segments),
         "model_bytes_estimate": model.memory_bytes(),
     }
+    if stats["epsilon"] > epsilon:
+        raise ValueError(f"Requested epsilon {epsilon} failed: realized {stats['epsilon']}")
     return predicted, stats
 
 
@@ -87,21 +88,33 @@ def make_insert_batch(parent_keys: list[str], round_id: int, inserts_per_parent:
     return keys
 
 
-def no_transport_error(index: RankTransportIndex, predicted_base: dict[str, int]) -> int:
-    max_error = 0
-    for key, pred0 in predicted_base.items():
-        if index.contains(key):
-            max_error = max(max_error, abs(pred0 - index.exact_rank(key)))
-    return max_error
-
-
-def verify_inserted_ranks(index: RankTransportIndex, inserted_keys: list[str], sample_size: int = 64) -> bool:
-    materialized = index.snapshot_keys()
-    for key in inserted_keys[:sample_size]:
-        exact = index.exact_rank(key)
-        if exact != bisect_left(materialized, key):
-            return False
-    return True
+def audit_live_state(index: RankTransportIndex, predicted_base: dict[str, int],
+                     expected_live: set[str], epsilon: int) -> dict:
+    """Check every live rank against input-derived state, never an index snapshot."""
+    expected_ranks = {key: rank for rank, key in enumerate(sorted(expected_live))}
+    if len(index) != len(expected_live):
+        raise ValueError("Live cardinality disagrees with independent oracle")
+    stale_error = transported_error = checked_base = 0
+    for key, rank in expected_ranks.items():
+        if not index.contains(key) or index.lookup(key, predicted_base.get(key, 0)) != rank:
+            raise ValueError(f"Lookup disagrees with independent oracle: {key!r}")
+        if index.exact_rank(key) != rank:
+            raise ValueError(f"Exact rank disagrees with independent oracle: {key!r}")
+        if key in predicted_base:
+            checked_base += 1
+            stale_error = max(stale_error, abs(predicted_base[key] - rank))
+            transported_error = max(transported_error,
+                                    abs(index.transport_base_prediction(key, predicted_base[key]) - rank))
+    for key in predicted_base.keys() - expected_live:
+        if index.contains(key) or index.lookup(key, predicted_base[key]) != -1:
+            raise ValueError(f"Deleted base key remains visible: {key!r}")
+    if transported_error > epsilon:
+        raise ValueError(f"Transported error {transported_error} exceeds requested {epsilon}")
+    return {"stale_no_transport_max_error": stale_error,
+            "transported_max_error": transported_error, "bound_holds": True,
+            "inserted_rank_exact": True, "checked_live_ranks": len(expected_live),
+            "checked_surviving_base": checked_base,
+            "checked_inserted_ranks": len(expected_live) - checked_base}
 
 
 def run_rank_transport_experiment(dataset_name: str, paths: list[str], initial_keys: int = 2600) -> dict:
@@ -113,7 +126,8 @@ def run_rank_transport_experiment(dataset_name: str, paths: list[str], initial_k
     embed_tree_poincare(nodes, alpha=0.5, spacing=0.85)
     base_keys = [node.path for node in sorted_nodes]
     predicted_base, base_stats = build_certified_base_model(base_keys, epsilon=64)
-    index = RankTransportIndex(base_keys, int(base_stats["epsilon"]))
+    index = RankTransportIndex(base_keys, int(base_stats["target_epsilon"]))
+    expected_live = set(base_keys)
 
     print(
         f"Base learned model: N={len(base_keys):,}, epsilon={base_stats['epsilon']}, "
@@ -122,38 +136,30 @@ def run_rank_transport_experiment(dataset_name: str, paths: list[str], initial_k
 
     parent_positions = [len(base_keys) // 5, len(base_keys) // 2, (len(base_keys) * 4) // 5]
     parent_keys = [base_keys[pos] for pos in parent_positions]
-    all_inserted: list[str] = []
     history = []
 
     for round_id in range(1, 7):
         batch = make_insert_batch(parent_keys, round_id, inserts_per_parent=35)
+        if len(set(batch)) != len(batch) or expected_live.intersection(batch):
+            raise ValueError("Mutation fixture does not contain distinct new keys")
         start = time.perf_counter()
         for key in batch:
-            index.insert(key)
+            if not index.insert(key):
+                raise ValueError(f"Expected insertion failed: {key!r}")
         insert_time_us = (time.perf_counter() - start) * 1e6
-        all_inserted.extend(batch)
+        expected_live.update(batch)
 
         # Delete a few base keys after round 3 to verify signed rank transport.
         deleted = 0
         if round_id >= 3:
             for key in base_keys[round_id : round_id + 10]:
-                deleted += int(index.delete(key))
+                expected_change = key in expected_live
+                if index.delete(key) != expected_change:
+                    raise ValueError(f"Deletion outcome disagrees with oracle: {key!r}")
+                deleted += int(expected_change)
+                expected_live.discard(key)
 
-        # Verify that our memory-efficient lookup method is 100% correct
-        for key in base_keys:
-            if index.contains(key):
-                pred0 = predicted_base[key]
-                logical_rank = index.lookup(key, pred0)
-                exact = index.exact_rank(key)
-                assert logical_rank == exact, f"Lookup mismatch for base key {key}: lookup={logical_rank}, exact={exact}"
-        for key in all_inserted:
-            logical_rank = index.lookup(key, 0)
-            exact = index.exact_rank(key)
-            assert logical_rank == exact, f"Lookup mismatch for inserted key {key}: lookup={logical_rank}, exact={exact}"
-
-        transported = index.verify_bound(predicted_base)
-        stale_error = no_transport_error(index, predicted_base)
-        inserted_exact = verify_inserted_ranks(index, all_inserted)
+        audit = audit_live_state(index, predicted_base, expected_live, base_stats["target_epsilon"])
         entry = {
             "round": round_id,
             "current_size": len(index),
@@ -161,24 +167,24 @@ def run_rank_transport_experiment(dataset_name: str, paths: list[str], initial_k
             "deleted_base_total": index.delta.deleted_count,
             "round_insert_time_us": insert_time_us,
             "deleted_this_round": deleted,
-            "stale_no_transport_max_error": stale_error,
-            "transported_max_error": transported["max_transported_error"],
-            "bound_holds": transported["bound_holds"],
-            "inserted_rank_exact": inserted_exact,
+            **audit,
         }
         history.append(entry)
         print(
             f"Round {round_id}: size={entry['current_size']:,}, "
-            f"stale_error={stale_error}, transported_error={entry['transported_max_error']}, "
-            f"bound={entry['bound_holds']}, inserted_exact={inserted_exact}"
+            f"stale_error={entry['stale_no_transport_max_error']}, transported_error={entry['transported_max_error']}, "
+            f"bound={entry['bound_holds']}, inserted_exact={entry['inserted_rank_exact']}"
         )
 
     baseline_insert_keys = make_insert_batch(parent_keys, 99, inserts_per_parent=120)
-    baseline_results = benchmark_update_baselines(base_keys, baseline_insert_keys, index)
+    baseline_results = benchmark_update_baselines(base_keys, baseline_insert_keys)
 
     return {
         "dataset": dataset_name,
         "dataset_stats": dataset_stats(paths[:initial_keys]),
+        "indexed_base_stats": dataset_stats(base_keys),
+        "mutation_source": "generated suffixes; correctness fixture, not natural workload evidence",
+        "oracle": "independently maintained input-derived Python set, exhaustive live ranks",
         "base_model": base_stats,
         "history": history,
         "baseline_insert_results": baseline_results,
@@ -186,8 +192,10 @@ def run_rank_transport_experiment(dataset_name: str, paths: list[str], initial_k
 
 
 def benchmark_update_baselines(
-    base_keys: list[str], insert_keys: list[str], hrt_index: RankTransportIndex
+    base_keys: list[str], insert_keys: list[str]
 ) -> dict[str, dict[str, float | int]]:
+    # Use the same initial state as each reference, not the six-round mutated state.
+    hrt_index = RankTransportIndex(base_keys, 0)
     baselines = {
         "B+-Tree": BPlusTreeIndex(),
         "ALEX-style gapped array": GappedArrayIndex(),

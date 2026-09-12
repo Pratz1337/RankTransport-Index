@@ -1,0 +1,49 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/hrtli_adaptive_ledger_5dCAqk/fenwick",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/base.txt",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/arrivals.nul",
+    "20260909",
+    "fenwick"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788718445.358919,
+  "elapsed_seconds": 2.4977078437805176,
+  "sources_sha256": {
+    "results_q1/adaptive_ledger_20260906/fenwick/benchmark_ledger_revision.cpp": "dda75b4efe468ee94713d60d966e205724032d438b172c770e3ced0c9ca14102",
+    "results_q1/adaptive_ledger_20260906/fenwick/prefix_radix_delta.hpp": "eec8b4aab89db3f39bdc98912aa4b62d87bde05f2c3c678929eeeea8d877a891",
+    "results_q1/adaptive_ledger_20260906/run_adaptive_ledger.sh": "9e41f801fdffb62e49f625cca8607ebb8f537c7b455348b8b4e7bdf7272e2900",
+    "/tmp/hrtli_adaptive_ledger_5dCAqk/fenwick": "36b9627b2bcbed9bd7af06ac8d93d59c347b512720e89c13c09b33d6dac0cc7e",
+    "results_q1/current_competitors_20260906/verified_inputs.json": "298b78ce98d7478abebc7844432690f23018f36a47a43b76161304ffc25d38c8",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/base.txt": "c19cd9a8ba212d80e8d63c811872c245b7a636afbcb03944c1d36c4fe9f843fd",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/arrivals.nul": "466ad1b90106e8acf5b4eb14b5ecff511e24c7b65ab5ff3b35ed9387e67e6080"
+  },
+  "exit_code": 0,
+  "stdout": "{\"variant\":\"fenwick\",\"seed\":20260909,\"natural_signed_keys\":200000,\"probe_pool\":400000,\"queries\":1048576,\"trace_fnv64\":\"14641524491649886373\",\"update_seconds\":0.331113446,\"prefix_seconds\":1.424948438,\"estimated_ledger_bytes\":37583835,\"every_prefix_answer_checked\":true,\"internal_invariants_checked\":true}\n",
+  "stderr": "",
+  "resource_usage": {
+    "max_rss_kib": 109504,
+    "user_seconds": 2.411944,
+    "system_seconds": 0.083967,
+    "major_faults": 0,
+    "minor_faults": 33375,
+    "voluntary_context_switches": 3,
+    "involuntary_context_switches": 5
+  },
+  "result": {
+    "variant": "fenwick",
+    "seed": 20260909,
+    "natural_signed_keys": 200000,
+    "probe_pool": 400000,
+    "queries": 1048576,
+    "trace_fnv64": "14641524491649886373",
+    "update_seconds": 0.331113446,
+    "prefix_seconds": 1.424948438,
+    "estimated_ledger_bytes": 37583835,
+    "every_prefix_answer_checked": true,
+    "internal_invariants_checked": true
+  }
+}

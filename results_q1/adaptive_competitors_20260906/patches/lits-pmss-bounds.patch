@@ -1,0 +1,16 @@
+diff --git a/lits/lits_pmss.hpp b/lits/lits_pmss.hpp
+--- a/lits/lits_pmss.hpp
++++ b/lits/lits_pmss.hpp
+@@ -1912,10 +1912,10 @@
+         pkl -= min_pkl;
+ 
+         int das_lower_bound = int(das);
+-        int das_upper_bound = int(das) + 1;
++        int das_upper_bound = std::min(int(das) + 1, das_delt - 1);
+         double das_lower_bound_ratio = das - das_lower_bound;
+         int pkl_lower_bound = int(pkl);
+-        int pkl_upper_bound = int(pkl) + 1;
++        int pkl_upper_bound = std::min(int(pkl) + 1, pkl_delt - 1);
+         double pkl_lower_bound_ratio = pkl - pkl_lower_bound;
+ 
+         RT_ASSERT(das_lower_bound_ratio >= 0 && das_lower_bound_ratio <= 1);

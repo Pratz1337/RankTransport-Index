@@ -1,0 +1,49 @@
+{
+  "command": [
+    "taskset",
+    "-c",
+    "2",
+    "/tmp/hrtli_adaptive_ledger_5dCAqk/adaptive",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/base.txt",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/arrivals.nul",
+    "20260909",
+    "adaptive"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788718448.1350846,
+  "elapsed_seconds": 2.281456708908081,
+  "sources_sha256": {
+    "results_q1/adaptive_ledger_20260906/adaptive/benchmark_ledger_revision.cpp": "dda75b4efe468ee94713d60d966e205724032d438b172c770e3ced0c9ca14102",
+    "results_q1/adaptive_ledger_20260906/adaptive/prefix_radix_delta.hpp": "f10ebc9ba87468c22ea352938668b967688864e678a9ddce99d4ca8dbf8cf32c",
+    "results_q1/adaptive_ledger_20260906/run_adaptive_ledger.sh": "9e41f801fdffb62e49f625cca8607ebb8f537c7b455348b8b4e7bdf7272e2900",
+    "/tmp/hrtli_adaptive_ledger_5dCAqk/adaptive": "2d6016237efe9ef5422c2d76ebe1e5c078f9aab1aa19c2c11e78b2f3264f64b1",
+    "results_q1/current_competitors_20260906/verified_inputs.json": "298b78ce98d7478abebc7844432690f23018f36a47a43b76161304ffc25d38c8",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/base.txt": "c19cd9a8ba212d80e8d63c811872c245b7a636afbcb03944c1d36c4fe9f843fd",
+    "/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000/arrivals.nul": "466ad1b90106e8acf5b4eb14b5ecff511e24c7b65ab5ff3b35ed9387e67e6080"
+  },
+  "exit_code": 0,
+  "stdout": "{\"variant\":\"adaptive\",\"seed\":20260909,\"natural_signed_keys\":200000,\"probe_pool\":400000,\"queries\":1048576,\"trace_fnv64\":\"14641524491649886373\",\"update_seconds\":0.253125994,\"prefix_seconds\":1.334375374,\"estimated_ledger_bytes\":31237411,\"every_prefix_answer_checked\":true,\"internal_invariants_checked\":true}\n",
+  "stderr": "",
+  "resource_usage": {
+    "max_rss_kib": 100552,
+    "user_seconds": 2.158894,
+    "system_seconds": 0.11986899999999999,
+    "major_faults": 0,
+    "minor_faults": 31147,
+    "voluntary_context_switches": 2,
+    "involuntary_context_switches": 7
+  },
+  "result": {
+    "variant": "adaptive",
+    "seed": 20260909,
+    "natural_signed_keys": 200000,
+    "probe_pool": 400000,
+    "queries": 1048576,
+    "trace_fnv64": "14641524491649886373",
+    "update_seconds": 0.253125994,
+    "prefix_seconds": 1.334375374,
+    "estimated_ledger_bytes": 31237411,
+    "every_prefix_answer_checked": true,
+    "internal_invariants_checked": true
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "command": [
+    "wsl",
+    "-d",
+    "kali-linux",
+    "--",
+    "bash",
+    "/mnt/c/Users/sayal/OneDrive/Desktop/research/scripts/verify_default_query_paths.sh"
+  ],
+  "platform": "Windows-10-10.0.26200-SP0",
+  "started_unix": 1788568023.3501353,
+  "elapsed_seconds": 17.321943759918213,
+  "sources_sha256": {
+    "hrtli_cpp\\packed_rank_transport.hpp": "bd73a2b9df68be3a39dae92ddd763f9825d7c8ce754edb4077c29cf71dab9542",
+    "hrtli_cpp\\prefix_radix_delta.hpp": "159d7408bd352dc315c7da936ff5f6eb3609831019e23af6df194e6c8dd3380a",
+    "hrtli_cpp\\test_packed_certification.cpp": "b9b26d20c08d7cd70df04a2b3ed33c2716bdc406664b3ede121003dbd2203b06",
+    "hrtli_cpp\\test_packed_rank_transport.cpp": "4711ffdaa7377f14b9f84ce297563023fd62f4491cd51e78f2142e6b6445f7b1",
+    "hrtli_cpp\\benchmark_packed_query_paths.cpp": "d20b7f9c00317dfe235108c37a1692fd3f3a6053dc31ff8ee1b317c4f26707dc",
+    "hrtli_cpp\\benchmark_commoncrawl_200m.cpp": "85e2b25a35ab7a876e88756ae3ceef98affb3fb2d1c67782ec7c576cf42946e2",
+    "hrtli_cpp\\benchmark_commoncrawl_200m_lifecycle.cpp": "308c2157da401c0ce50916e3b2ed9c26653f13ebfc32d269d45334d7ab290cd1",
+    "scripts\\verify_default_query_paths.sh": "81b3f0bf0fed27cb1e3fe6c7052564a569fb3b117d24b5256569ed6ccdd40c5e"
+  },
+  "exit_code": 0,
+  "stdout": "Temporary check directory: /tmp/hrtli_default_queries_0RQsgt\nepsilon=0 realized=0 segments=7967\nepsilon=1 realized=1 segments=3163\nepsilon=2 realized=2 segments=1897\nepsilon=4 realized=4 segments=1091\nepsilon=16 realized=16 segments=339\nepsilon=32 realized=32 segments=125\nepsilon=64 realized=64 segments=62\nepsilon=128 realized=128 segments=31\nPASS default learned queries, opt-in fingerprints, explicit binary controls, certification, byte routing, absent boundaries, empty state, 2400 mixed mutations, signed materialization and rebuild\nPASS: dependent drivers compile with explicit legacy/control query paths\nNatural 200000-key API regression only; these timings are not manuscript evidence.\n{\"base_keys\":199900,\"selected_keys\":200000,\"epsilon\":64,\"model_segments\":2306,\"repaired_segments\":0,\"construction_ms\":24.139083,\"insert_ms\":0.081452,\"base_delete_ms\":0.054555,\"queries\":20000,\"range_queries\":20000,\"seed\":20260905,\"stored_query_fallbacks\":0,\"inserted_query_fallbacks\":0,\"trial_design\":\"paired same-state rotated query paths; not independent builds\",\"rows\":[{\"trial\":1,\"mode\":\"learned\",\"uniform_membership_ns\":410.8905,\"balanced_membership_ns\":255.80235,\"deleted_membership_ns\":54.022,\"uniform_rank_ns\":685.3398,\"range_ns\":862.82715,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":1,\"mode\":\"binary\",\"uniform_membership_ns\":384.975,\"balanced_membership_ns\":224.3007,\"deleted_membership_ns\":54.5369,\"uniform_rank_ns\":584.37195,\"range_ns\":789.4302,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":1,\"mode\":\"fingerprint\",\"uniform_membership_ns\":173.1292,\"balanced_membership_ns\":139.1364,\"deleted_membership_ns\":61.1188,\"uniform_rank_ns\":572.77405,\"range_ns\":845.3277,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":2,\"mode\":\"binary\",\"uniform_membership_ns\":530.02695,\"balanced_membership_ns\":244.3332,\"deleted_membership_ns\":52.75645,\"uniform_rank_ns\":682.9108,\"range_ns\":827.93325,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":2,\"mode\":\"fingerprint\",\"uniform_membership_ns\":164.96005,\"balanced_membership_ns\":119.8971,\"deleted_membership_ns\":56.99325,\"uniform_rank_ns\":452.13025,\"range_ns\":891.42285,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":2,\"mode\":\"learned\",\"uniform_membership_ns\":431.39295,\"balanced_membership_ns\":229.02795,\"deleted_membership_ns\":79.0467,\"uniform_rank_ns\":448.4162,\"range_ns\":849.90535,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":3,\"mode\":\"fingerprint\",\"uniform_membership_ns\":172.61225,\"balanced_membership_ns\":115.6706,\"deleted_membership_ns\":65.0812,\"uniform_rank_ns\":550.29405,\"range_ns\":1049.3012,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":3,\"mode\":\"learned\",\"uniform_membership_ns\":512.8239,\"balanced_membership_ns\":233.7046,\"deleted_membership_ns\":55.8731,\"uniform_rank_ns\":684.2788,\"range_ns\":896.65935,\"rank_checksum\":2012512278,\"range_checksum\":90568817},{\"trial\":3,\"mode\":\"binary\",\"uniform_membership_ns\":384.5509,\"balanced_membership_ns\":240.85175,\"deleted_membership_ns\":80.27075,\"uniform_rank_ns\":494.80555,\"range_ns\":878.5251,\"rank_checksum\":2012512278,\"range_checksum\":90568817}],\"base_reinsert_ms\":0.08214,\"inserted_delete_ms\":0.031197,\"final_mutation_count\":0,\"all_oracles_passed\":true}\n",
+  "stderr": "",
+  "result": null
+}

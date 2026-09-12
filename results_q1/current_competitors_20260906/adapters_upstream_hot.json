@@ -1,0 +1,29 @@
+{
+  "command": [
+    "/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized",
+    "/tmp/hrtli_current_competitors_Pmjw3A"
+  ],
+  "platform": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.42",
+  "started_unix": 1788652610.2737026,
+  "elapsed_seconds": 1.1258924007415771,
+  "sources_sha256": {
+    "results_q1/current_competitors_20260906/source/benchmark_lits_comparison.cpp": "f1aedca09f3434195708f85faabb6e6dd0ea100ae654dcc5c7765a345270d613",
+    "results_q1/current_competitors_20260906/source/test_competitor_set_adapters.cpp": "05a08ffa576d01b6882c1d1d8812f08696f8ccd08d4998b86e2d121524293646",
+    "results_q1/current_competitors_20260906/source/packed_rank_transport.hpp": "bc3fb8183b32ee73c865c40258be764fae05e2056334a9a81c90fed3add0377d",
+    "results_q1/current_competitors_20260906/source/prefix_radix_delta.hpp": "eec8b4aab89db3f39bdc98912aa4b62d87bde05f2c3c678929eeeea8d877a891",
+    "/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized": "f2567206a322912b1859abd211a7bafbc3f34b7a741bb803dbedf8212286a7c5"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "AddressSanitizer:DEADLYSIGNAL\n=================================================================\n==1127==ERROR: AddressSanitizer: SEGV on unknown address 0x71ab6d06cfff (pc 0x583b04464d60 bp 0x7fffdfca9cf0 sp 0x7fffdfca9b20 T0)\n==1127==The signal is caused by a READ memory access.\n    #0 0x583b04464d60 in lits::InnerNode* lits::_try_rebulk_as_model_node<lits::KVS2>(lits::KVS2 const&, int, int, int, lits::HPT const*, lits::PMSS const*) (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0xb11d60) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d)\n    #1 0x583b04466a1b in lits::Item lits::pmss_bulk<lits::KVS2>(lits::KVS2 const&, int, int, int, lits::HPT const*, lits::PMSS const*) (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0xb13a1b) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d)\n    #2 0x583b04467cae in lits::LITS::_bulkload(char* const*, unsigned long const*, int, lits::HPT*) (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0xb14cae) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d)\n    #3 0x583b04468cf5 in LitsAdapter::LitsAdapter(Corpus const&, char const*, int) (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0xb15cf5) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d)\n    #4 0x583b03fecc43 in main (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0x699c43) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d)\n    #5 0x71ab6d433f74  (/usr/lib/x86_64-linux-gnu/libc.so.6+0x29f74) (BuildId: c9a199fd28ea54b305ea35a8b25500a79bfe684a)\n    #6 0x71ab6d434026 in __libc_start_main (/usr/lib/x86_64-linux-gnu/libc.so.6+0x2a026) (BuildId: c9a199fd28ea54b305ea35a8b25500a79bfe684a)\n    #7 0x583b03fda7c0 in _start (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0x6877c0) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d)\n\n==1127==Register values:\nrax = 0x0000000000000001  rbx = 0x00006ffb6c8e5100  rcx = 0x000071ab6d06d000  rdx = 0x0000000000000000  \nrdi = 0x0000000000000000  rsi = 0x0000000000000000  rbp = 0x00007fffdfca9cf0  rsp = 0x00007fffdfca9b20  \n r8 = 0x000071ab6d06d000   r9 = 0x000071ab6d06cfff  r10 = 0x0000000000000000  r11 = 0x0000000000000007  \nr12 = 0x00006dab6b827700  r13 = 0x0000000000000000  r14 = 0x0000000000000000  r15 = 0x00006dab6b7549c0  \nAddressSanitizer can not provide additional info.\nSUMMARY: AddressSanitizer: SEGV (/tmp/hrtli_current_competitors_Pmjw3A/adapters_sanitized+0xb11d60) (BuildId: 0c50e4ce77285681d497cc76cf220c8e4ee7b03d) in lits::InnerNode* lits::_try_rebulk_as_model_node<lits::KVS2>(lits::KVS2 const&, int, int, int, lits::HPT const*, lits::PMSS const*)\n==1127==ABORTING\n",
+  "resource_usage": {
+    "max_rss_kib": 60544,
+    "user_seconds": 1.085981,
+    "system_seconds": 0.02011,
+    "major_faults": 75,
+    "minor_faults": 12546,
+    "voluntary_context_switches": 59,
+    "involuntary_context_switches": 6
+  },
+  "result": null
+}

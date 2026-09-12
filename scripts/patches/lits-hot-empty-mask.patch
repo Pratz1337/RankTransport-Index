@@ -1,0 +1,12 @@
+diff --git a/lits/hot_src/include/BitMask32.hpp b/lits/hot_src/include/BitMask32.hpp
+--- a/lits/hot_src/include/BitMask32.hpp
++++ b/lits/hot_src/include/BitMask32.hpp
+@@ -171,7 +171,7 @@
+ }
+ 
+ inline int BitMask32::getFirstUsedSlot() const {
+-	return __builtin_ctz(mUsedSlots);
++	return mUsedSlots == 0 ? TOTAL_NUMBER_SLOTS : __builtin_ctz(mUsedSlots);
+ }
+ 
+ inline int BitMask32::consumeFirst() {

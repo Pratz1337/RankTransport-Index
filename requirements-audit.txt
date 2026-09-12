@@ -1,0 +1,6 @@
+# Versions used for the lightweight release validation, Python 3.11.
+numpy==2.0.0
+matplotlib==3.10.8
+nbformat==5.10.4
+nbclient==0.10.4
+ipykernel==7.2.0

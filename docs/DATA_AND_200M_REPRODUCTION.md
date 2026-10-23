@@ -4,7 +4,7 @@
 
 The input is the Common Crawl host-level web graph release
 `cc-main-2026-may-jun-jul`. The retained
-[metadata](../tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_metadata.json)
+[metadata](../datasets/commoncrawl_200m/commoncrawl_hosts_200m_metadata.json)
 identifies its official announcement, all 48 compressed vertex-shard URLs and
 SHA-256 digests, record counts, output sizes and prepared-file digests.
 Download those shards from the recorded `data.commoncrawl.org` URLs and verify

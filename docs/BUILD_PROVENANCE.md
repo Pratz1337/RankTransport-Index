@@ -137,11 +137,11 @@ SHA-256 prefixes below are display identifiers; full digests and source maps are
 | Direct ledger, seed 20260911, linear | 2026-09-06T18:14:21.753511+00:00 | `d10d746d913cd1e5` | Main ledger trade-off table; same natural signed-key workload, separate binaries |
 | Direct ledger, seed 20260911, fenwick | 2026-09-06T18:14:24.321442+00:00 | `36b9627b2bcbed9b` | Main ledger trade-off table; same natural signed-key workload, separate binaries |
 | Direct ledger, seed 20260911, adaptive | 2026-09-06T18:14:19.157752+00:00 | `2d6016237efe9ef5` | Main ledger trade-off table; same natural signed-key workload, separate binaries |
-| Compact certificate fixtures | Unavailable | `Unavailable` | Supplementary history only; internal oracle; removed from main figures/tables |
+| Compact certificate fixtures | Unavailable | `Unavailable` | History only; internal oracle |
 | Compact native comparisons | Unavailable | `Unavailable` | Compact native comparison and update/memory figures; earlier implementation |
 | Radix / counted B+-tree ledger | Unavailable | `Unavailable` | Historical ledger comparison; predates Fenwick revision |
 | 9.04M range-count / scan | Unavailable | `Unavailable` | Range-count/scan figure; earlier native index |
-| 9.04M ART/HOT comparison | Unavailable | `Unavailable` | Historical paragraph and supplementary ranges; not current packed API |
+| 9.04M ART/HOT comparison | Unavailable | `Unavailable` | Historical context only; not current packed API |
 
 ## Identity limits
 
@@ -157,6 +157,7 @@ File modification times and a broad dirty-tree manifest are not substituted for
 missing experiment provenance. These rows remain explicitly limited historical
 context; rerunning the current default is the preferred way to close the gap.
 
-Regenerate from workspace records: `python scripts/build_provenance_table.py`.
+This table and `BUILD_PROVENANCE.json` are frozen; `python scripts/verify_release.py`
+(`make verify`) checks every listed record digest.
 Development records are listed for completeness; not every external baseline
 dependency is redistributed in this repository (see `THIRD_PARTY_NOTICES.md`).

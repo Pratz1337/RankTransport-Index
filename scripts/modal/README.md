@@ -1,4 +1,4 @@
-# Modal jobs for the replicated rank-capable comparison (Fig. 4, Fig. 5b, Table 1)
+# Modal jobs for the replicated rank-capable comparison (Fig. 4, Fig. 5b–c, Table 1)
 
 The rank-capable comparison ran in [Modal](https://modal.com) containers, one fresh
 container per replicate and corpus (five replicates x two corpora). Records are in
@@ -25,6 +25,11 @@ python -m modal run scripts/modal/modal_hrtli.py::run_prepare_enwiki
 * driver: `hrtli_cpp/benchmark_equal_contract.cpp`, invoked as
   `equal_contract MODE BASE ARRIVALS BASE_N ARRIVAL_N DELTA QUERIES SEED EPSILON WORKLOAD`
   with `DELTA` = 80000 (hosts) / 150000 (titles), `QUERIES` = 1048576, `SEED` = 20261023, `EPSILON` = 64.
+
+Source SHA-256 recorded in the replicate records (`build.source_sha256`). **Pending:**
+`benchmark_equal_contract.cpp`, `counted_art.hpp`, `fenced_rank_transport.hpp` and the listed
+revisions of `counted_radix_ost.hpp` and `packed_rank_transport.hpp` are not yet in `hrtli_cpp/`
+(the current files there predate these runs); compare against these digests when adding them.
 
 Source SHA-256 recorded in the replicate records (`build.source_sha256`):
 

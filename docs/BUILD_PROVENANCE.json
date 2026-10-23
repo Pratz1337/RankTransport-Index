@@ -3712,7 +3712,7 @@
       "run_started_utc": null,
       "binary_sha256": null,
       "commit": null,
-      "scope": "Supplementary history only; internal oracle; removed from main figures/tables",
+      "scope": "History only; internal oracle",
       "identity_status": "No experiment-time build/date in inspected result; current file digest identifies result only"
     },
     {
@@ -3752,7 +3752,7 @@
       "run_started_utc": null,
       "binary_sha256": null,
       "commit": null,
-      "scope": "Historical paragraph and supplementary ranges; not current packed API",
+      "scope": "Historical context only; not current packed API",
       "identity_status": "No experiment-time build/date in inspected result; current file digest identifies result only"
     }
   ],

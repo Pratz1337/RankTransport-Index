@@ -5,7 +5,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 
-RESULTS_DIR = "results_q1"
+RESULTS_DIR = "results/early_prototype"
 JSON_PATH = os.path.join(RESULTS_DIR, "cpp_benchmark_results.json")
 
 def main():

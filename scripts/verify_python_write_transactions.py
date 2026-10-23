@@ -26,7 +26,7 @@ current, current_log = run_case()
 assert current.wasSuccessful(), current_log
 import hli.rank_transport as current_rank
 import hli.signed_delta as current_delta
-baseline = ROOT / "results_q1/reassessment_20260905/python_transaction_source_before"
+baseline = ROOT / "results/verification_20260905/python_transaction_source_before"
 for name in ("signed_delta", "rank_transport"):
     module_name = f"hli.{name}"
     module = types.ModuleType(module_name)

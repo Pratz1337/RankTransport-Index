@@ -44,7 +44,7 @@ def main():
     # Save plot
     save_path = "results/latency_comparison.png"
     plt.savefig(save_path, bbox_inches="tight")
-    save_path_q1 = "results_q1/latency_comparison.png"
+    save_path_q1 = "results/early_prototype/latency_comparison.png"
     os.makedirs(os.path.dirname(save_path_q1), exist_ok=True)
     plt.savefig(save_path_q1, bbox_inches="tight")
     plt.close()

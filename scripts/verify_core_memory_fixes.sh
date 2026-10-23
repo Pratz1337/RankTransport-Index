@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd /mnt/c/Users/sayal/OneDrive/Desktop/research
+cd "$(dirname "$0")/.."
 check_dir=$(mktemp -d /tmp/hrtli_core_memory_XXXXXX)
 printf 'Temporary check directory: %s\n' "$check_dir"
 g++ -std=c++17 -O2 -Wall -Wextra -Wno-mismatched-new-delete \
@@ -19,7 +19,7 @@ ASAN_OPTIONS=detect_leaks=1 "$check_dir/packed_check"
 # Same regression against the immutable pre-fix header must fail.
 cp hrtli_cpp/test_prefix_radix_allocation.cpp "$check_dir/test_old.cpp"
 g++ -std=c++17 -O2 -Wno-mismatched-new-delete \
-    -I "$PWD/results_q1/reassessment_20260905/query_paths_source_v1" \
+    -I "$PWD/results/verification_20260905/query_paths_source_v1" \
     "$check_dir/test_old.cpp" -o "$check_dir/old_allocation_check"
 if "$check_dir/old_allocation_check"; then
     printf 'FAIL: regression unexpectedly passed against pre-fix ledger\n' >&2
@@ -28,7 +28,7 @@ fi
 printf 'PASS: pre-fix ledger rejected by the same allocation-failure regression\n'
 cp hrtli_cpp/test_mapped_allocation.cpp "$check_dir/test_old_mapped.cpp"
 g++ -std=c++17 -O2 -Wno-mismatched-new-delete \
-    -I "$PWD/results_q1/reassessment_20260905/query_paths_source_v1" \
+    -I "$PWD/results/verification_20260905/query_paths_source_v1" \
     "$check_dir/test_old_mapped.cpp" -o "$check_dir/old_mapped_check"
 if "$check_dir/old_mapped_check"; then
     printf 'FAIL: pre-fix mapped constructor unexpectedly passed resource checks\n' >&2

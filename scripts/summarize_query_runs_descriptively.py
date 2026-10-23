@@ -5,7 +5,7 @@ import json
 from statistics import mean, median
 
 root = Path(__file__).resolve().parents[1]
-data = root / "results_q1/controlled_queries_20260905"
+data = root / "results/controlled_queries_20260905"
 metrics = {
     "uniform_membership_ns": "Uniform live membership",
     "balanced_membership_ns": "Balanced live membership",
@@ -28,5 +28,5 @@ for key, label in metrics.items():
     values = [[x / 1000 for x in samples[mode]] for mode in ("learned", "binary")] + [paired]
     cells = [f"{median(v):.2f} [{min(v):.2f}, {max(v):.2f}]" for v in values]
     print(label + " & " + " & ".join(cells) + r" \\")
-out = root / "results_q1/reviewer_response_20260906/query_descriptive.json"
+out = root / "results/query_summary_20260906/query_descriptive.json"
 out.write_text(json.dumps(report, indent=2) + "\n")

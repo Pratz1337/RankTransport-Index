@@ -1,6 +1,6 @@
 import unittest
 
-from download_publishable_corpora import (
+from corpora.download_publishable_corpora import (
     _collect_json_paths,
     _normalise_dns_rule,
     _normalise_purl,

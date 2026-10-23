@@ -413,7 +413,7 @@ int main(int argc, char** argv) {
     bool small_only = false;
     bool ordered_only = false;
     std::vector<std::string> requested_datasets;
-    std::string output_path = "results_q1/cpp_benchmark_results.json";
+    std::string output_path = "results/early_prototype/cpp_benchmark_results.json";
     if (const char* env_trials = std::getenv("HRTLI_NATIVE_TRIALS")) {
         trials = static_cast<size_t>(std::stoul(env_trials));
     }

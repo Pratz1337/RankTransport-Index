@@ -26,7 +26,7 @@ from hli.tree_generator import TreeNode
 from bisect import bisect_left
 
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results_q1")
+RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "results", "early_prototype")
 
 
 def build_base_model(base_keys, epsilon=64):

@@ -22,7 +22,7 @@ from hli.hpsfc import HPSFCRankTransportIndex
 from hli.rank_transport import RankTransportIndex
 
 
-RESULTS_DIR = "results_q1"
+RESULTS_DIR = "results/early_prototype"
 N = 100_000
 EPSILON = 64
 TRIALS = 5

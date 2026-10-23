@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd /mnt/c/Users/sayal/OneDrive/Desktop/research
+cd "$(dirname "$0")/.."
 check_dir=$(mktemp -d /tmp/hrtli_segment_fence_XXXXXX)
 printf 'Temporary check directory: %s\n' "$check_dir"
 # A mechanically transformed temporary header tests the fallback independently

@@ -29,7 +29,7 @@ the numerical ID, as the index key.
 ## Rebuild the measured query path, not the later default
 
 The frozen sources for trials 2 through 6 are in
-`results_q1/controlled_queries_20260905/source/`. In particular, these trials
+`results/controlled_queries_20260905/source/`. In particular, these trials
 predate the segment-fence and Fenwick refinements. The paired paths share the
 same index state, use no fingerprint table, and perform an internal recovery
 ablation. They do not compare HRT-LI against another index.
@@ -38,7 +38,7 @@ Example build and single-process invocation on Linux, with GCC/G++ and `taskset`
 
 ```sh
 mkdir -p build
-g++ -std=c++17 -O3 -DNDEBUG -march=native results_q1/controlled_queries_20260905/source/benchmark_packed_query_paths.cpp -o build/query_paths
+g++ -std=c++17 -O3 -DNDEBUG -march=native results/controlled_queries_20260905/source/benchmark_packed_query_paths.cpp -o build/query_paths
 taskset -c 2 build/query_paths NEW_PREPARED_DIRECTORY/commoncrawl_hosts_200m_initial.txt NEW_PREPARED_DIRECTORY/commoncrawl_hosts_200m_insert.txt 199900000 2000 64 1000000 4 learned_binary
 ```
 
@@ -58,7 +58,7 @@ before using them. Rebuilding can change binary hashes even for identical source
 Five fresh processes each run four paired rounds. The records report 164M timed
 answers checked against the driver's independent oracle, including surviving,
 inserted and deleted-key cases and ordered queries. The relevant summary is
-`results_q1/reviewer_response_20260906/query_descriptive.json`, recomputed by
+`results/query_summary_20260906/query_descriptive.json`, recomputed by
 `scripts/summarize_query_runs_descriptively.py`.
 
 Keep all five runs. Three have sampled host page-out activity. These are
@@ -66,7 +66,7 @@ descriptive observations on one shared Windows/WSL2 laptop, one dataset selectio
 and one seed, not confidence intervals over machines or datasets.
 
 The error-budget sweep and the single offline-consolidation timing are separate
-records under `results_q1/reassessment_20260905`, with their own frozen source
+records under `results/verification_20260905`, with their own frozen source
 directories. Consult `docs/BUILD_PROVENANCE.json` rather than assuming they use
 the query binary. The consolidation observation does not establish atomic,
 online or crash-safe maintenance.

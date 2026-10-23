@@ -279,7 +279,7 @@ def _write_sources_manifest(source_dir: Path, corpora: dict[str, list[str]]) -> 
         f"| Package manager | package-url tests and type definitions under {PURL_RAW_PREFIX} | MIT | {len(corpora['package'])} |",
         "",
         "The `data/*_initial.txt` and `data/*_insert.txt` files are normalized hierarchical keys derived from these sources.",
-        "Keep the raw source files and this manifest with benchmark artifacts so paper reviewers can reproduce the exact corpus build.",
+        "Keep the raw source files and this manifest with benchmark artifacts so readers can reproduce the exact corpus build.",
     ]
     (source_dir / "SOURCES.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 

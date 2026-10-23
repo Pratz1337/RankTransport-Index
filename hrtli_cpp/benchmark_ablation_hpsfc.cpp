@@ -8,7 +8,7 @@
  *   2. No HP-SFC: point lookup falls back to model prediction + binary search window
  *   3. No model: point lookup uses HP-SFC only (model contributes nothing to point lookup)
  *
- * This directly answers the reviewer's question:
+ * This isolates the question:
  *   "What does the learned model actually contribute?"
  *
  * The answer for point lookups: HP-SFC does essentially all the work.
@@ -327,7 +327,7 @@ int main(int argc, char** argv) {
         run_ablation(ds, results);
 
     // Write JSON
-    std::ofstream json_out("results_q1/ablation_hpsfc_results.json");
+    std::ofstream json_out("results/early_prototype/ablation_hpsfc_results.json");
     if (json_out) {
         json_out << "[\n";
         for (size_t i = 0; i < results.size(); ++i) {
@@ -344,7 +344,7 @@ int main(int argc, char** argv) {
                      << "  }" << (i + 1 == results.size() ? "" : ",") << "\n";
         }
         json_out << "]\n";
-        std::cout << "Wrote results to results_q1/ablation_hpsfc_results.json\n";
+        std::cout << "Wrote results to results/early_prototype/ablation_hpsfc_results.json\n";
     }
 
     return 0;

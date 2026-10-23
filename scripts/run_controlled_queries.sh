@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd /mnt/c/Users/sayal/OneDrive/Desktop/research
+cd "$(dirname "$0")/.."
 first_trial=${1:-1}
 last_trial=${2:-1}
-output="$PWD/results_q1/controlled_queries_20260905"
+output="$PWD/results/controlled_queries_20260905"
 source_dir="$output/source"
 binary=/tmp/hrtli_controlled_queries_20260905
 if [[ ! -d "$output" ]]; then

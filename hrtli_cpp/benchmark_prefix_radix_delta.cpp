@@ -156,7 +156,7 @@ int main() {
     scenarios.push_back(shared_hierarchy(100000));
     scenarios.push_back(shallow_keys(100000));
 
-    std::ofstream json("results_q1/prefix_radix_delta.json");
+    std::ofstream json("results/early_prototype/prefix_radix_delta.json");
     json << "{\n  \"trials\": 7,\n  \"query_count_per_trial\": 500000,\n  \"scenarios\": [\n";
     for (size_t i = 0; i < scenarios.size(); ++i) {
         const Scenario& scenario = scenarios[i];

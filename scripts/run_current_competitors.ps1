@@ -1,8 +1,9 @@
 param([string]$RecordDirectory = 'current_competitors_20260906')
 $ErrorActionPreference = 'Stop'
 if ($RecordDirectory -notmatch '^[a-z0-9_]+$') { throw 'Invalid experiment directory name' }
-$workspace = 'C:\Users\sayal\OneDrive\Desktop\research'
-$logBase = Join-Path $workspace "results_q1\$RecordDirectory\session"
+$workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+$wslWorkspace = (& wsl -d kali-linux -- wslpath -a ($workspace -replace '\\','/')).Trim()
+$logBase = Join-Path $workspace "results\$RecordDirectory\session"
 foreach ($suffix in @('.stdout.txt', '.stderr.txt', '.host.csv')) {
     if (Test-Path -LiteralPath ($logBase + $suffix)) { throw "Existing session log: $logBase$suffix" }
 }
@@ -10,7 +11,7 @@ try {
     & wsl -d kali-linux -u root -- systemctl stop docker.service docker.socket containerd.service cron.service
     if ($LASTEXITCODE -ne 0) { throw 'Could not pause guest background services' }
     $benchmarkProcess = Start-Process -FilePath 'wsl.exe' -WindowStyle Hidden -PassThru `
-        -ArgumentList @('-d','kali-linux','--','bash','/mnt/c/Users/sayal/OneDrive/Desktop/research/scripts/run_current_competitors.sh',"results_q1/$RecordDirectory") `
+        -ArgumentList @('-d','kali-linux','--','bash',"$wslWorkspace/scripts/run_current_competitors.sh","results/$RecordDirectory") `
         -RedirectStandardOutput ($logBase + '.stdout.txt') -RedirectStandardError ($logBase + '.stderr.txt')
     $benchmarkHandle = $benchmarkProcess.Handle
     Write-Output "Current specialist session PID $($benchmarkProcess.Id)"

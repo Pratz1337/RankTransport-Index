@@ -71,7 +71,7 @@ int main(int argc, char** argv) {
     const std::string dataset = argc > 1 ? argv[1] : "synthetic";
     const std::string output_path = argc > 2
         ? argv[2]
-        : "results_q1/benchmark_audit/range_stable_" + dataset + ".json";
+        : "results/benchmark_audit/range_stable_" + dataset + ".json";
     const size_t trials = std::getenv("HRTLI_RANGE_TRIALS")
         ? std::stoull(std::getenv("HRTLI_RANGE_TRIALS")) : 30;
     const size_t minimum_count_operations = std::getenv("HRTLI_RANGE_MIN_COUNTS")

@@ -8,19 +8,19 @@ ROOT = Path(__file__).resolve().parents[1]
 parser = argparse.ArgumentParser()
 parser.add_argument("--adaptive", action="store_true")
 args = parser.parse_args()
-OUT = ROOT / ("results_q1/adaptive_competitors_20260906/audit.ipynb" if args.adaptive else "results_q1/current_competitors_20260906/audit.ipynb")
+OUT = ROOT / ("results/adaptive_competitors_20260906/audit.ipynb" if args.adaptive else "results/current_competitors_20260906/audit.ipynb")
 nb = nbf.v4.new_notebook()
 nb.metadata.kernelspec = {"display_name": "Python 3", "language": "python", "name": "python3"}
 nb.cells = [
     nbf.v4.new_markdown_cell("## tl;dr\nCurrent-default specialist and direct ledger-revision evidence. The executed tables below report all predeclared cells and observed ranges; they do not infer confidence intervals or establish 200M competitive performance."),
     nbf.v4.new_markdown_cell("## Context & Methods\nTen million natural Common Crawl keys: eight million base plus two million eligible arrivals. Four distinct seeds, four methods, three workloads and fresh processes. Each cell has 1,048,576 operations. Shared independent oracle/trace, successful balanced writes, reset states, fixed CPU and rotated method order. Prefix bursts use 64 writes under `com.` alternating with 64 full-pool reads.\n\n### Key Assumptions\nThis systematic sample spans the 200M selection, not the full release. Four process/seed observations are not four datasets or machines. LITS and HOT compile separately; explicitly recorded safety patches are applied. LITS deallocation leaks are retained, not claimed fixed. Peak RSS is whole-process, not index-only. The ledger comparison isolates linear versus Fenwick sibling sums on 200,000 natural signed keys, with an independent sorted-prefix oracle."),
-    nbf.v4.new_markdown_cell("## Data\nImmutable process JSON, frozen sources, protocol, dependency digests, input verification and host/swap counters reside beside this notebook. The matching ledger records are in `results_q1/current_ledger_20260906`. Failed and superseded preflight records are not benchmark measurements."),
+    nbf.v4.new_markdown_cell("## Data\nImmutable process JSON, frozen sources, protocol, dependency digests, input verification and host/swap counters reside beside this notebook. The matching ledger records are in `results/current_ledger_20260906`. Failed and superseded preflight records are not benchmark measurements."),
     nbf.v4.new_code_cell('''from pathlib import Path
 import json, statistics as st, csv, hashlib
 from datetime import datetime
 root = Path.cwd()
-out = root / "results_q1/current_competitors_20260906"
-ledger_dir = root / "results_q1/current_ledger_20260906"
+out = root / "results/current_competitors_20260906"
+ledger_dir = root / "results/current_ledger_20260906"
 ledger_variants = ("linear", "fenwick")
 ledger_seeds = range(20260906,20260910)
 inputs = json.loads((out / "verified_inputs.json").read_text())
@@ -115,7 +115,7 @@ for name in ("session", "ledger_session"):
     summary["telemetry"][name] = {"samples": len(rows), "minimum_available_MiB": min(int(r["AvailableMiB"]) for r in rows),
         "positive_pageout_samples": sum(float(r["PagesOutputPerSecond"]) > 0 for r in rows),
         "maximum_sampling_gap_seconds": max(b-a for a,b in zip(times,times[1:]))}
-legacy = json.loads((root / "results_q1/benchmark_audit/external_benchmark_commoncrawl_host_real_art_hot.json").read_text())
+legacy = json.loads((root / "results/benchmark_audit/external_benchmark_commoncrawl_host_real_art_hot.json").read_text())
 summary["legacy_specialists"] = {r["name"]: {metric: describe(values) for metric,values in r["samples"].items()} for r in legacy["results"]}
 print(json.dumps(summary["telemetry"], indent=2))
 print(json.dumps(summary["legacy_specialists"], indent=2))
@@ -124,8 +124,8 @@ print(json.dumps(summary["legacy_specialists"], indent=2))
 ]
 if args.adaptive:
     for cell in nb.cells:
-        cell.source = cell.source.replace("results_q1/current_competitors_20260906", "results_q1/adaptive_competitors_20260906")
-        cell.source = cell.source.replace("results_q1/current_ledger_20260906", "results_q1/adaptive_ledger_20260906")
+        cell.source = cell.source.replace("results/current_competitors_20260906", "results/adaptive_competitors_20260906")
+        cell.source = cell.source.replace("results/current_ledger_20260906", "results/adaptive_ledger_20260906")
         cell.source = cell.source.replace('ledger_variants = ("linear", "fenwick")', 'ledger_variants = ("linear", "fenwick", "adaptive")')
         cell.source = cell.source.replace('ledger_seeds = range(20260906,20260910)', 'ledger_seeds = range(20260906,20260912)')
         cell.source = cell.source.replace("with an independent sorted-prefix oracle.", "with an independent sorted-prefix oracle. The three-way ledger experiment uses six seeds and rotates method order.")

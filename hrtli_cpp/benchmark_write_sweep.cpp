@@ -350,7 +350,7 @@ int main(int argc, char** argv) {
     }
 
     // Write output to CSV
-    std::ofstream csv_out("results_q1/write_sweep_results.csv");
+    std::ofstream csv_out("results/early_prototype/write_sweep_results.csv");
     if (csv_out) {
         csv_out << "dataset,write_ratio,index_name,throughput_mops,latency_ns,time_ms,trial\n";
         for (const auto& row : all_results) {
@@ -358,11 +358,11 @@ int main(int argc, char** argv) {
                     << row.throughput_mops << "," << row.latency_ns << "," << row.time_ms
                     << "," << row.trial << "\n";
         }
-        std::cout << "Wrote results to results_q1/write_sweep_results.csv" << std::endl;
+        std::cout << "Wrote results to results/early_prototype/write_sweep_results.csv" << std::endl;
     }
 
     // Write output to JSON
-    std::ofstream json_out("results_q1/write_sweep_results.json");
+    std::ofstream json_out("results/early_prototype/write_sweep_results.json");
     if (json_out) {
         json_out << "[\n";
         for (size_t i = 0; i < all_results.size(); ++i) {
@@ -378,7 +378,7 @@ int main(int argc, char** argv) {
                      << "  }" << (i + 1 == all_results.size() ? "" : ",") << "\n";
         }
         json_out << "]\n";
-        std::cout << "Wrote results to results_q1/write_sweep_results.json" << std::endl;
+        std::cout << "Wrote results to results/early_prototype/write_sweep_results.json" << std::endl;
     }
 
     // Identify crossover points

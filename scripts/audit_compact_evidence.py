@@ -4,7 +4,7 @@ import nbformat
 from nbclient import NotebookClient
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "results_q1/reassessment_20260905/compact_evidence_audit.ipynb"
+OUT = ROOT / "results/verification_20260905/compact_evidence_audit.ipynb"
 notebook = nbformat.v4.new_notebook()
 notebook.metadata.kernelspec = {"display_name": "Python 3", "language": "python", "name": "python3"}
 notebook.cells = [
@@ -35,9 +35,9 @@ import json
 import pandas as pd
 root = Path.cwd()
 paths = {
-    "legacy_results": root / "results_q1/hrtli_benchmark_results.json",
+    "legacy_results": root / "results/early_prototype/hrtli_benchmark_results.json",
     "corrected_driver": root / "benchmark_hrtli.py",
-    "regression_record": root / "results_q1/reassessment_20260905/compact_oracle_regression.json",
+    "regression_record": root / "results/verification_20260905/compact_oracle_regression.json",
 }
 source_hashes = {name: hashlib.sha256(path.read_bytes()).hexdigest() for name, path in paths.items()}
 pd.DataFrame([{"source": name, "path": str(paths[name].relative_to(root)), "sha256": digest}

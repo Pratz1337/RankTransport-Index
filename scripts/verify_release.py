@@ -21,7 +21,7 @@ for row in provenance["rows"]:
 for relative in ("hrtli_cpp/packed_rank_transport.hpp",
                  "hrtli_cpp/prefix_radix_delta.hpp",
                  "scripts/prepare_commoncrawl_200m.py",
-                 "results_q1/reviewer_response_20260906/query_descriptive.json"):
+                 "results/query_summary_20260906/query_descriptive.json"):
     path = ROOT / relative
     if not path.is_file():
         raise SystemExit(f"Missing required release file: {relative}")

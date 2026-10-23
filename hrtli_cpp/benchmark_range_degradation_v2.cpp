@@ -294,7 +294,7 @@ int main(int argc, char** argv) {
         run_degradation_for_dataset(dataset, all_results);
 
     // Write CSV
-    std::ofstream csv_out("results_q1/range_degradation_v2_results.csv");
+    std::ofstream csv_out("results/early_prototype/range_degradation_v2_results.csv");
     if (csv_out) {
         csv_out << "dataset,deleted_ratio,index_name,total_scan_time_ms,avg_scan_time_us,total_returned,consolidation_time_ms\n";
         for (const auto& row : all_results) {
@@ -302,11 +302,11 @@ int main(int argc, char** argv) {
                     << row.total_scan_time_ms << "," << row.avg_scan_time_us << "," << row.total_returned
                     << "," << row.consolidation_time_ms << "\n";
         }
-        std::cout << "Wrote results to results_q1/range_degradation_v2_results.csv\n";
+        std::cout << "Wrote results to results/early_prototype/range_degradation_v2_results.csv\n";
     }
 
     // Write JSON
-    std::ofstream json_out("results_q1/range_degradation_v2_results.json");
+    std::ofstream json_out("results/early_prototype/range_degradation_v2_results.json");
     if (json_out) {
         json_out << "[\n";
         for (size_t i = 0; i < all_results.size(); ++i) {
@@ -322,7 +322,7 @@ int main(int argc, char** argv) {
                      << "  }" << (i + 1 == all_results.size() ? "" : ",") << "\n";
         }
         json_out << "]\n";
-        std::cout << "Wrote results to results_q1/range_degradation_v2_results.json\n";
+        std::cout << "Wrote results to results/early_prototype/range_degradation_v2_results.json\n";
     }
 
     return 0;

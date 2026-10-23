@@ -121,7 +121,7 @@ void run_latency_vs_mn() {
                   << ", V3 Point: " << v3_point_avg_ns << " ns, V3 Rank: " << v3_rank_avg_ns << " ns" << std::endl;
     }
     
-    std::ofstream file("results_q1/latency_vs_mn.json");
+    std::ofstream file("results/early_prototype/latency_vs_mn.json");
     file << "{\n  \"ratios\": [";
     for (size_t i = 0; i < ratios.size(); ++i) {
         file << ratios[i] << (i + 1 == ratios.size() ? "" : ", ");
@@ -151,7 +151,7 @@ void run_latency_vs_mn() {
         file << v3_rank_latencies_ns[i] << (i + 1 == v3_rank_latencies_ns.size() ? "" : ", ");
     }
     file << "]\n}\n";
-    std::cout << "Saved to results_q1/latency_vs_mn.json" << std::endl;
+    std::cout << "Saved to results/early_prototype/latency_vs_mn.json" << std::endl;
 }
 
 // 3. Memory Footprint Breakdown
@@ -161,7 +161,7 @@ void run_memory_breakdown() {
         "synthetic", "filesystem", "url", "dns", "json", "package", "wiki_ts", "osm_cellids"
     };
     
-    std::ofstream file("results_q1/memory_breakdown.json");
+    std::ofstream file("results/early_prototype/memory_breakdown.json");
     file << "{\n  \"datasets\": {\n";
     
     for (size_t d = 0; d < datasets.size(); ++d) {
@@ -211,7 +211,7 @@ void run_memory_breakdown() {
     }
     
     file << "  }\n}\n";
-    std::cout << "Saved to results_q1/memory_breakdown.json" << std::endl;
+    std::cout << "Saved to results/early_prototype/memory_breakdown.json" << std::endl;
 }
 
 // 4. Model Evolution Across Generations
@@ -248,7 +248,7 @@ void run_model_evolution() {
         std::cout << "Gen: " << g << ", Segments: " << segs << ", Max Error: " << max_err << std::endl;
     }
     
-    std::ofstream file("results_q1/model_evolution.json");
+    std::ofstream file("results/early_prototype/model_evolution.json");
     file << "{\n  \"generations\": [";
     for (size_t i = 0; i < generations.size(); ++i) {
         file << generations[i] << (i + 1 == generations.size() ? "" : ", ");
@@ -262,7 +262,7 @@ void run_model_evolution() {
         file << max_errors[i] << (i + 1 == max_errors.size() ? "" : ", ");
     }
     file << "]\n}\n";
-    std::cout << "Saved to results_q1/model_evolution.json" << std::endl;
+    std::cout << "Saved to results/early_prototype/model_evolution.json" << std::endl;
 }
 
 int main() {

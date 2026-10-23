@@ -193,7 +193,7 @@ def measure_dataset(name, initial_path, insert_path, max_keys=30000):
 
 
 def main():
-    base = os.path.dirname(os.path.abspath(__file__))
+    base = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     data_dir = os.path.join(base, "data")
 
     datasets = [
@@ -243,7 +243,7 @@ def main():
         print(f"  Only wins on {wins}/{total} datasets. Compressed depth >= log2(m).")
         print("  The B+-tree replacement gives better ROI for closing the 20x gap.")
 
-    out = os.path.join(base, "results_q1", "trie_depth_measurement.json")
+    out = os.path.join(base, "results/early_prototype", "trie_depth_measurement.json")
     with open(out, "w") as f:
         json.dump(results, f, indent=2)
     print(f"\nResults saved: {out}")

@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
-workspace=/mnt/c/Users/sayal/OneDrive/Desktop/research
+workspace="${HRTLI_WORKSPACE:-$(cd "$(dirname "$0")/.." && pwd)}"
 cd "$workspace"
-out=results_q1/adaptive_competitors_20260906
+out=results/adaptive_competitors_20260906
 mkdir "$out" "$out/source_measured" "$out/patches"
 upstream_build=/tmp/hrtli_current_competitors_Pmjw3A
 build=$(mktemp -d /tmp/hrtli_adaptive_competitors_XXXXXX)
 printf '%s\n' "$build" > "$out/build_path.txt"
 cp hrtli_cpp/{benchmark_lits_comparison.cpp,test_competitor_set_adapters.cpp,packed_rank_transport.hpp,prefix_radix_delta.hpp,approx_local_delta.hpp} "$out/source_measured/"
 cp scripts/{build_adaptive_competitors.sh,record_experiment.py} "$out/source_measured/"
-cp results_q1/current_competitors_20260906/{upstream_revisions.txt,compiler.txt,cpu.txt} "$out/"
-cp results_q1/current_competitors_20260906/patches/*.patch "$out/patches/"
+cp results/current_competitors_20260906/{upstream_revisions.txt,compiler.txt,cpu.txt} "$out/"
+cp results/current_competitors_20260906/patches/*.patch "$out/patches/"
 bash scripts/verify_radix_fenwick.sh > "$out/core_verification.txt" 2>&1
 hot_includes=(-I "$out/source_measured" -I "$upstream_build/libart/src"
     -I "$upstream_build/hot/libs/hot/single-threaded/include"

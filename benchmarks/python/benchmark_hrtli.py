@@ -21,10 +21,10 @@ from hli.datasets import (
 from hli.poincare_embedding import embed_tree_poincare
 from hli.rank_transport import RankTransportIndex
 from hli.tree_generator import TreeNode
-from download_publishable_corpora import build_publishable_corpora
+from corpora.download_publishable_corpora import build_publishable_corpora
 
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results_q1")
+RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "results", "early_prototype")
 
 
 def paths_to_tree(paths: list[str]) -> tuple[dict[int, TreeNode], list[TreeNode]]:

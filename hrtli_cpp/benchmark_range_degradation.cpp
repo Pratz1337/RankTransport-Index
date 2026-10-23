@@ -523,7 +523,7 @@ int main(int argc, char** argv) {
         run_degradation_for_dataset(dataset, config, all_results);
     }
 
-    std::ofstream csv_out("results_q1/range_degradation_results.csv");
+    std::ofstream csv_out("results/early_prototype/range_degradation_results.csv");
     if (csv_out) {
         csv_out << "dataset,deleted_ratio,index_name,total_scan_time_ms,"
                    "avg_scan_time_us,ci95_avg_scan_time_us,total_returned,"
@@ -536,10 +536,10 @@ int main(int argc, char** argv) {
                     << "," << row.trials << "\n";
         }
         std::cout << "Wrote range degradation results to "
-                  << "results_q1/range_degradation_results.csv\n";
+                  << "results/early_prototype/range_degradation_results.csv\n";
     }
 
-    std::ofstream json_out("results_q1/range_degradation_results.json");
+    std::ofstream json_out("results/early_prototype/range_degradation_results.json");
     if (json_out) {
         json_out << "[\n";
         for (size_t i = 0; i < all_results.size(); ++i) {
@@ -558,7 +558,7 @@ int main(int argc, char** argv) {
         }
         json_out << "]\n";
         std::cout << "Wrote range degradation results to "
-                  << "results_q1/range_degradation_results.json\n";
+                  << "results/early_prototype/range_degradation_results.json\n";
     }
 
     return 0;

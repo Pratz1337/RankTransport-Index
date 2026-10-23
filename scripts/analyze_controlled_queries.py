@@ -8,7 +8,7 @@ from datetime import datetime
 import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA = ROOT / "results_q1/controlled_queries_20260905"
+DATA = ROOT / "results/controlled_queries_20260905"
 METRICS = ("uniform_membership_ns", "balanced_membership_ns",
            "deleted_membership_ns", "uniform_rank_ns", "range_ns")
 
@@ -39,7 +39,7 @@ def analyze():
         before = (DATA / f"trial_{trial}.swap_before.txt").read_text()
         after = (DATA / f"trial_{trial}.swap_after.txt").read_text()
         assert before == after, f"Guest swap changed in trial {trial}"
-        log = ROOT / "results_q1/reassessment_20260905" / (
+        log = ROOT / "results/verification_20260905" / (
             "controlled_2_to_2.host.csv" if trial == 2 else "controlled_3_to_6.host.csv")
         with log.open(newline="", encoding="utf-8-sig") as stream:
             samples = [row for row in csv.DictReader(stream)
@@ -129,8 +129,8 @@ Host counters describe the whole Windows machine; positive page-out is a resourc
 warning, not proof that a particular timed query was swapped. The first launch
 failed before executing the benchmark and is documented separately.
 ## Data
-Raw records and telemetry are retained under results_q1/controlled_queries_20260905
-and results_q1/reassessment_20260905. The next cell displays and executes the exact
+Raw records and telemetry are retained under results/controlled_queries_20260905
+and results/verification_20260905. The next cell displays and executes the exact
 validation and aggregation code; it does not rerun a benchmark or start WSL.
 """),
         nbformat.v4.new_code_cell("""import sys, inspect, json
@@ -142,7 +142,7 @@ sys.path.insert(0, str(root / 'scripts'))
 from analyze_controlled_queries import analyze
 print(inspect.getsource(analyze))
 audit = analyze()
-saved = json.loads((root / 'results_q1/controlled_queries_20260905/analysis.json').read_text())
+saved = json.loads((root / 'results/controlled_queries_20260905/analysis.json').read_text())
 assert audit == saved
 print('Raw records, checksums, source identity, guest swap and saved aggregate agree.')"""),
         nbformat.v4.new_markdown_cell("## Results\n### Process-level resource checks"),

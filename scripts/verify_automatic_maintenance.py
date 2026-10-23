@@ -25,7 +25,7 @@ def run_case():
 
 current, current_log = run_case()
 assert current.wasSuccessful(), current_log
-baseline = ROOT / "results_q1/reassessment_20260905/automatic_maintenance_source_before/hpsfc.py"
+baseline = ROOT / "results/verification_20260905/automatic_maintenance_source_before/hpsfc.py"
 spec = importlib.util.spec_from_file_location("hli.hpsfc", baseline)
 old_module = importlib.util.module_from_spec(spec)
 sys.modules["hli.hpsfc"] = old_module

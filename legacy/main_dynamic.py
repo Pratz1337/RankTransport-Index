@@ -184,7 +184,7 @@ def run_dynamic_experiment():
     
     # 8. Create beautiful plots showing the dynamic warp
     print("\n[Step 8] Generating visual proofs of conformal warping...")
-    os.makedirs("results_dynamic", exist_ok=True)
+    os.makedirs("results/early_prototype/dynamic", exist_ok=True)
     
     # Plot 1: Poincaré Conformal Warping Layouts (Before vs After)
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
@@ -222,7 +222,7 @@ def run_dynamic_experiment():
     ax2.legend()
     
     plt.tight_layout()
-    plt.savefig("results_dynamic/poincare_conformal_warp.png", dpi=300)
+    plt.savefig("results/early_prototype/dynamic/poincare_conformal_warp.png", dpi=300)
     plt.close()
     
     # Plot 2: Prediction error distribution before vs after Möbius transformation
@@ -236,12 +236,12 @@ def run_dynamic_experiment():
     plt.legend()
     plt.grid(True, alpha=0.3)
     plt.tight_layout()
-    plt.savefig("results_dynamic/warp_errors_comparison.png", dpi=300)
+    plt.savefig("results/early_prototype/dynamic/warp_errors_comparison.png", dpi=300)
     plt.close()
     
     print("\nVisual representations generated successfully:")
-    print("  1. Poincaré Conformal Warped Layout: C:\\Users\\sayal\\OneDrive\\Desktop\research\\results_dynamic\\poincare_conformal_warp.png")
-    print("  2. Prediction Error Compensation: C:\\Users\\sayal\\OneDrive\\Desktop\research\\results_dynamic\\warp_errors_comparison.png")
+    print("  1. Poincaré Conformal Warped Layout: results/early_prototype/dynamic/poincare_conformal_warp.png")
+    print("  2. Prediction Error Compensation: results/early_prototype/dynamic/warp_errors_comparison.png")
     print("\n======================================================================")
     print(" DYNAMIC WRITE EXPERIMENT SUCCESSFULLY COMPLETED!")
     print("======================================================================")

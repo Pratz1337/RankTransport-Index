@@ -167,11 +167,11 @@ int main() {
         return 1;
     }
     
-    // Run V2, write to results_q1/concurrent_timeline_v2.json
-    run_concurrent_benchmark<hrtli::RankTransportIndex>(initial_keys, "RankTransportIndex (V2)", "results_q1/concurrent_timeline_v2.json");
+    // Run V2, write to results/early_prototype/concurrent_timeline_v2.json
+    run_concurrent_benchmark<hrtli::RankTransportIndex>(initial_keys, "RankTransportIndex (V2)", "results/early_prototype/concurrent_timeline_v2.json");
     
-    // Run V3, write to results_q1/concurrent_timeline.json
-    run_concurrent_benchmark<hrtli::RankTransportIndexV3>(initial_keys, "RankTransportIndexV3 (V3)", "results_q1/concurrent_timeline.json");
+    // Run V3, write to results/early_prototype/concurrent_timeline.json
+    run_concurrent_benchmark<hrtli::RankTransportIndexV3>(initial_keys, "RankTransportIndexV3 (V3)", "results/early_prototype/concurrent_timeline.json");
     
     return 0;
 }

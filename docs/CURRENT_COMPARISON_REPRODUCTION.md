@@ -1,10 +1,10 @@
 # Current comparison: reproduction and scope
 
-The main specialist table uses `results_q1/adaptive_competitors_20260906`.
-The main ledger table uses `results_q1/adaptive_ledger_20260906`.
+The main specialist table uses `results/adaptive_competitors_20260906`.
+The main ledger table uses `results/adaptive_ledger_20260906`.
 Paths below are relative to the repository root.
 Do not pool these records with the all-node prototype in
-`results_q1/current_competitors_20260906` or the earlier LITS pilots.
+`results/current_competitors_20260906` or the earlier LITS pilots.
 
 ## Audit without rerunning benchmarks
 

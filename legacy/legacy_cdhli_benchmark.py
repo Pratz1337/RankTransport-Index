@@ -28,7 +28,7 @@ from hli.datasets import (load_linux_kernel_paths, generate_dns_paths,
                            generate_json_paths, generate_scalable_tree, dataset_stats)
 from hli.baselines import GappedArrayIndex, PiecewiseLinearIndex, AdaptiveRadixTree, BPlusTreeIndex
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results_q1")
+RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "results", "early_prototype")
 os.makedirs(RESULTS_DIR, exist_ok=True)
 
 # ─── Helpers ─────────────────────────────────────────────────────────────────

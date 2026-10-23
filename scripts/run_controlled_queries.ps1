@@ -1,7 +1,8 @@
 param([int]$FirstTrial = 1, [int]$LastTrial = 1)
 $ErrorActionPreference = 'Stop'
-$workspace = 'C:\Users\sayal\OneDrive\Desktop\research'
-$logBase = Join-Path $workspace "results_q1\reassessment_20260905\controlled_${FirstTrial}_to_${LastTrial}"
+$workspace = (Resolve-Path (Join-Path $PSScriptRoot '..')).Path
+$wslWorkspace = (& wsl -d kali-linux -- wslpath -a ($workspace -replace '\\','/')).Trim()
+$logBase = Join-Path $workspace "results\verification_20260905\controlled_${FirstTrial}_to_${LastTrial}"
 foreach ($suffix in @('.stdout.txt', '.stderr.txt', '.host.csv')) {
     if (Test-Path -LiteralPath ($logBase + $suffix)) { throw "Existing session log: $logBase$suffix" }
 }
@@ -10,7 +11,7 @@ try {
     & wsl -d kali-linux -u root -- bash -lc 'systemctl stop docker.service docker.socket containerd.service cron.service'
     if ($LASTEXITCODE -ne 0) { throw 'Could not pause guest background services' }
     $benchmarkProcess = Start-Process -FilePath 'wsl.exe' -WindowStyle Hidden -PassThru `
-        -ArgumentList @('-d','kali-linux','--','bash','/mnt/c/Users/sayal/OneDrive/Desktop/research/scripts/run_controlled_queries.sh',"$FirstTrial","$LastTrial") `
+        -ArgumentList @('-d','kali-linux','--','bash',"$wslWorkspace/scripts/run_controlled_queries.sh","$FirstTrial","$LastTrial") `
         -RedirectStandardOutput ($logBase + '.stdout.txt') -RedirectStandardError ($logBase + '.stderr.txt')
     $processHandle = $benchmarkProcess.Handle
     Write-Output "Started controlled trials $FirstTrial through $LastTrial; WSL launcher PID $($benchmarkProcess.Id)"

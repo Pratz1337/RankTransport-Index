@@ -1,4 +1,4 @@
-PYTHON ?= python
+PYTHON ?= python3
 CXX ?= g++
 CXXFLAGS ?= -O2 -std=c++17 -I.
 EXTERNAL_ROOT ?= external/competitors
@@ -9,18 +9,42 @@ EXTERNAL_CPP_DEFS ?= -DHRTLI_WITH_ALEX -DHRTLI_WITH_LIPP -DHRTLI_WITH_PGM -DHRTL
 EXTERNAL_CXXFLAGS ?= -O3 -std=c++17 -mavx2 -mbmi -mbmi2 -mlzcnt -mpopcnt -Ihrtli_cpp -I$(EXTERNAL_ROOT)/alex/src/core -I$(EXTERNAL_ROOT)/lipp/src/core -I$(EXTERNAL_ROOT)/pgm/include -I$(EXTERNAL_ROOT)/libart/src -I$(EXTERNAL_ROOT)/lits -I$(EXTERNAL_ROOT)/lits/lits -I$(EXTERNAL_ROOT)/hot/libs/hot/single-threaded/include -I$(EXTERNAL_ROOT)/hot/libs/hot/commons/include -I$(EXTERNAL_ROOT)/hot/libs/idx/content-helpers/include
 EXTERNAL_SOURCES ?= $(EXTERNAL_ROOT)/libart/src/art.c
 
-.PHONY: test data benchmark cpp-test cpp-benchmark cpp-concurrency-benchmark cpp-characterization-benchmark cpp-range-benchmark cpp-write-sweep cpp-range-degradation cpp-ablation-hpsfc cpp-external cpp-external-smoke external-baselines all
+.PHONY: figures fig1 table1 replicated-summary verify paper-check test data benchmark cpp-test cpp-benchmark cpp-concurrency-benchmark cpp-characterization-benchmark cpp-range-benchmark cpp-write-sweep cpp-range-degradation cpp-ablation-hpsfc cpp-external cpp-external-smoke external-baselines all
 
+# ---------------------------------------------------------------- paper artefacts
+# Figs. 2-6 (PDF) from results/; needs matplotlib and a LaTeX install (text.usetex).
+figures:
+	$(PYTHON) figures/make_figs.py
+
+# Fig. 1 is TikZ (no data input).
+fig1:
+	cd figures && pdflatex -interaction=nonstopmode fig1_overview.tex && rm -f fig1_overview.aux fig1_overview.log
+
+# Table 1 rows (LaTeX) from results/replicated_rankcap/replicated_summary.json.
+table1:
+	$(PYTHON) figures/make_table1.py
+
+# Re-audit the ten replicate records and rebuild replicated_summary.json.
+replicated-summary:
+	$(PYTHON) figures/summarize_replicates.py
+
+# SHA-256 identity of every experiment record listed in docs/BUILD_PROVENANCE.json.
+verify:
+	$(PYTHON) scripts/verify_release.py
+
+paper-check: verify replicated-summary table1 figures fig1
+
+# ---------------------------------------------------------------- tests and earlier benchmarks
 test:
 	$(PYTHON) -m unittest discover -s tests
 
 data:
-	$(PYTHON) export_datasets.py
+	$(PYTHON) -m corpora.export_datasets
 
 benchmark: data
-	$(PYTHON) benchmark_q1.py
-	$(PYTHON) benchmark_ablation.py
-	$(PYTHON) benchmark_range_latency.py
+	$(PYTHON) -m benchmarks.python.benchmark_q1_full
+	$(PYTHON) -m benchmarks.python.benchmark_ablation
+	$(PYTHON) -m benchmarks.python.benchmark_range_latency
 
 cpp-test:
 	$(CXX) $(CXXFLAGS) -o hrtli_cpp/test_rank_transport hrtli_cpp/test_rank_transport.cpp

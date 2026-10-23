@@ -17,7 +17,7 @@ baseline macros. It exists so CI can keep the external harness buildable without
 vendoring competitor repositories.
 
 `cpp-range-benchmark` compiles `benchmark_range.cpp` and writes
-`results_q1/cpp_range_latency_synthetic.json`. The executable verifies
+`results/early_prototype/cpp_range_latency_synthetic.json`. The executable verifies
 `count_range == scan_range.size()` for every measured range before reporting
 latency percentiles.
 

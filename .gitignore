@@ -10,12 +10,10 @@ __pycache__/
 /external/
 /build/
 /data/
-/tmp/*
-!/tmp/commoncrawl-2026-may-jun-jul-local/
-/tmp/commoncrawl-2026-may-jun-jul-local/*
-!/tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/
-/tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/*
-!/tmp/commoncrawl-2026-may-jun-jul-local/prepared_interleaved/commoncrawl_hosts_200m_metadata.json
+/tmp/
+/data_sources/
+figures/*.aux
+figures/*.log
 /hrtli_cpp/bench_v3
 /hrtli_cpp/benchmark
 /hrtli_cpp/benchmark_ablation_hpsfc

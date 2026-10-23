@@ -1,5 +1,5 @@
 import os
-from download_publishable_corpora import build_publishable_corpora
+from corpora.download_publishable_corpora import build_publishable_corpora
 from hli.datasets import (
     generate_scalable_tree,
     load_filesystem_paths,

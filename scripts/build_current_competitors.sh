@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-workspace=/mnt/c/Users/sayal/OneDrive/Desktop/research
+workspace="${HRTLI_WORKSPACE:-$(cd "$(dirname "$0")/.." && pwd)}"
 cd "$workspace"
-out=results_q1/current_competitors_20260906
+out=results/current_competitors_20260906
 build=$(< "$out/build_path.txt")
 test "$build" = /tmp/hrtli_current_competitors_Pmjw3A
 (cd "$build/hot" && git apply "$workspace/scripts/patches/hot-portable-mask.patch")

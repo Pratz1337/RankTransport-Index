@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
-workspace=/mnt/c/Users/sayal/OneDrive/Desktop/research
+workspace="${HRTLI_WORKSPACE:-$(cd "$(dirname "$0")/.." && pwd)}"
 cd "$workspace"
-out=${1:-results_q1/current_competitors_20260906}
+out=${1:-results/current_competitors_20260906}
 build=$(< "$out/build_path.txt")
 test -d "$build"
 corpus=/tmp/hrtli_lits_scale_yXM89Z/corpus/sample_10000000

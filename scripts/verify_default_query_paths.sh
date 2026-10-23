@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
-cd /mnt/c/Users/sayal/OneDrive/Desktop/research
+cd "$(dirname "$0")/.."
 check_dir=$(mktemp -d /tmp/hrtli_default_queries_XXXXXX)
 printf 'Temporary check directory: %s\n' "$check_dir"
 g++ -std=c++17 -O1 -g -fsanitize=address,undefined -fno-omit-frame-pointer \
@@ -12,7 +12,7 @@ for source in benchmark_packed_query_paths benchmark_commoncrawl_200m benchmark_
     g++ -std=c++17 -O2 "hrtli_cpp/$source.cpp" -o "$check_dir/$source"
 done
 printf 'PASS: dependent drivers compile with explicit legacy/control query paths\n'
-printf 'Natural 200000-key API regression only; these timings are not manuscript evidence.\n'
+printf 'Natural 200000-key API regression only; these timings are not reported results.\n'
 "$check_dir/benchmark_packed_query_paths" \
     /tmp/hrtli_real_smoke_20260905/initial.txt /tmp/hrtli_real_smoke_20260905/insert.txt \
     199900 2000 64 20000 3

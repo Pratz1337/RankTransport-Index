@@ -7,7 +7,7 @@ import numpy as np
 plt.style.use('seaborn-v0_8-whitegrid' if 'seaborn-v0_8-whitegrid' in plt.style.available else 'default')
 
 def plot_concurrent_timeline():
-    json_path = 'results_q1/concurrent_timeline.json'
+    json_path = 'results/early_prototype/concurrent_timeline.json'
     if not os.path.exists(json_path):
         print(f"Skipping {json_path} (not found)")
         return
@@ -27,12 +27,12 @@ def plot_concurrent_timeline():
     plt.title('p99.9 Read Latency Timeline under Concurrent Consolidation (Rebuilds)', fontsize=14, fontweight='bold')
     plt.grid(True, linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig('results_q1/concurrent_timeline.png', dpi=300)
+    plt.savefig('results/early_prototype/concurrent_timeline.png', dpi=300)
     plt.close()
     print("Generated concurrent_timeline.png")
 
 def plot_latency_vs_mn():
-    json_path = 'results_q1/latency_vs_mn.json'
+    json_path = 'results/early_prototype/latency_vs_mn.json'
     if not os.path.exists(json_path):
         print(f"Skipping {json_path} (not found)")
         return
@@ -68,13 +68,13 @@ def plot_latency_vs_mn():
     
     fig.suptitle('Lookup Latency vs Mutation Ratio (m/n) for V2 and V3', fontsize=15, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('results_q1/latency_vs_mn.png', dpi=300)
+    plt.savefig('results/early_prototype/latency_vs_mn.png', dpi=300)
     plt.close()
     print("Generated latency_vs_mn.png")
 
 
 def plot_memory_breakdown():
-    json_path = 'results_q1/memory_breakdown.json'
+    json_path = 'results/early_prototype/memory_breakdown.json'
     if not os.path.exists(json_path):
         print(f"Skipping {json_path} (not found)")
         return
@@ -117,12 +117,12 @@ def plot_memory_breakdown():
     plt.legend(frameon=True, facecolor='white', framealpha=0.9)
     plt.grid(True, axis='y', linestyle='--', alpha=0.6)
     plt.tight_layout()
-    plt.savefig('results_q1/memory_breakdown.png', dpi=300)
+    plt.savefig('results/early_prototype/memory_breakdown.png', dpi=300)
     plt.close()
     print("Generated memory_breakdown.png")
 
 def plot_model_evolution():
-    json_path = 'results_q1/model_evolution.json'
+    json_path = 'results/early_prototype/model_evolution.json'
     if not os.path.exists(json_path):
         print(f"Skipping {json_path} (not found)")
         return
@@ -156,7 +156,7 @@ def plot_model_evolution():
     
     plt.title('Model Evolution Across Out-of-Distribution Insert Generations', fontsize=14, fontweight='bold')
     plt.tight_layout()
-    plt.savefig('results_q1/model_evolution.png', dpi=300)
+    plt.savefig('results/early_prototype/model_evolution.png', dpi=300)
     plt.close()
     print("Generated model_evolution.png")
 

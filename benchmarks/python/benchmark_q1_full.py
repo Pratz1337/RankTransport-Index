@@ -49,7 +49,7 @@ from hli.baselines import (
 )
 
 
-RESULTS_DIR = os.path.join(os.path.dirname(__file__), "results_q1")
+RESULTS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "results", "early_prototype")
 N_TRIALS = 5
 EPSILON = 64
 RANDOM_SEED = 42

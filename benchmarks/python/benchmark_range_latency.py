@@ -17,7 +17,7 @@ from hli.datasets import generate_scalable_tree
 from hli.range_query import RangeQueryIndex
 
 
-RESULTS_DIR = "results_q1"
+RESULTS_DIR = "results/early_prototype"
 RESULT_PATH = os.path.join(RESULTS_DIR, "range_latency_results.json")
 BASE_KEYS = 20_000
 INSERTS = 2_000

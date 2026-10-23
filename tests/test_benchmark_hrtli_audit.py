@@ -2,7 +2,7 @@
 import unittest
 from unittest.mock import patch
 
-import benchmark_hrtli as benchmark
+import benchmarks.python.benchmark_hrtli as benchmark
 from hli.rank_transport import RankTransportIndex
 
 

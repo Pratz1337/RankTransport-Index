@@ -13,10 +13,10 @@ SHA-256 prefixes below are display identifiers; full digests and source maps are
 | 200M paired queries, process 6 | 2026-09-05T00:55:33.644334+00:00 | `7e24e812e0522c5b` | Internal recovery ablation and inverse writes; pre-segment-fence and pre-Fenwick |
 | 199.9M epsilon sweep | 2026-09-04T23:10:38.106137+00:00 | `41c5378e8ca2efb7` | Exhaustive epsilon table; earlier certified-builder snapshot |
 | 199.9M signed consolidation | 2026-09-04T23:34:15.424097+00:00 | `486bfc4df5856b36` | Lifecycle table offline transition; earlier allocation-safety snapshot |
-| 1000000 natural-key pilot, lits | 2026-09-05T17:29:34.107312+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result disclosed in competitive-baseline section; not replicated |
-| 1000000 natural-key pilot, hrtli | 2026-09-05T17:29:35.851146+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result disclosed in competitive-baseline section; not replicated |
-| 10000000 natural-key pilot, lits | 2026-09-05T17:29:40.638233+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result disclosed in competitive-baseline section; not replicated |
-| 10000000 natural-key pilot, hrtli | 2026-09-05T17:29:47.966399+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result disclosed in competitive-baseline section; not replicated |
+| 1000000 natural-key pilot, lits | 2026-09-05T17:29:34.107312+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result retained; not replicated |
+| 1000000 natural-key pilot, hrtli | 2026-09-05T17:29:35.851146+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result retained; not replicated |
+| 10000000 natural-key pilot, lits | 2026-09-05T17:29:40.638233+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result retained; not replicated |
+| 10000000 natural-key pilot, hrtli | 2026-09-05T17:29:47.966399+00:00 | `b0e7777d116b466a` | One pilot pair/scale; 10M unfavorable result retained; not replicated |
 | 10M mutation-path pair 1, binary_mutation | 2026-09-05T17:36:01.712111+00:00 | `b0e7777d116b466a` | Development-only paired refinement; not the 200M experiment |
 | 10M mutation-path pair 1, learned_mutation | 2026-09-05T17:36:12.656257+00:00 | `ebb56d47eeeaeaed` | Development-only paired refinement; not the 200M experiment |
 | 10M mutation-path pair 2, binary_mutation | 2026-09-05T17:36:33.285416+00:00 | `b0e7777d116b466a` | Development-only paired refinement; not the 200M experiment |
@@ -158,5 +158,5 @@ missing experiment provenance. These rows remain explicitly limited historical
 context; rerunning the current default is the preferred way to close the gap.
 
 Regenerate from workspace records: `python scripts/build_provenance_table.py`.
-The supplement carries identifiers for development records; not every external
-baseline dependency is redistributed in the manuscript source ZIP.
+Development records are listed for completeness; not every external baseline
+dependency is redistributed in this repository (see `THIRD_PARTY_NOTICES.md`).

@@ -1,0 +1,40 @@
+{
+  "name": "ubuntu_noble_paths",
+  "key_rule": "debian_contents_paths",
+  "sources": [
+    {
+      "url": "https://archive.ubuntu.com/ubuntu/dists/noble/Contents-amd64.gz",
+      "bytes": 51301092,
+      "sha256": "c8718dbbacd1ab72675513cf0674ff9921fcf781d9f49c4c0eaf68a49c18adc1"
+    }
+  ],
+  "raw_records": 8443588,
+  "rejected_records": 0,
+  "unique_keys": 8443588,
+  "systematic_stride": 1,
+  "hash_sampling": {
+    "function": "blake2b-64 little-endian mod m == 0",
+    "modulus": 1
+  },
+  "selected_keys": 8443588,
+  "base_keys": 6754871,
+  "arrival_keys": 1688717,
+  "split": "sorted unique keys; every fifth (one-indexed) held out as an arrival",
+  "natural_keys_not_generated": true,
+  "key_bytes": {
+    "mean": 64.28290342920569,
+    "median": 62,
+    "p99": 132,
+    "max": 305
+  },
+  "files": {
+    "base.txt": {
+      "sha256": "d5ba664c9290ba829abc662945655833c481ee3a28075af6d18e7f42e5f80b6e",
+      "bytes": 440977207
+    },
+    "arrivals.nul": {
+      "sha256": "c6861c8077f9ee52813f617117beaac410ef3962c14756ee7bb955431decbbc0",
+      "bytes": 110244733
+    }
+  }
+}

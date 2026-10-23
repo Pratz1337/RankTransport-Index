@@ -1,0 +1,876 @@
+{
+  "corpus": "enwiki_titles",
+  "delta": 150000,
+  "queries": 1048576,
+  "seed": 20261023,
+  "epsilon": 64,
+  "workload": "standard",
+  "modes_in_order": [
+    "counted_art",
+    "radix_ost",
+    "pbds_rbtree",
+    "hrtli",
+    "hrtli_binary"
+  ],
+  "build": {
+    "source": "benchmark_equal_contract.cpp",
+    "flags": [
+      "-std=c++17",
+      "-O3",
+      "-DNDEBUG",
+      "-march=x86-64-v3",
+      "-DHRTLI_WITH_COUNTED_ART",
+      "-DHRTLI_WITH_FENCED"
+    ],
+    "compiler": "g++ (Debian 12.2.0-14+deb12u1) 12.2.0",
+    "binary_sha256": "04f1fb3be7365d026733759f621c614e49b3b145eb72e702261dd0a730a195c4",
+    "source_sha256": {
+      "approx_local_delta.hpp": "629815cf11dd90f655916d2b0522fa6ca2c9fb839ef118e46f8609c3bf277e25",
+      "benchmark_equal_contract.cpp": "e6ec8cea1d81ecce2bf289669e99a510d9ef21fd08bf711567ccd401ba5bf557",
+      "counted_art.hpp": "397b29c4036e1746e6ff5aa0ccd5f05dc0d4d3a74e41662debe844dae0c037e8",
+      "counted_radix_ost.hpp": "b06bcd24c8a2484000c290f028cb36c366c937645f544cd6f6a27c3252875c2d",
+      "fenced_rank_transport.hpp": "7a01ad9d925c77d157b3bb16c093092e183386a07577dac12eca7037f9e2a4d2",
+      "packed_rank_transport.hpp": "ae798a132de0fa5e0cf082b364b5375270ea5b8d4eb1a1123ff61fb4ae7ab123",
+      "prefix_radix_delta.hpp": "f10ebc9ba87468c22ea352938668b967688864e678a9ddce99d4ca8dbf8cf32c"
+    }
+  },
+  "inputs_sha256": {
+    "/data/corpora/enwiki_titles/base.txt": "4d4c225b3a655a8ce98a5fb27d071b7b43e804bc2ec70fe822e29086dab9c613",
+    "/data/corpora/enwiki_titles/arrivals.nul": "67906855324f189eb2a52c3b6387b90c3bd9933ab9477e5e5783bf516de16b8c"
+  },
+  "runs": [
+    {
+      "mode": "counted_art",
+      "exit_code": 0,
+      "wall_seconds": 43.52085065841675,
+      "telemetry_before": {
+        "unix_time": 1792773667.2852867,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "345278932 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "telemetry_after": {
+        "unix_time": 1792773710.8079755,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "343393612 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "stdout": "{\"base_keys\":15381064,\"arrival_keys\":3845265,\"net_delta\":150000,\"queries_per_stream\":1048576,\"seed\":20261023,\"epsilon\":64,\"workload\":\"standard\",\"base_mean_key_bytes\":20.9732,\"base_max_key_bytes\":255,\"mode\":\"counted_art\",\"build_seconds\":4.939379235,\"heap_bytes_after_build\":1428516496,\"mapped_key_bytes\":0,\"streams\":[{\"name\":\"writes_establish_delta\",\"ops\":150000,\"seconds\":0.78900127,\"ns_per_op\":5260.008467,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"member_hit\",\"ops\":1048576,\"seconds\":1.152460531,\"ns_per_op\":1099.072009,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"member_miss\",\"ops\":1048576,\"seconds\":1.027592061,\"ns_per_op\":979.9881563,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"rank_live\",\"ops\":1048576,\"seconds\":1.717575228,\"ns_per_op\":1638.007381,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"rank_absent_boundary\",\"ops\":1048576,\"seconds\":1.670878471,\"ns_per_op\":1593.473884,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"range_live_10\",\"ops\":1048576,\"seconds\":2.548557066,\"ns_per_op\":2430.493418,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"range_live_1000\",\"ops\":1048576,\"seconds\":3.669279497,\"ns_per_op\":3499.297616,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"range_live_100000\",\"ops\":1048576,\"seconds\":3.902814906,\"ns_per_op\":3722.014338,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"range_absent_1000\",\"ops\":1048576,\"seconds\":3.866208239,\"ns_per_op\":3687.103499,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1429373376,\"answers_checked\":true},{\"name\":\"mixed_50w_rank_range\",\"ops\":1048576,\"seconds\":5.274289563,\"ns_per_op\":5029.954494,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1432013248,\"answers_checked\":true}],\"art_inner_nodes\":7669169,\"max_rss_kib\":3819272}\n",
+      "stderr": "",
+      "result": {
+        "base_keys": 15381064,
+        "arrival_keys": 3845265,
+        "net_delta": 150000,
+        "queries_per_stream": 1048576,
+        "seed": 20261023,
+        "epsilon": 64,
+        "workload": "standard",
+        "base_mean_key_bytes": 20.9732,
+        "base_max_key_bytes": 255,
+        "mode": "counted_art",
+        "build_seconds": 4.939379235,
+        "heap_bytes_after_build": 1428516496,
+        "mapped_key_bytes": 0,
+        "streams": [
+          {
+            "name": "writes_establish_delta",
+            "ops": 150000,
+            "seconds": 0.78900127,
+            "ns_per_op": 5260.008467,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "member_hit",
+            "ops": 1048576,
+            "seconds": 1.152460531,
+            "ns_per_op": 1099.072009,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "member_miss",
+            "ops": 1048576,
+            "seconds": 1.027592061,
+            "ns_per_op": 979.9881563,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_live",
+            "ops": 1048576,
+            "seconds": 1.717575228,
+            "ns_per_op": 1638.007381,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_absent_boundary",
+            "ops": 1048576,
+            "seconds": 1.670878471,
+            "ns_per_op": 1593.473884,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_10",
+            "ops": 1048576,
+            "seconds": 2.548557066,
+            "ns_per_op": 2430.493418,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_1000",
+            "ops": 1048576,
+            "seconds": 3.669279497,
+            "ns_per_op": 3499.297616,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_100000",
+            "ops": 1048576,
+            "seconds": 3.902814906,
+            "ns_per_op": 3722.014338,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "range_absent_1000",
+            "ops": 1048576,
+            "seconds": 3.866208239,
+            "ns_per_op": 3687.103499,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1429373376,
+            "answers_checked": true
+          },
+          {
+            "name": "mixed_50w_rank_range",
+            "ops": 1048576,
+            "seconds": 5.274289563,
+            "ns_per_op": 5029.954494,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1432013248,
+            "answers_checked": true
+          }
+        ],
+        "art_inner_nodes": 7669169,
+        "max_rss_kib": 3819272
+      }
+    },
+    {
+      "mode": "radix_ost",
+      "exit_code": 0,
+      "wall_seconds": 76.68583917617798,
+      "telemetry_before": {
+        "unix_time": 1792773710.8092961,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "343393612 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "telemetry_after": {
+        "unix_time": 1792773787.4969578,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "342704004 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "stdout": "{\"base_keys\":15381064,\"arrival_keys\":3845265,\"net_delta\":150000,\"queries_per_stream\":1048576,\"seed\":20261023,\"epsilon\":64,\"workload\":\"standard\",\"base_mean_key_bytes\":20.9732,\"base_max_key_bytes\":255,\"mode\":\"radix_ost\",\"build_seconds\":9.271108063,\"heap_bytes_after_build\":2136137648,\"mapped_key_bytes\":0,\"streams\":[{\"name\":\"writes_establish_delta\",\"ops\":150000,\"seconds\":1.218327384,\"ns_per_op\":8122.18256,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"member_hit\",\"ops\":1048576,\"seconds\":4.892325618,\"ns_per_op\":4665.685289,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"member_miss\",\"ops\":1048576,\"seconds\":4.138826245,\"ns_per_op\":3947.09229,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"rank_live\",\"ops\":1048576,\"seconds\":4.660481214,\"ns_per_op\":4444.581236,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"rank_absent_boundary\",\"ops\":1048576,\"seconds\":3.348681446,\"ns_per_op\":3193.551489,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"range_live_10\",\"ops\":1048576,\"seconds\":4.793630872,\"ns_per_op\":4571.562645,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"range_live_1000\",\"ops\":1048576,\"seconds\":6.262715711,\"ns_per_op\":5972.591125,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"range_live_100000\",\"ops\":1048576,\"seconds\":9.227164696,\"ns_per_op\":8799.709984,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"range_absent_1000\",\"ops\":1048576,\"seconds\":8.133671919,\"ns_per_op\":7756.874007,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2136697120,\"answers_checked\":true},{\"name\":\"mixed_50w_rank_range\",\"ops\":1048576,\"seconds\":5.515288552,\"ns_per_op\":5259.78904,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":2138480128,\"answers_checked\":true}],\"self_estimated_bytes\":1903214092,\"max_rss_kib\":4512004}\n",
+      "stderr": "",
+      "result": {
+        "base_keys": 15381064,
+        "arrival_keys": 3845265,
+        "net_delta": 150000,
+        "queries_per_stream": 1048576,
+        "seed": 20261023,
+        "epsilon": 64,
+        "workload": "standard",
+        "base_mean_key_bytes": 20.9732,
+        "base_max_key_bytes": 255,
+        "mode": "radix_ost",
+        "build_seconds": 9.271108063,
+        "heap_bytes_after_build": 2136137648,
+        "mapped_key_bytes": 0,
+        "streams": [
+          {
+            "name": "writes_establish_delta",
+            "ops": 150000,
+            "seconds": 1.218327384,
+            "ns_per_op": 8122.18256,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "member_hit",
+            "ops": 1048576,
+            "seconds": 4.892325618,
+            "ns_per_op": 4665.685289,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "member_miss",
+            "ops": 1048576,
+            "seconds": 4.138826245,
+            "ns_per_op": 3947.09229,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_live",
+            "ops": 1048576,
+            "seconds": 4.660481214,
+            "ns_per_op": 4444.581236,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_absent_boundary",
+            "ops": 1048576,
+            "seconds": 3.348681446,
+            "ns_per_op": 3193.551489,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_10",
+            "ops": 1048576,
+            "seconds": 4.793630872,
+            "ns_per_op": 4571.562645,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_1000",
+            "ops": 1048576,
+            "seconds": 6.262715711,
+            "ns_per_op": 5972.591125,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_100000",
+            "ops": 1048576,
+            "seconds": 9.227164696,
+            "ns_per_op": 8799.709984,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_absent_1000",
+            "ops": 1048576,
+            "seconds": 8.133671919,
+            "ns_per_op": 7756.874007,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2136697120,
+            "answers_checked": true
+          },
+          {
+            "name": "mixed_50w_rank_range",
+            "ops": 1048576,
+            "seconds": 5.515288552,
+            "ns_per_op": 5259.78904,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 2138480128,
+            "answers_checked": true
+          }
+        ],
+        "self_estimated_bytes": 1903214092,
+        "max_rss_kib": 4512004
+      }
+    },
+    {
+      "mode": "pbds_rbtree",
+      "exit_code": 0,
+      "wall_seconds": 61.76570224761963,
+      "telemetry_before": {
+        "unix_time": 1792773787.4982595,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "342704004 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "telemetry_after": {
+        "unix_time": 1792773849.265514,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "343196552 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "stdout": "{\"base_keys\":15381064,\"arrival_keys\":3845265,\"net_delta\":150000,\"queries_per_stream\":1048576,\"seed\":20261023,\"epsilon\":64,\"workload\":\"standard\",\"base_mean_key_bytes\":20.9732,\"base_max_key_bytes\":255,\"mode\":\"pbds_rbtree\",\"build_seconds\":12.95191348,\"heap_bytes_after_build\":1636459344,\"mapped_key_bytes\":0,\"streams\":[{\"name\":\"writes_establish_delta\",\"ops\":150000,\"seconds\":0.735291435,\"ns_per_op\":4901.9429,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"member_hit\",\"ops\":1048576,\"seconds\":2.714142187,\"ns_per_op\":2588.407695,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"member_miss\",\"ops\":1048576,\"seconds\":2.674730213,\"ns_per_op\":2550.821507,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"rank_live\",\"ops\":1048576,\"seconds\":2.872939093,\"ns_per_op\":2739.848226,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"rank_absent_boundary\",\"ops\":1048576,\"seconds\":2.216595717,\"ns_per_op\":2113.910405,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"range_live_10\",\"ops\":1048576,\"seconds\":4.221396362,\"ns_per_op\":4025.83729,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"range_live_1000\",\"ops\":1048576,\"seconds\":5.632913915,\"ns_per_op\":5371.965327,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"range_live_100000\",\"ops\":1048576,\"seconds\":6.264117821,\"ns_per_op\":5973.928281,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"range_absent_1000\",\"ops\":1048576,\"seconds\":4.345964029,\"ns_per_op\":4144.634274,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636462800,\"answers_checked\":true},{\"name\":\"mixed_50w_rank_range\",\"ops\":1048576,\"seconds\":3.212035939,\"ns_per_op\":3063.236178,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":1636488320,\"answers_checked\":true}],\"self_estimated_bytes\":null,\"max_rss_kib\":4018684}\n",
+      "stderr": "",
+      "result": {
+        "base_keys": 15381064,
+        "arrival_keys": 3845265,
+        "net_delta": 150000,
+        "queries_per_stream": 1048576,
+        "seed": 20261023,
+        "epsilon": 64,
+        "workload": "standard",
+        "base_mean_key_bytes": 20.9732,
+        "base_max_key_bytes": 255,
+        "mode": "pbds_rbtree",
+        "build_seconds": 12.95191348,
+        "heap_bytes_after_build": 1636459344,
+        "mapped_key_bytes": 0,
+        "streams": [
+          {
+            "name": "writes_establish_delta",
+            "ops": 150000,
+            "seconds": 0.735291435,
+            "ns_per_op": 4901.9429,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "member_hit",
+            "ops": 1048576,
+            "seconds": 2.714142187,
+            "ns_per_op": 2588.407695,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "member_miss",
+            "ops": 1048576,
+            "seconds": 2.674730213,
+            "ns_per_op": 2550.821507,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_live",
+            "ops": 1048576,
+            "seconds": 2.872939093,
+            "ns_per_op": 2739.848226,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_absent_boundary",
+            "ops": 1048576,
+            "seconds": 2.216595717,
+            "ns_per_op": 2113.910405,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_10",
+            "ops": 1048576,
+            "seconds": 4.221396362,
+            "ns_per_op": 4025.83729,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_1000",
+            "ops": 1048576,
+            "seconds": 5.632913915,
+            "ns_per_op": 5371.965327,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_100000",
+            "ops": 1048576,
+            "seconds": 6.264117821,
+            "ns_per_op": 5973.928281,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "range_absent_1000",
+            "ops": 1048576,
+            "seconds": 4.345964029,
+            "ns_per_op": 4144.634274,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636462800,
+            "answers_checked": true
+          },
+          {
+            "name": "mixed_50w_rank_range",
+            "ops": 1048576,
+            "seconds": 3.212035939,
+            "ns_per_op": 3063.236178,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 1636488320,
+            "answers_checked": true
+          }
+        ],
+        "self_estimated_bytes": null,
+        "max_rss_kib": 4018684
+      }
+    },
+    {
+      "mode": "hrtli",
+      "exit_code": 0,
+      "wall_seconds": 58.98383712768555,
+      "telemetry_before": {
+        "unix_time": 1792773849.266534,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "343205416 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "telemetry_after": {
+        "unix_time": 1792773908.2530887,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "344698216 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "stdout": "{\"base_keys\":15381064,\"arrival_keys\":3845265,\"net_delta\":150000,\"queries_per_stream\":1048576,\"seed\":20261023,\"epsilon\":64,\"workload\":\"standard\",\"base_mean_key_bytes\":20.9732,\"base_max_key_bytes\":255,\"mode\":\"hrtli\",\"build_seconds\":1.467913677,\"heap_bytes_after_build\":131442848,\"mapped_key_bytes\":337971317,\"streams\":[{\"name\":\"writes_establish_delta\",\"ops\":150000,\"seconds\":0.601399689,\"ns_per_op\":4009.33126,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"member_hit\",\"ops\":1048576,\"seconds\":3.052137122,\"ns_per_op\":2910.744783,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"member_miss\",\"ops\":1048576,\"seconds\":4.172049479,\"ns_per_op\":3978.776435,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"rank_live\",\"ops\":1048576,\"seconds\":3.655388631,\"ns_per_op\":3486.050254,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"rank_absent_boundary\",\"ops\":1048576,\"seconds\":3.480863565,\"ns_per_op\":3319.610181,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_live_10\",\"ops\":1048576,\"seconds\":5.221963839,\"ns_per_op\":4980.052794,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_live_1000\",\"ops\":1048576,\"seconds\":6.33610129,\"ns_per_op\":6042.577066,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_live_100000\",\"ops\":1048576,\"seconds\":7.45920395,\"ns_per_op\":7113.651228,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_absent_1000\",\"ops\":1048576,\"seconds\":5.647671072,\"ns_per_op\":5386.038849,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"mixed_50w_rank_range\",\"ops\":1048576,\"seconds\":5.832716473,\"ns_per_op\":5562.511895,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":225660880,\"answers_checked\":true}],\"model_segments\":158037,\"repaired_segments\":0,\"ledger_entries\":640456,\"ledger_inserted\":320228,\"ledger_deleted\":320228,\"ledger_bytes_estimate\":90440045,\"max_rss_kib\":2969768}\n",
+      "stderr": "",
+      "result": {
+        "base_keys": 15381064,
+        "arrival_keys": 3845265,
+        "net_delta": 150000,
+        "queries_per_stream": 1048576,
+        "seed": 20261023,
+        "epsilon": 64,
+        "workload": "standard",
+        "base_mean_key_bytes": 20.9732,
+        "base_max_key_bytes": 255,
+        "mode": "hrtli",
+        "build_seconds": 1.467913677,
+        "heap_bytes_after_build": 131442848,
+        "mapped_key_bytes": 337971317,
+        "streams": [
+          {
+            "name": "writes_establish_delta",
+            "ops": 150000,
+            "seconds": 0.601399689,
+            "ns_per_op": 4009.33126,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "member_hit",
+            "ops": 1048576,
+            "seconds": 3.052137122,
+            "ns_per_op": 2910.744783,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "member_miss",
+            "ops": 1048576,
+            "seconds": 4.172049479,
+            "ns_per_op": 3978.776435,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_live",
+            "ops": 1048576,
+            "seconds": 3.655388631,
+            "ns_per_op": 3486.050254,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_absent_boundary",
+            "ops": 1048576,
+            "seconds": 3.480863565,
+            "ns_per_op": 3319.610181,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_10",
+            "ops": 1048576,
+            "seconds": 5.221963839,
+            "ns_per_op": 4980.052794,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_1000",
+            "ops": 1048576,
+            "seconds": 6.33610129,
+            "ns_per_op": 6042.577066,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_100000",
+            "ops": 1048576,
+            "seconds": 7.45920395,
+            "ns_per_op": 7113.651228,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_absent_1000",
+            "ops": 1048576,
+            "seconds": 5.647671072,
+            "ns_per_op": 5386.038849,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "mixed_50w_rank_range",
+            "ops": 1048576,
+            "seconds": 5.832716473,
+            "ns_per_op": 5562.511895,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 225660880,
+            "answers_checked": true
+          }
+        ],
+        "model_segments": 158037,
+        "repaired_segments": 0,
+        "ledger_entries": 640456,
+        "ledger_inserted": 320228,
+        "ledger_deleted": 320228,
+        "ledger_bytes_estimate": 90440045,
+        "max_rss_kib": 2969768
+      }
+    },
+    {
+      "mode": "hrtli_binary",
+      "exit_code": 0,
+      "wall_seconds": 68.87235260009766,
+      "telemetry_before": {
+        "unix_time": 1792773908.2544136,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "344698216 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "telemetry_after": {
+        "unix_time": 1792773977.1282742,
+        "cpu_model": "unknown",
+        "cpu_fields": {
+          "vendor_id": "AuthenticAMD",
+          "cpu family": "25",
+          "model": "1",
+          "stepping": "unknown",
+          "cpu MHz": "2449.996",
+          "cache size": "8192 KB",
+          "flags_sha256": "d8d85c880dda55a4",
+          "avx2": true
+        },
+        "logical_cpus": 20,
+        "mem_available_kib": "344700704 kB",
+        "mem_total_kib": "345333680 kB",
+        "vmstat": {},
+        "loadavg": "0.00 0.00 0.00 0/0 0"
+      },
+      "stdout": "{\"base_keys\":15381064,\"arrival_keys\":3845265,\"net_delta\":150000,\"queries_per_stream\":1048576,\"seed\":20261023,\"epsilon\":64,\"workload\":\"standard\",\"base_mean_key_bytes\":20.9732,\"base_max_key_bytes\":255,\"mode\":\"hrtli_binary\",\"build_seconds\":1.454027682,\"heap_bytes_after_build\":131442848,\"mapped_key_bytes\":337971317,\"streams\":[{\"name\":\"writes_establish_delta\",\"ops\":150000,\"seconds\":0.644190595,\"ns_per_op\":4294.603967,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"member_hit\",\"ops\":1048576,\"seconds\":4.882764931,\"ns_per_op\":4656.567508,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"member_miss\",\"ops\":1048576,\"seconds\":4.564592865,\"ns_per_op\":4353.13498,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"rank_live\",\"ops\":1048576,\"seconds\":5.37854803,\"ns_per_op\":5129.383116,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"rank_absent_boundary\",\"ops\":1048576,\"seconds\":5.954521041,\"ns_per_op\":5678.673783,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_live_10\",\"ops\":1048576,\"seconds\":4.815214829,\"ns_per_op\":4592.14671,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_live_1000\",\"ops\":1048576,\"seconds\":6.531488376,\"ns_per_op\":6228.912712,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_live_100000\",\"ops\":1048576,\"seconds\":7.673423081,\"ns_per_op\":7317.946511,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"range_absent_1000\",\"ops\":1048576,\"seconds\":6.591739835,\"ns_per_op\":6286.372981,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":153793120,\"answers_checked\":true},{\"name\":\"mixed_50w_rank_range\",\"ops\":1048576,\"seconds\":8.579381589,\"ns_per_op\":8181.935872,\"major_faults\":0,\"minor_faults\":0,\"heap_bytes_after\":225660880,\"answers_checked\":true}],\"model_segments\":158037,\"repaired_segments\":0,\"ledger_entries\":640456,\"ledger_inserted\":320228,\"ledger_deleted\":320228,\"ledger_bytes_estimate\":90440045,\"max_rss_kib\":2972524}\n",
+      "stderr": "",
+      "result": {
+        "base_keys": 15381064,
+        "arrival_keys": 3845265,
+        "net_delta": 150000,
+        "queries_per_stream": 1048576,
+        "seed": 20261023,
+        "epsilon": 64,
+        "workload": "standard",
+        "base_mean_key_bytes": 20.9732,
+        "base_max_key_bytes": 255,
+        "mode": "hrtli_binary",
+        "build_seconds": 1.454027682,
+        "heap_bytes_after_build": 131442848,
+        "mapped_key_bytes": 337971317,
+        "streams": [
+          {
+            "name": "writes_establish_delta",
+            "ops": 150000,
+            "seconds": 0.644190595,
+            "ns_per_op": 4294.603967,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "member_hit",
+            "ops": 1048576,
+            "seconds": 4.882764931,
+            "ns_per_op": 4656.567508,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "member_miss",
+            "ops": 1048576,
+            "seconds": 4.564592865,
+            "ns_per_op": 4353.13498,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_live",
+            "ops": 1048576,
+            "seconds": 5.37854803,
+            "ns_per_op": 5129.383116,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "rank_absent_boundary",
+            "ops": 1048576,
+            "seconds": 5.954521041,
+            "ns_per_op": 5678.673783,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_10",
+            "ops": 1048576,
+            "seconds": 4.815214829,
+            "ns_per_op": 4592.14671,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_1000",
+            "ops": 1048576,
+            "seconds": 6.531488376,
+            "ns_per_op": 6228.912712,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_live_100000",
+            "ops": 1048576,
+            "seconds": 7.673423081,
+            "ns_per_op": 7317.946511,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "range_absent_1000",
+            "ops": 1048576,
+            "seconds": 6.591739835,
+            "ns_per_op": 6286.372981,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 153793120,
+            "answers_checked": true
+          },
+          {
+            "name": "mixed_50w_rank_range",
+            "ops": 1048576,
+            "seconds": 8.579381589,
+            "ns_per_op": 8181.935872,
+            "major_faults": 0,
+            "minor_faults": 0,
+            "heap_bytes_after": 225660880,
+            "answers_checked": true
+          }
+        ],
+        "model_segments": 158037,
+        "repaired_segments": 0,
+        "ledger_entries": 640456,
+        "ledger_inserted": 320228,
+        "ledger_deleted": 320228,
+        "ledger_bytes_estimate": 90440045,
+        "max_rss_kib": 2972524
+      }
+    }
+  ],
+  "label": "repl3",
+  "replicate": 3,
+  "replicates_total": 5
+}

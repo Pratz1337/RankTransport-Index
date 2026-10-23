@@ -1,0 +1,36 @@
+{
+  "name": "enwiki_titles",
+  "key_rule": "enwiki_titles",
+  "sources": [
+    {
+      "url": "https://dumps.wikimedia.org/other/pagetitles/20260811/enwiki-20260811-all-titles-in-ns-0.gz",
+      "bytes": 109068354,
+      "sha256": "cf23b16dc7e4091f9d13d2c2fb039de17f7979252cea4c7ec39b1d82cf41bdb8"
+    }
+  ],
+  "raw_records": 19226330,
+  "rejected_records": 0,
+  "unique_keys": 19226329,
+  "systematic_stride": 1,
+  "selected_keys": 19226329,
+  "base_keys": 15381064,
+  "arrival_keys": 3845265,
+  "split": "sorted unique keys; every fifth (one-indexed) held out as an arrival",
+  "natural_keys_not_generated": true,
+  "key_bytes": {
+    "mean": 20.972838236566115,
+    "median": 18,
+    "p99": 62,
+    "max": 255
+  },
+  "files": {
+    "base.txt": {
+      "sha256": "4d4c225b3a655a8ce98a5fb27d071b7b43e804bc2ec70fe822e29086dab9c613",
+      "bytes": 337971317
+    },
+    "arrivals.nul": {
+      "sha256": "67906855324f189eb2a52c3b6387b90c3bd9933ab9477e5e5783bf516de16b8c",
+      "bytes": 84485700
+    }
+  }
+}

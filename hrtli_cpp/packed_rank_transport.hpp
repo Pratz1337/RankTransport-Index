@@ -453,6 +453,16 @@ public:
         throw std::runtime_error("key not present in packed HRT-LI");
     }
 
+    // Strict live boundary rank for any key, live or not: rank0(k) + Delta_t(k).
+    // exact_rank() remains the public live-key API and still rejects non-live keys.
+    int boundary_rank(const std::string& key) const {
+        return static_cast<int>(model_.lower_bound(key, base_)) + delta_.prefix_delta(key);
+    }
+
+    // Read-only component access for out-of-path profiling.
+    const PackedPiecewiseModel& model() const { return model_; }
+    const PrefixRadixDelta& ledger() const { return delta_; }
+
     int learned_count_range(const std::string& lo, const std::string& hi) const {
         if (lo > hi) return 0;
         const size_t left = model_.lower_bound(lo, base_);

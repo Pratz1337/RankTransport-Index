@@ -7,6 +7,7 @@ container per replicate and corpus (five replicates x two corpora). Records are 
 | File | Role |
 |---|---|
 | `modal_hrtli.py` | Modal app: corpus preparation (`run_prepare_commoncrawl`, `run_prepare_enwiki`, `run_prepare_paths`), the timed session `equal_contract_session`, and exploratory `run_pilot`. Records are written to `results/replicated_rankcap/`. |
+| `modal_replicate.py` | Launches the replicated sessions: `python -m modal run scripts/modal/modal_replicate.py::replicate --n 5` runs five fresh containers per corpus with the method order rotated per replicate. |
 | `summarize_equal_contract.py` | Per-record audit (exit codes, `answers_checked`, certificate bound) and a quick ns/op printout. |
 | `../../figures/summarize_replicates.py` | Audits all ten replicate records and writes `replicated_summary.json` (median/min/max). |
 
@@ -26,12 +27,8 @@ python -m modal run scripts/modal/modal_hrtli.py::run_prepare_enwiki
   `equal_contract MODE BASE ARRIVALS BASE_N ARRIVAL_N DELTA QUERIES SEED EPSILON WORKLOAD`
   with `DELTA` = 80000 (hosts) / 150000 (titles), `QUERIES` = 1048576, `SEED` = 20261023, `EPSILON` = 64.
 
-Source SHA-256 recorded in the replicate records (`build.source_sha256`). **Pending:**
-`benchmark_equal_contract.cpp`, `counted_art.hpp`, `fenced_rank_transport.hpp` and the listed
-revisions of `counted_radix_ost.hpp` and `packed_rank_transport.hpp` are not yet in `hrtli_cpp/`
-(the current files there predate these runs); compare against these digests when adding them.
-
-Source SHA-256 recorded in the replicate records (`build.source_sha256`):
+Source SHA-256 recorded in the replicate records (`build.source_sha256`). All seven files in
+`hrtli_cpp/` match these digests byte for byte (`sha256sum` them to check):
 
 | File | SHA-256 |
 |---|---|
@@ -42,3 +39,20 @@ Source SHA-256 recorded in the replicate records (`build.source_sha256`):
 | `fenced_rank_transport.hpp` | `7a01ad9d925c77d157b3bb16c093092e183386a07577dac12eca7037f9e2a4d2` |
 | `packed_rank_transport.hpp` | `ae798a132de0fa5e0cf082b364b5375270ea5b8d4eb1a1123ff61fb4ae7ab123` |
 | `prefix_radix_delta.hpp` | `f10ebc9ba87468c22ea352938668b967688864e678a9ddce99d4ca8dbf8cf32c` |
+
+## Local build and smoke test
+
+```sh
+make cpp-equal-contract     # builds hrtli_cpp/equal_contract with the flags above
+make equal-contract-smoke   # synthetic 300k keys; every method must pass the driver's answer checks
+```
+
+The smoke test checks correctness only; its timings are not results.
+
+## As-run copies
+
+`scripts/as_run/modal_hrtli.py` is the job script exactly as it ran (paths of the original
+working directory). `modal_replicate.py` was changed only in its docstring and by a
+`sys.path` line so it imports `modal_hrtli.py` from this directory; the launcher as run had
+SHA-256 `58227937877e2ec1cb1a1afc9146253a766d2bc4fa69231e0580b807d022a5b4`. Neither script's
+digest is part of any experiment record.

@@ -67,6 +67,9 @@ public:
 
     bool point_lookup(const std::string& key) const { return contains(key); }
 
+    // Strict boundary rank for any key, live or not.
+    int boundary_rank(const std::string& key) const { return prefix_sum_lt(root_.get(), key, 0); }
+
     int count_range(const std::string& lo, const std::string& hi) const {
         if (lo > hi) return 0;
         return prefix_sum_le(hi) - prefix_sum_lt(root_.get(), lo, 0);

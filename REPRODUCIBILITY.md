@@ -45,18 +45,20 @@ Each plotted value is read from these files; none is entered by hand.
 
 | File | Producer |
 |---|---|
-| `repl{1..5}_cc_hosts_10m_d80000_s20261023_e64.json`, `repl{1..5}_enwiki_titles_d150000_s20261023_e64.json` | `scripts/modal/modal_hrtli.py` (`equal_contract_session`), one fresh Modal container per file; driver `benchmark_equal_contract.cpp` with the headers `counted_art.hpp` and `fenced_rank_transport.hpp` (**not yet in this repository; see below**), built with g++ 12.2.0 and `-std=c++17 -O3 -DNDEBUG -march=x86-64-v3 -DHRTLI_WITH_COUNTED_ART -DHRTLI_WITH_FENCED`; delta 80,000 (hosts) / 150,000 (titles), 1,048,576 queries, seed 20261023, ε = 64. Each record stores its build command, source digests, `/proc/cpuinfo` summary and telemetry. |
+| `repl{1..5}_cc_hosts_10m_d80000_s20261023_e64.json`, `repl{1..5}_enwiki_titles_d150000_s20261023_e64.json` | `scripts/modal/modal_hrtli.py` (`equal_contract_session`), one fresh Modal container per file; launched by `scripts/modal/modal_replicate.py`; driver `hrtli_cpp/benchmark_equal_contract.cpp` (with `counted_art.hpp`, `fenced_rank_transport.hpp`, `counted_radix_ost.hpp`, `packed_rank_transport.hpp`, `prefix_radix_delta.hpp`, `approx_local_delta.hpp`, all byte-identical to the recorded digests), built with g++ 12.2.0 and `-std=c++17 -O3 -DNDEBUG -march=x86-64-v3 -DHRTLI_WITH_COUNTED_ART -DHRTLI_WITH_FENCED`; delta 80,000 (hosts) / 150,000 (titles), 1,048,576 queries, seed 20261023, ε = 64. Each record stores its build command, source digests, `/proc/cpuinfo` summary and telemetry. |
 | `replicated_summary.json` | `figures/summarize_replicates.py` over the ten replicate records (`make replicated-summary`). |
 | `corpus_commoncrawl.json` | `scripts/modal/modal_hrtli.py::run_prepare_commoncrawl` (shard downloads, regenerated 200M split, 1M/10M sample provenance). |
 | `corpus_enwiki_titles.json` | `scripts/modal/modal_hrtli.py::run_prepare_enwiki`. |
 | `corpus_ubuntu_noble_paths.json` | `scripts/modal/modal_hrtli.py::run_prepare_paths` (prepared, not used in the paper). |
 
 See [`scripts/modal/README.md`](scripts/modal/README.md) for the source digests of the
-benchmark driver and headers used in these runs. **Pending:** the driver
-`benchmark_equal_contract.cpp`, the headers `counted_art.hpp` and `fenced_rank_transport.hpp`, the
-revisions of `packed_rank_transport.hpp` and `counted_radix_ost.hpp` used in these runs, and the
-replicate launcher are to be added to `hrtli_cpp/` and `scripts/modal/`; the SHA-256 recorded in
-every replicate record identifies the exact files.
+benchmark driver and headers used in these runs. `make equal-contract-smoke` builds the driver
+and checks every method on a small synthetic key set (correctness only).
+
+Earlier experiments compiled older revisions of `packed_rank_transport.hpp` and
+`counted_radix_ost.hpp`; each such experiment kept its own frozen copy (for example
+`adaptive_competitors_20260906/source_measured/`), so the newer files in `hrtli_cpp/` do not
+affect those records.
 
 ### `results/verification_20260905/` — 200M scale evidence and correctness verification
 

@@ -159,5 +159,9 @@ context; rerunning the current default is the preferred way to close the gap.
 
 This table and `BUILD_PROVENANCE.json` are frozen; `python scripts/verify_release.py`
 (`make verify`) checks every listed record digest.
+`current_packed_source_sha256` in the JSON is the digest of `packed_rank_transport.hpp`
+when this table was generated (kept in `results/adaptive_competitors_20260906/source_measured/`);
+`hrtli_cpp/` now holds the later revision used by the replicated comparison
+(see `scripts/modal/README.md`).
 Development records are listed for completeness; not every external baseline
 dependency is redistributed in this repository (see `THIRD_PARTY_NOTICES.md`).

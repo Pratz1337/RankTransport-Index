@@ -25,6 +25,7 @@ figures/*.log
 /hrtli_cpp/benchmark_range_degradation_bin
 /hrtli_cpp/benchmark_range_degradation_v2
 /hrtli_cpp/benchmark_write_sweep_bin
+/hrtli_cpp/equal_contract
 /hrtli_cpp/test_rank_transport
 /hrtli_cpp/test_v3_adversarial
 /hrtli_cpp/test_v3_oracle

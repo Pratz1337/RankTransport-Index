@@ -19,7 +19,7 @@ requirement. The statements and proofs are summarised in [`docs/THEORY.md`](docs
 
 | Path | Contents |
 |---|---|
-| [`hrtli_cpp/`](hrtli_cpp) | C++17 core (`packed_rank_transport.hpp`, `prefix_radix_delta.hpp`, `approx_local_delta.hpp`, `counted_radix_ost.hpp`, …), native benchmark drivers (`benchmark_*.cpp`) and native tests (`test_*.cpp`). Headers are included by relative name; compile with `-Ihrtli_cpp`. |
+| [`hrtli_cpp/`](hrtli_cpp) | C++17 core (`packed_rank_transport.hpp`, `prefix_radix_delta.hpp`, `approx_local_delta.hpp`, `fenced_rank_transport.hpp`, …), the rank-capable baselines `counted_art.hpp` and `counted_radix_ost.hpp`, the comparison driver `benchmark_equal_contract.cpp`, native benchmark drivers (`benchmark_*.cpp`) and native tests (`test_*.cpp`). Headers are included by relative name; compile with `-Ihrtli_cpp`. |
 | [`hli/`](hli) | Python reference implementation (`rank_transport.py`, `signed_delta.py`, `hpsfc.py`, …). |
 | [`figures/`](figures) | Scripts that regenerate every figure and Table 1 of the paper from `results/`, plus the generated PDFs. |
 | [`results/`](results) | Frozen experiment records, one directory per experiment (see [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)). |
@@ -59,6 +59,9 @@ make test                 # Python unit tests
 
 # native correctness tests (ASan/UBSan), no data needed
 bash scripts/verify_radix_fenwick.sh
+
+# build the rank-capable comparison driver and smoke-test every method (synthetic keys)
+make equal-contract-smoke
 ```
 
 `make paper-check` runs `verify`, `replicated-summary`, `table1`, `figures` and `fig1` in sequence.

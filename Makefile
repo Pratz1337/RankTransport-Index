@@ -9,7 +9,7 @@ EXTERNAL_CPP_DEFS ?= -DHRTLI_WITH_ALEX -DHRTLI_WITH_LIPP -DHRTLI_WITH_PGM -DHRTL
 EXTERNAL_CXXFLAGS ?= -O3 -std=c++17 -mavx2 -mbmi -mbmi2 -mlzcnt -mpopcnt -Ihrtli_cpp -I$(EXTERNAL_ROOT)/alex/src/core -I$(EXTERNAL_ROOT)/lipp/src/core -I$(EXTERNAL_ROOT)/pgm/include -I$(EXTERNAL_ROOT)/libart/src -I$(EXTERNAL_ROOT)/lits -I$(EXTERNAL_ROOT)/lits/lits -I$(EXTERNAL_ROOT)/hot/libs/hot/single-threaded/include -I$(EXTERNAL_ROOT)/hot/libs/hot/commons/include -I$(EXTERNAL_ROOT)/hot/libs/idx/content-helpers/include
 EXTERNAL_SOURCES ?= $(EXTERNAL_ROOT)/libart/src/art.c
 
-.PHONY: figures fig1 table1 replicated-summary verify paper-check test data benchmark cpp-test cpp-benchmark cpp-concurrency-benchmark cpp-characterization-benchmark cpp-range-benchmark cpp-write-sweep cpp-range-degradation cpp-ablation-hpsfc cpp-external cpp-external-smoke external-baselines all
+.PHONY: figures fig1 table1 replicated-summary verify paper-check test data benchmark cpp-test cpp-equal-contract equal-contract-smoke cpp-benchmark cpp-concurrency-benchmark cpp-characterization-benchmark cpp-range-benchmark cpp-write-sweep cpp-range-degradation cpp-ablation-hpsfc cpp-external cpp-external-smoke external-baselines all
 
 # ---------------------------------------------------------------- paper artefacts
 # Figs. 2-6 (PDF) from results/; needs matplotlib and a LaTeX install (text.usetex).
@@ -49,6 +49,13 @@ benchmark: data
 cpp-test:
 	$(CXX) $(CXXFLAGS) -o hrtli_cpp/test_rank_transport hrtli_cpp/test_rank_transport.cpp
 	./hrtli_cpp/test_rank_transport
+
+cpp-equal-contract:
+	$(CXX) -std=c++17 -O3 -DNDEBUG -march=x86-64-v3 -DHRTLI_WITH_COUNTED_ART -DHRTLI_WITH_FENCED \
+		-Ihrtli_cpp hrtli_cpp/benchmark_equal_contract.cpp -o hrtli_cpp/equal_contract
+
+equal-contract-smoke:
+	$(PYTHON) scripts/smoke_equal_contract.py
 
 cpp-benchmark: data
 	$(CXX) $(CXXFLAGS) -o hrtli_cpp/benchmark hrtli_cpp/benchmark.cpp

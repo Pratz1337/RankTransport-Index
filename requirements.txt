@@ -1,0 +1,10 @@
+# Runtime dependencies for figures/, the Python reference implementation (hli/),
+# the Python tests and the verification scripts.
+# Figures and Table 1 were regenerated and checked with numpy 2.5.4 and
+# matplotlib 3.11.2 on Python 3.13.5; requirements-audit.txt pins the versions
+# used for the notebook audits (Python 3.11).
+# Figures use text.usetex=True and therefore also need a LaTeX installation.
+numpy>=2.0
+matplotlib>=3.10
+# Optional, only for scripts/modal/: modal
+# Optional, only for legacy/ experiments: torch

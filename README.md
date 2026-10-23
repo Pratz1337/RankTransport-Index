@@ -1,129 +1,153 @@
-# HRT-LI: Certified Rank Transport
+# HRT-LI: Count, Don't Retrain
 
-Research code and reproducibility records for **Certified rank transport for
-hierarchical strings**, by Prathmesh Sayal and Kshiraja Nelapati.
+Code, frozen experiment records and figure scripts for
 
-HRT-LI separates a frozen learned base from a signed prefix-mass ledger. For a
-query key `k`, the ledger stores the exact change in the number of live keys
-strictly below `k`:
+> **Count, Don't Retrain: Keeping a Frozen Learned String Index Certified Under Inserts and Deletes**
+> Kshiraja Nelapati and Prathmesh Sayal
 
-```text
-rank_t(k) = rank_0(k) + Delta_t(k)
-p_t(k)    = p_0(k)    + Delta_t(k)
-```
+Learned indexes promise a bounded search window, but one write shifts every larger key and
+silently voids that promise. For byte-string keys, rank drift is a bookkeeping problem, not a
+learning problem. HRT-LI freezes a piecewise-linear model certified on a base snapshot `S_0` and
+records the live set's signed difference from that snapshot in a byte-radix ledger. The ledger's
+mass below a query is the exact drift, `rank_t(k) = rank_0(k) + Δ_t(k)`, so adding it to the
+prediction keeps the certified error of every surviving base key unchanged after any write
+sequence; new keys and absent boundaries are answered by exact counting instead. Range counts
+need only two boundary recoveries. Retraining becomes a cost decision, never a correctness
+requirement. The statements and proofs are summarised in [`docs/THEORY.md`](docs/THEORY.md).
 
-For surviving base keys, applying the same correction preserves the base
-prediction's certified error. Inserted keys and absent query boundaries use
-exact recovery; they do not inherit the stored-base prediction certificate.
-The set contract uses unsigned-byte lexicographic order and excludes duplicates.
+## Repository layout
 
-## Implementation
+| Path | Contents |
+|---|---|
+| [`hrtli_cpp/`](hrtli_cpp) | C++17 core (`packed_rank_transport.hpp`, `prefix_radix_delta.hpp`, `approx_local_delta.hpp`, `counted_radix_ost.hpp`, …), native benchmark drivers (`benchmark_*.cpp`) and native tests (`test_*.cpp`). Headers are included by relative name; compile with `-Ihrtli_cpp`. |
+| [`hli/`](hli) | Python reference implementation (`rank_transport.py`, `signed_delta.py`, `hpsfc.py`, …). |
+| [`figures/`](figures) | Scripts that regenerate every figure and Table 1 of the paper from `results/`, plus the generated PDFs. |
+| [`results/`](results) | Frozen experiment records, one directory per experiment (see [`REPRODUCIBILITY.md`](REPRODUCIBILITY.md)). |
+| [`scripts/`](scripts) | Corpus preparation, experiment runners, audits and verification scripts. [`scripts/modal/`](scripts/modal) holds the Modal jobs for the replicated comparison; [`scripts/as_run/`](scripts/as_run) holds byte-exact copies of runners whose hashes are recorded in experiment records. |
+| [`datasets/`](datasets) | Corpus metadata (Common Crawl 200M selection: shard URLs, digests, counts). Raw corpora are not redistributed. |
+| [`corpora/`](corpora) | Builders for the small public path corpora used by the Python benchmarks. |
+| [`benchmarks/python/`](benchmarks/python) | Python benchmark drivers (run as modules from the repository root). |
+| [`tests/`](tests) | Python unit tests. |
+| [`docs/`](docs) | Theory summary, build provenance (all record digests) and detailed reproduction guides. |
+| [`legacy/`](legacy) | Early exploratory prototype (hyperbolic embedding experiments); not used in the paper. |
 
-The serial C++17 implementation is in
-[`hrtli_cpp/packed_rank_transport.hpp`](hrtli_cpp/packed_rank_transport.hpp), with
-the compressed radix ledger in
-[`hrtli_cpp/prefix_radix_delta.hpp`](hrtli_cpp/prefix_radix_delta.hpp).
-The default query path uses guarded learned recovery without the optional
-fingerprint table. The refined implementation includes segment-fence recovery
-and fanout-aware sibling accounting: direct sums at up to 16 children and a
-Fenwick array above that threshold. These are distinct from the earlier
-implementation measured in the 200M-key query trials.
+## Requirements
 
-The packed implementation requires Linux/POSIX facilities such as memory mapping.
-The newline-delimited base-file format cannot represent a newline within a key.
-This is an in-memory, single-threaded research index, not a concurrent or
-crash-safe storage engine. Offline consolidation is blocking.
+* Linux x86-64 (the packed index uses POSIX memory mapping).
+* C++: g++ with C++17. The replicated comparison was built with `g++ (Debian 12.2.0-14+deb12u1) 12.2.0` and
+  `-std=c++17 -O3 -DNDEBUG -march=x86-64-v3 -DHRTLI_WITH_COUNTED_ART -DHRTLI_WITH_FENCED`
+  (recorded in every replicate record). Each other experiment records its own compiler and flags
+  (see [`docs/BUILD_PROVENANCE.md`](docs/BUILD_PROVENANCE.md)).
+* Python 3.11+ with the packages in [`requirements.txt`](requirements.txt) (`numpy`, `matplotlib`).
+  Figures use `text.usetex`, so a LaTeX installation (e.g. TeX Live) is needed to regenerate them.
+  Notebook audits additionally need [`requirements-audit.txt`](requirements-audit.txt).
+  The Modal jobs need the `modal` client and your own Modal account.
 
-The Python reference implementations are in `hli/rank_transport.py`,
-`hli/signed_delta.py`, and `hli/hpsfc.py`.
-
-## Match each result to its build
-
-| Evidence | Location | Scope |
-|---|---|---|
-| 200M selected Common Crawl keys; five process trials | [`controlled_queries_20260905`](results_q1/controlled_queries_20260905) | Learned-versus-binary recovery inside the same index; 164M timed answers checked. Uses linear sibling sums and predates segment-fence refinement. |
-| Refined HRT-LI versus ART, HOT and LITS | [`adaptive_competitors_20260906`](results_q1/adaptive_competitors_20260906) | 10M natural keys: 8M base and 2M eligible arrivals; four seeds, three workloads, 48 processes. Membership contract, not rank/range comparison. |
-| Linear, all-node Fenwick and fanout-aware ledgers | [`adaptive_ledger_20260906`](results_q1/adaptive_ledger_20260906) | 200K natural signed keys, six seeds and 18 processes. Query time, update time and estimated ledger memory. |
-| Error-budget sweep and offline consolidation | [`reassessment_20260905`](results_q1/reassessment_20260905) | Separate frozen builds and verification records; consolidation timing is one observation. |
-
-The [build provenance table](docs/BUILD_PROVENANCE.md) and
-[full source/binary digest map](docs/BUILD_PROVENANCE.json) identify experiment-time
-sources. Use the corresponding frozen `source/`, `source_measured/`, or variant
-directory to reproduce a measured build. A newly compiled binary need not have
-the historical binary digest. The repository commit identifies this release;
-it is not retroactively the commit used by those experiments.
-
-The 200M experiment is an internal ablation, not a competitive benchmark.
-In the refined membership comparison, ART, HOT and LITS finish every measured
-workload faster than HRT-LI. The fanout-aware ledger has overlapping observed
-query-time ranges with linear sums and higher estimated memory use. These
-measurements do not establish universal throughput superiority.
-
-Timing summaries use medians and observed ranges, not population confidence
-intervals. The experiments use one laptop and systematic selections from one
-Common Crawl release. Windows-host memory pressure is retained in the telemetry;
-the records do not establish portable latency or steady-state service behavior.
-
-## Lightweight checks: no corpus download or benchmark rerun
-
-From the repository root, with Python 3.11:
+## Quick start
 
 ```sh
-python -m pip install -r requirements-audit.txt
-python -m ipykernel install --user --name python3
-python scripts/verify_release.py
-python -m unittest tests.test_rank_transport tests.test_hpsfc tests.test_consolidation_failure tests.test_benchmark_hrtli_audit tests.test_signed_delta_transactions tests.test_hpsfc_automatic_failure tests.test_dataset_seed
-python scripts/audit_current_comparisons.py --adaptive
-python scripts/summarize_query_runs_descriptively.py
-```
+git clone https://github.com/Pratz1337/RankTransport-Index.git
+cd RankTransport-Index
+python3 -m pip install -r requirements.txt
 
-The notebook audit validates all 48 specialist records, 18 ledger records, source
-identities and shared traces, and regenerates the descriptive summary. The final
-command recomputes the five-process query summaries. These commands inspect
-recorded experiments; they do not independently rerun their timed operations.
-Audit scripts regenerate the notebook/summary files, so run them in a disposable
-checkout if you want to preserve the release checkout byte-for-byte.
+make verify               # SHA-256 identity of all 136 indexed experiment records
+make replicated-summary   # re-audit the 10 replicate records -> replicated_summary.json
+make table1               # Table 1 rows (LaTeX) from the replicate summary
+make figures              # Figs. 2-6 -> figures/*.pdf
+make fig1                 # Fig. 1 (TikZ) -> figures/fig1_overview.pdf
+make test                 # Python unit tests
 
-For the current native correctness/sanitizer fixtures on Linux with GCC/G++:
-
-```sh
+# native correctness tests (ASan/UBSan), no data needed
 bash scripts/verify_radix_fenwick.sh
 ```
 
-The focused Python suite and both record-summary audits were rerun for this
-release. Native sanitizer and full-scale performance reruns were not performed
-during release packaging; their retained records are dated separately.
+`make paper-check` runs `verify`, `replicated-summary`, `table1`, `figures` and `fig1` in sequence.
+None of these commands re-runs a timed experiment; they recompute figures and tables from the
+frozen records.
 
-## Reproduce the real-corpus experiments
+## Reproducing the paper's figures and table
 
-See [data and 200M-query reproduction](docs/DATA_AND_200M_REPRODUCTION.md) and
-[specialist/ledger reproduction](docs/CURRENT_COMPARISON_REPRODUCTION.md).
-They identify source URLs, selection rules, input checksums, pinned third-party
-revisions, patches, build separation, operation streams and resource limits.
+All commands run from the repository root. Inputs are paths under `results/`.
 
-The multi-gigabyte Common Crawl corpus and third-party baseline checkouts are
-not redistributed. The repository includes all 48 upstream shard URLs and
-checksums, preparation code, frozen HRT-LI sources, process-level measurements,
-host telemetry, and audit notebooks.
+| Item | Content | Command | Input file(s) | Output |
+|---|---|---|---|---|
+| Fig. 1 | Method overview and toy run (TikZ, no data) | `make fig1` | – | `figures/fig1_overview.pdf` |
+| Fig. 2 | Scale evidence on 199.9M host names: segments per bound, fit/audit time, learned vs. binary recovery, consolidation | `make figures` | `results/verification_20260905/epsilon_corrected.json`, `results/controlled_queries_20260905/analysis.json`, `results/verification_20260905/signed_consolidation_200m.json` | `figures/fig_scale.pdf` |
+| Fig. 3 | Set-only workloads vs. ART, HOT, LITS (8M base, 2M arrivals) | `make figures` | `results/adaptive_competitors_20260906/summary.json` | `figures/fig_specialists.pdf` |
+| Fig. 4 | Rank-capable comparison, five containers per corpus | `make replicated-summary && make figures` | `results/replicated_rankcap/repl{1..5}_*.json` → `results/replicated_rankcap/replicated_summary.json` | `figures/fig_rankcap.pdf` |
+| Table 1 | Median [min, max] build, bytes/key, rank, count, mixed | `make table1` | `results/replicated_rankcap/replicated_summary.json` | LaTeX rows on stdout |
+| Fig. 5 | Range-count cost vs. span: (a) earlier native index, 9.04M host keys; (b,c) replicated comparison | `make figures` | `results/benchmark_audit/range_stable_commoncrawl_host_real.json`, `results/replicated_rankcap/replicated_summary.json` | `figures/fig_range.pdf` |
+| Fig. 6 | (a) ledger variants on a 200,000-key signed ledger; (b–d) earlier implementation (historical) | `make figures` | `results/adaptive_ledger_20260906/*_{linear,fenwick,adaptive}.json`, `results/early_prototype/prefix_radix_delta.json`, `results/early_prototype/cpp_benchmark_results.json` | `figures/fig_ledger.pdf` |
 
-## Historical material
+The figure script reads every plotted value from these files; no number is typed in by hand.
+How each input was produced (driver, runner, build) is listed in
+[`REPRODUCIBILITY.md`](REPRODUCIBILITY.md).
 
-Existing root-level exploratory drivers, `analysis/`, `results_dynamic/`, older
-undated `results_q1/` files and the legacy `Makefile` are retained for history.
-They are not the reproduction entry points for the manuscript's main tables.
-The dated `current_competitors_20260906` directory contains the superseded
-all-node-Fenwick prototype, despite its historical name; the refined results
-are in `adaptive_competitors_20260906`.
+## Datasets
 
-The historical `controlled_query_audit.ipynb` and
-`scripts/analyze_controlled_queries.py` retain an earlier bootstrap analysis.
-Use `scripts/summarize_query_runs_descriptively.py` and
-`results_q1/reviewer_response_20260906/query_descriptive.json` for the manuscript's
-five-run descriptive summaries. Failed/preflight diagnostics remain labelled
-and must not be counted as successful performance trials.
+Raw corpora are not redistributed; every input is identified by URL and SHA-256.
+
+**Common Crawl hosts.** Reversed host names from the Common Crawl host-level web graph release
+`cc-main-2026-may-jun-jul` (240,380,987 vertex records in 48 shards).
+[`datasets/commoncrawl_200m/commoncrawl_hosts_200m_metadata.json`](datasets/commoncrawl_200m/commoncrawl_hosts_200m_metadata.json)
+lists all 48 shard URLs with their SHA-256 digests and the digests of the prepared files.
+`scripts/prepare_commoncrawl_200m.py` verifies byte order and selects host IDs 0–199,999,999,
+holding out every 2000th selected key: 199,900,000 base keys and 100,000 insertion keys
+(base `6840d31d…eab7`, inserts `aff541a1…5d38`).
+`scripts/prepare_lits_scale_corpora.py` derives the 10M natural-key sample used for Figs. 3, 4, 5b–c and Table 1
+(source IDs divisible by 20; every fifth sampled key held out: 8,000,000 base keys and
+2,000,000 arrivals; `base.txt` `c19cd9a8…43fd`, `arrivals.nul` `466ad1b9…6080`).
+In the replicated runs, `scripts/modal/modal_hrtli.py::run_prepare_commoncrawl` re-downloaded all
+48 shards, rebuilt both splits and asserted every digest above before benchmarking.
+Full procedure: [`docs/DATA_AND_200M_REPRODUCTION.md`](docs/DATA_AND_200M_REPRODUCTION.md);
+provenance record: `results/replicated_rankcap/corpus_commoncrawl.json`.
+
+**Wikipedia titles.** English Wikipedia main-namespace titles,
+`https://dumps.wikimedia.org/other/pagetitles/20260811/enwiki-20260811-all-titles-in-ns-0.gz`
+(109,068,354 bytes, SHA-256 `cf23b16dc7e4091f9d13d2c2fb039de17f7979252cea4c7ec39b1d82cf41bdb8`).
+19,226,329 unique keys (mean 20.97 bytes, max 255); sorted, every fifth key held out:
+15,381,064 base keys and 3,845,265 arrivals (`base.txt` `4d4c225b…c613`, `arrivals.nul`
+`67906855…6b8c`). Prepared by `scripts/modal/modal_hrtli.py::run_prepare_enwiki`; provenance
+record: `results/replicated_rankcap/corpus_enwiki_titles.json`.
+
+## Hardware
+
+* **Replicated rank-capable comparison (Fig. 4, Fig. 5b–c, Table 1):** Modal containers, one fresh
+  container per replicate and corpus (function request: 4 CPUs, 32 GiB). Containers were assigned
+  different host CPUs: `/proc/cpuinfo` reports AuthenticAMD in nine records (family 25 models 1
+  and 17, family 23 model 49) and GenuineIntel family 6 model 85 in one. Results are therefore
+  reported as median and min–max over the five containers; per-run telemetry is in each record.
+* **200M verification, set-only and ledger experiments (Figs. 2, 3, 6a):** one laptop under
+  WSL2 (platform string recorded in each record). The controlled-query and specialist
+  directories record a 13th Gen Intel Core i5-13500H with 4 logical CPUs visible and
+  g++ 15.2.0 (`cpu.txt`, `compiler.txt`, `kernel.txt`, swap counters next to each experiment).
+* **Earlier native index (Fig. 5a, Fig. 6b–d):** historical context only; see the limits stated in
+  [`docs/BUILD_PROVENANCE.md`](docs/BUILD_PROVENANCE.md).
+
+## Scope
+
+HRT-LI is an in-memory, single-threaded research index, not a concurrent or crash-safe storage
+engine. The certificate covers surviving base keys under serial, set-semantics writes and
+non-overflowing counters; inserted keys and absent boundaries are exact but uncertified.
+Consolidation is offline and blocking. Third-party baselines (libart, HOT, LITS) are not vendored;
+their pinned revisions and patches are in [`docs/CURRENT_COMPARISON_REPRODUCTION.md`](docs/CURRENT_COMPARISON_REPRODUCTION.md)
+and [`scripts/patches/`](scripts/patches).
 
 ## License
 
-The authors' original HRT-LI code is released under the [MIT License](LICENSE).
-Third-party software and Common Crawl data retain their upstream terms; see
-[third-party notices](THIRD_PARTY_NOTICES.md).
+The authors' original code is released under the [MIT License](LICENSE). Third-party software
+and Common Crawl/Wikimedia data keep their upstream terms; see
+[`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).
+
+## Citation
+
+If you use this code or these records, please cite (see also [`CITATION.cff`](CITATION.cff)):
+
+```bibtex
+@misc{nelapati2026count,
+  title  = {Count, Don't Retrain: Keeping a Frozen Learned String Index Certified Under Inserts and Deletes},
+  author = {Nelapati, Kshiraja and Sayal, Prathmesh},
+  year   = {2026},
+  note   = {Code and experiment records: https://github.com/Pratz1337/RankTransport-Index}
+}
+```

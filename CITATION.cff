@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software or its experiment records, please cite it as below."
+title: "Count, Don't Retrain: Keeping a Frozen Learned String Index Certified Under Inserts and Deletes"
+type: software
+authors:
+  - family-names: Nelapati
+    given-names: Kshiraja
+    orcid: "https://orcid.org/0009-0005-1539-9717"
+  - family-names: Sayal
+    given-names: Prathmesh
+    orcid: "https://orcid.org/0009-0003-0108-1789"
+repository-code: "https://github.com/Pratz1337/RankTransport-Index"
+license: MIT
+keywords:
+  - learned index
+  - string index
+  - rank queries
+  - dynamic updates
+  - certified error bound
+abstract: >-
+  HRT-LI freezes a piecewise-linear learned index certified on a base snapshot of byte-string
+  keys and records the live set's signed difference from that snapshot in a byte-radix ledger.
+  Adding the ledger's mass below a query to the model's prediction keeps the certified error of
+  every surviving base key unchanged after any sequence of inserts and deletes; new keys and
+  absent boundaries are answered by exact counting.

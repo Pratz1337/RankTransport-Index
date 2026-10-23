@@ -7,4 +7,5 @@
 numpy>=2.0
 matplotlib>=3.10
 # Optional, only for scripts/modal/: modal
-# Optional, only for legacy/ experiments: torch
+# Optional: torch, for legacy/ experiments and two tests in tests/test_benchmark_hrtli_audit.py
+# (they error with ModuleNotFoundError without it)

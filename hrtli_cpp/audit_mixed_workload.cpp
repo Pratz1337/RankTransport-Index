@@ -131,7 +131,7 @@ int main() {
         }
     }
     json << "\n  ]\n}\n";
-    std::ofstream out("results/mixed_workload_audit.json");
+    std::ofstream out("results/early_prototype/mixed_workload_audit.json");
     out << json.str();
     std::cout << json.str();
     return 0;

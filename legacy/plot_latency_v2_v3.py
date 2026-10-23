@@ -5,7 +5,7 @@ matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
 def main():
-    csv_path = "results/latency_v2_v3.csv"
+    csv_path = "results/early_prototype/latency_v2_v3.csv"
     if not os.path.exists(csv_path):
         print(f"Error: {csv_path} not found.")
         return
@@ -42,7 +42,7 @@ def main():
     ax.set_ylim(0.05, 5000)
 
     # Save plot
-    save_path = "results/latency_comparison.png"
+    save_path = "results/early_prototype/latency_comparison.png"
     plt.savefig(save_path, bbox_inches="tight")
     save_path_q1 = "results/early_prototype/latency_comparison.png"
     os.makedirs(os.path.dirname(save_path_q1), exist_ok=True)

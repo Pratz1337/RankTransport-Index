@@ -369,7 +369,7 @@ int main() {
     }
     json << "\n  ]\n}\n";
 
-    std::ofstream out("results/revision_gap_experiments.json");
+    std::ofstream out("results/early_prototype/revision_gap_experiments.json");
     out << json.str();
     std::cout << json.str();
     return 0;

@@ -91,7 +91,7 @@ void run_spike_benchmark() {
     auto v3_stats = get_stats(v3_latencies);
 
     // Write traces to CSV
-    std::ofstream csv("results/latency_v2_v3.csv");
+    std::ofstream csv("results/early_prototype/latency_v2_v3.csv");
     csv << "step,v2_latency_us,v3_latency_us\n";
     for (size_t i = 0; i < insert_keys.size(); ++i) {
         csv << i << "," << v2_latencies[i] << "," << v3_latencies[i] << "\n";

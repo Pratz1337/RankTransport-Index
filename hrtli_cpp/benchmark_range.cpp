@@ -249,7 +249,7 @@ int main(int argc, char** argv) {
                   << " scan p99=" << (row_v3.scan_range.p99_ns / 1000.0) << " us\n";
     }
 
-    std::string out = "results/cpp_range_latency_" + dataset + ".json";
+    std::string out = "results/early_prototype/cpp_range_latency_" + dataset + ".json";
     write_json(out, dataset, initial.size(), inserts.size(), deletes, snapshot.size(),
                index.mutation_count(), ranges_per_selectivity, rows, rows_v3);
     std::cout << "Saved native range benchmark to " << out << "\n";

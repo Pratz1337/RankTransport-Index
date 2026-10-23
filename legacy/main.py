@@ -222,7 +222,7 @@ def run_experiment():
     ax.axis('off')
     ax.set_title("Deterministic Poincaré Disk Embedding of the Database Hierarchy", fontsize=11, fontweight='bold', pad=15)
     plt.tight_layout()
-    plot_path_1 = os.path.abspath("results/poincare_embedding.png")
+    plot_path_1 = os.path.abspath("results/early_prototype/poincare_embedding.png")
     plt.savefig(plot_path_1, bbox_inches='tight')
     plt.close()
     
@@ -255,7 +255,7 @@ def run_experiment():
     ax2.grid(True, which="both", linestyle=':', alpha=0.6)
     
     plt.tight_layout()
-    plot_path_2 = os.path.abspath("results/prediction_errors.png")
+    plot_path_2 = os.path.abspath("results/early_prototype/prediction_errors.png")
     plt.savefig(plot_path_2, bbox_inches='tight')
     plt.close()
     
@@ -271,7 +271,7 @@ def run_experiment():
     ax.legend()
     ax.grid(True, linestyle=':', alpha=0.6)
     plt.tight_layout()
-    plot_path_3 = os.path.abspath("results/search_comparisons.png")
+    plot_path_3 = os.path.abspath("results/early_prototype/search_comparisons.png")
     plt.savefig(plot_path_3, bbox_inches='tight')
     plt.close()
     

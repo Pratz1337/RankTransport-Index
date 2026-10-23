@@ -627,7 +627,7 @@ int main(int argc, char** argv) {
     if (write_json != nullptr && std::string(write_json) == "1") {
         const char* env_output = std::getenv("HRTLI_EXTERNAL_OUTPUT");
         const std::string output_path = env_output == nullptr
-            ? "results/external_benchmark_" + dataset + ".json"
+            ? "results/early_prototype/external_benchmark_" + dataset + ".json"
             : env_output;
         write_trial_results_json(dataset, results, output_path);
     }
